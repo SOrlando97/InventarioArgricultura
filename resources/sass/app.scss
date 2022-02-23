@@ -1,0 +1,83 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+.mydiv {    
+    //background:linear-gradient(rgb(135, 245, 159), rgb(96, 190, 77));
+    text-align: center;
+    //border-bottom-left-radius: 50px;
+    //border-bottom-right-radius: 50px;
+    //border-bottom: 3px solid rgb(62, 122, 50);
+}
+body{
+
+    min-height: 100vh;
+    
+}   
+.carta-inicio {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.formsito button{
+    background: #43A047;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 50%;         
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form-titulo{
+    background-color: rgb(96, 190, 77);
+}
+.formsito{
+    border-radius: 10px;
+}
+.content-div{
+    display: flexbox;
+    min-width: 100px;
+    max-width: 700px;
+}
+.content-div2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div1{
+    background-image: url("../../public/images/Fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+}
+.div2{ 
+    background: radial-gradient(rgba(0, 0, 0, 0.3) , rgba(184, 181, 177, 0.3));
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+
+}
+.navtext{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 1.5px 1.5px black;
+}
+.navtext:hover{
+    color:rgb(96, 190, 77);;
+    cursor: pointer;
+}
