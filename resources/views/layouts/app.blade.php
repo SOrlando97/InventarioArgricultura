@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,11 +19,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+
 </head>
-<body>   
-    <div class="div1">
+<body> 
+    <div class="div1" id="app">
         <div class="div2">
-            <div class="mydiv" id="app"x>
+            <div class="mydiv">
                 <nav class="navbar navbar-expand-md" style ="border 8px">
                     <div class="container">
                         <a class="navbar-brand navtext" href="{{ url('/') }}">
@@ -32,23 +35,23 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav me-auto">
                             </ul>
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ms-auto">
+                            <ul class="navbar-nav ms-auto"> 
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
+                                            
                                             <a class="nav-link navtext" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
-                                        <li class="nav-item">
+                                    <li class="nav-item">
                                             <a class="nav-link navtext" href="{{ route('register') }}">{{ __('Crear Cuenta') }}</a>
                                         </li>
                                     @endif
@@ -75,14 +78,16 @@
                                     </li>
                                 @endguest
                             </ul>
-                        </div>
+                        </div>                        
                     </div>
-                </nav>        
-            </div>
+                </nav>                
+            </div>                        
             <main class="py-4">
                     @yield('content')
             </main>
         </div>
     </div>
+           
+
 </body>
 </html>

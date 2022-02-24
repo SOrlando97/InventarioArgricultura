@@ -8,13 +8,24 @@
                 <div class="form-titulo text-center">{{__('Modificar Usuario')}}</div>
                 <div class="row mb-3 text-center mt-3">
                     <label class="col-md-4 col-form-label mt-4 text-md-end" for="current_password" >{{__('Contraseña Actual')}}</label>
-                    <div class="col-md-6">
+                    <div class="col-md-6">                        
                         <input name="current_password" class="form-control mt-4 @error('current_password') is-invalid @enderror" type="password" autocomplete = "current_password">
-                        @error('current_password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        @if(session()->has('msg'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('msg') }}
+                            </div>
+                        @endif
+                        @if(session()->has('success'))
+                            <script>
+                                //alert ('Contraseña cambiada')
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'La contraseña se cambio exitosamente',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                    })
+                            </script>
+                        @endif
                     </div>
                     <label class="col-md-4 col-form-label  mt-4 text-md-end" for="new_password" >{{__('Contraseña Nueva')}}</label>
                     <div class="col-md-6">
@@ -45,20 +56,18 @@
                 </div>
             </form>
         </div>
-        <div ">
-            <form  method="POST" action="{{ route('change.delete',['user'=>Auth::user()->id ] ) }}">
+        <div>
+            
                 <div class="form-titulo text-center">{{__('Eliminar Cuenta')}}</div>
                 <div class="row mb-3 text-center mt-3">
                     <div class="text-center">
                         @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">
-                            {{ __('Eliminar Cuenta') }}
-                        </button>  
-                    </div>            
-                </div>
-            </form>
-        </div>     
+                        <elim-cuenta usuario-actual = {{Auth::user()->id}}>
+                        </elim-cuenta>
+                    </div>
+                    
+                </div>             
+         </div>     
     </div>
 </div>
 @endsection

@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\resources",
+    "\\resources\\js",
     "\\resources\\views",
     "\\resources\\views\\layouts"
   ],

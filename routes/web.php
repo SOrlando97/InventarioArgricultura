@@ -19,4 +19,4 @@ Route::view('/', 'inicio')->name('/');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/Usuario',[App\Http\Controllers\ModificarUsuario::class, 'index'])->name('modusuario');
 Route::post('/Usuario',[App\Http\Controllers\ModificarUsuario::class, 'store'])->name('change.password');
-Route::delete('/Usuario{user}',[App\Http\Controllers\ModificarUsuario::class, 'destroy'])->name('change.delete');
+Route::delete('/Usuario/{user}',[App\Http\Controllers\ModificarUsuario::class, 'destroy'])->name('change.delete');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth,Hash;
-
 class ModificarUsuario extends Controller
 {
     /**
@@ -37,8 +36,8 @@ class ModificarUsuario extends Controller
           $user = Auth::user();
   
           if (!Hash::check($request->current_password, $user->password)) {
-                    
-            return back()->with('error', 'La contraseña no es correcta');
+            //return back()->with('error', 'La contraseña no es correcta');
+            return back()->with(['msg' => 'La contraseña Actual no coincide']);
 
           }
           else{
@@ -95,6 +94,5 @@ class ModificarUsuario extends Controller
     {
         $user = Auth::user();       
         $user->delete();
-        return back();
     }
 }
