@@ -1,5 +1,5 @@
 <?php
-/**Modelo para controlar los usuarios desde el administrador*/
+/**controlador para los usuarios desde el administrador*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -66,9 +66,10 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user,$contra)
     {
-        //
+        $user->password = Hash::make($contra);
+        $user->save();
     }
 
     /**

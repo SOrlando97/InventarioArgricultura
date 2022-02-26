@@ -1,7 +1,7 @@
 <?php
-/**Modelo para controlar la cuenta del usuario logeado */
+/**controlador para controlar la cuenta del usuario logeado */
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth,Hash;
 class ModificarUsuario extends Controller
@@ -86,12 +86,11 @@ class ModificarUsuario extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = Auth::user();       
         $user->delete();
     }
 }

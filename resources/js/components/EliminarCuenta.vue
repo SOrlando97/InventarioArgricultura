@@ -1,8 +1,7 @@
 <template>
     <input type="submit"
-    class="btn btn-danger"
-    value="Eliminar"
-    style="width: 155px"
+    class="btn botonsito btn-danger"
+    value="Eliminar"    
     @click="borrarcuenta"
     >
 </template>
@@ -18,13 +17,14 @@
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Si, borrarla'
+                    confirmButtonText: 'Si, borrarla',
+                    cancelButtonText: 'Cancelar'
                     })
                     .then((result) => {
                         if (result.isConfirmed) {
-                            const params={
-                                id: this.usuarioActual
-                            }
+                            const params={                                
+                                id: this.usuarioActual,
+                            }                            
                             axios.post(`/Usuario/${this.usuarioActual}`,{params, _method: 'delete'})
                             .then(respuesta=>{
                                 console.log(respuesta)
@@ -39,9 +39,7 @@
                             showConfirmButton: false,
                             timer: '1000'
                             })
-                            .then(function(){
-                                window.location ="/home";
-                            })
+                            
                         }
                     })
             }

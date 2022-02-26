@@ -23,6 +23,7 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(VueSweetalert2);
 Vue.component('elim-cuenta', require('./components/EliminarCuenta.vue').default);
+Vue.component('contra-cuenta', require('./components/ModUsuarioContra.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

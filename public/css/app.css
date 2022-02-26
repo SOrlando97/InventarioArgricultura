@@ -11369,6 +11369,28 @@ body {
   cursor: pointer;
 }
 
-.table {
-  background-color: orange;
+.tabla1 {
+  border-radius: 1em;
+  border-collapse: collapse;
+}
+
+.tabla1 thead {
+  text-align: center;
+  background-color: #60be4d;
+}
+
+.tabla1 tbody {
+  background-color: white;
+}
+
+.tabla1 td {
+  width: 25%;
+  text-justify: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.botonsito {
+  margin-right: 10px;
+  width: 165px;
 }
