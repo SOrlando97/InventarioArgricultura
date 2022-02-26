@@ -1,10 +1,11 @@
 <?php
-/**Modelo para controlar la cuenta del usuario logeado */
+/**Modelo para controlar los usuarios desde el administrador*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use Auth,Hash;
-class ModificarUsuario extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,26 @@ class ModificarUsuario extends Controller
     }
     public function index()
     {
-        return view('Usuario.modusuario');  
+        $user= User::all();
+        if(Auth::user()->id_rol==2){
+            return view('admin.usuario', compact('user'));
+        }
+        else{
+            return view('inicio');
+        }
+        
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -27,26 +46,7 @@ class ModificarUsuario extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'current_password' => 'required',
-            'new_password' => 'required|string|min:6',
-            'new_confirm_password' => 'required|same:new_password',
-          ]);
-  
-          $user = Auth::user();
-  
-          if (!Hash::check($request->current_password, $user->password)) {
-            return back()->with(['msg' => 'La contraseña Actual no coincide']);
-
-          }
-          else{
-            $user->password = Hash::make($request->new_password);
-            $user->save();
-    
-            return back()->with('success', 'Password successfully changed!');
-          }
-  
-          
+        //
     }
 
     /**
@@ -91,7 +91,6 @@ class ModificarUsuario extends Controller
      */
     public function destroy($id)
     {
-        $user = Auth::user();       
-        $user->delete();
+        //
     }
 }

@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('rols', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion');
-            $table->timestamps();
         });
+        DB::table('rols')->insert([
+            ['id' => '1','descripcion' => 'Usuario'],
+            ['id' => '2','descripcion' => 'Administrador'],            
+        ]);
     }
 
     /**

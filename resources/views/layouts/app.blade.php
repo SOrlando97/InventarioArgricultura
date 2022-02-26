@@ -56,6 +56,11 @@
                                         </li>
                                     @endif
                                 @else
+                                @if (Auth::user()->id_rol==2)
+                                    <li class="nav-item" style="margin-right: 25px">
+                                            <a class="nav-link navtext" href="{{ route('Usuarios.index') }}">{{ __('Administrar Usuarios') }}</a>
+                                    </li>
+                                    @endif
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle navtext" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
@@ -70,13 +75,12 @@
                                                             document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
-
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
                                         </div>
                                     </li>
-                                @endguest
+                                @endguest                                
                             </ul>
                         </div>                        
                     </div>

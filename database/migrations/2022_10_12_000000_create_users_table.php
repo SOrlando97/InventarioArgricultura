@@ -18,11 +18,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('usuario');
             $table->string('password');
-            $table->bigInteger('id_rol');
+            $table->unsignedBigInteger('id_rol')->default(1);
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('id_rol')->references('id')->on('Rol');
+            $table->foreign('id_rol')->references('id')->on('rols');
         });
+        DB::table('usuario')->insert([
+            ['name' => 'administrador','usuario' => 'Admin','password' => Hash::make('12345678'),'id_rol' =>'2'],           
+        ]);
     }
 
     /**

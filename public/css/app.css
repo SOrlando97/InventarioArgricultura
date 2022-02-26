@@ -11368,3 +11368,7 @@ body {
   color: #60be4d;
   cursor: pointer;
 }
+
+.table {
+  background-color: orange;
+}

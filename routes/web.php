@@ -20,3 +20,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/Usuario',[App\Http\Controllers\ModificarUsuario::class, 'index'])->name('modusuario');
 Route::post('/Usuario',[App\Http\Controllers\ModificarUsuario::class, 'store'])->name('change.password');
 Route::delete('/Usuario/{user}',[App\Http\Controllers\ModificarUsuario::class, 'destroy'])->name('change.delete');
+Route::get('/Usuarios',[App\Http\Controllers\UsuariosController::class,'index'])->name('Usuarios.index');

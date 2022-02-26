@@ -10,11 +10,6 @@
       "taskLabel": "tarea-ProyectoG",
       "appliesTo": "/",
       "type": "launch"
-    },
-    {
-      "taskLabel": "tarea-ProyectoGrado",
-      "appliesTo": "/",
-      "type": "launch"
     }
   ]
 }
