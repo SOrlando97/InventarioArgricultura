@@ -30,7 +30,7 @@
                 <nav class="navbar navbar-expand-md" style ="border 8px">
                     <div class="container">
                         <a class="navbar-brand navtext" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
+                            {{ ('Inicio') }}
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             <span class="navbar-toggler-icon"></span>
@@ -61,6 +61,9 @@
                                             <a class="nav-link navtext" href="{{ route('Usuarios.index') }}">{{ __('Administrar Usuarios') }}</a>
                                     </li>
                                     @endif
+                                    <li class="nav-item" style="margin-right: 25px">
+                                            <a class="nav-link navtext" href="{{ route('Producto.index') }}">{{ __('Productos') }}</a>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle navtext" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}

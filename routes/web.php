@@ -22,3 +22,5 @@ Route::post('/Usuario',[App\Http\Controllers\ModificarUsuario::class, 'store'])-
 Route::delete('/Usuario/{user}',[App\Http\Controllers\ModificarUsuario::class, 'destroy'])->name('change.delete');
 Route::get('/Usuarios',[App\Http\Controllers\UsuariosController::class,'index'])->name('Usuarios.index');
 Route::get('/Usuarios/{user}/{contra}/edit',[App\Http\Controllers\UsuariosController::class,'edit'])->name('Usuarios.edit');
+Route::get('/productos',[App\Http\Controllers\ProductoController::class,'index'])->name('Producto.index');
+Route::get('/productos/create',[App\Http\Controllers\ProductoController::class,'create'])->name('Producto.create');
