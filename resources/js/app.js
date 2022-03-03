@@ -24,6 +24,8 @@ window.Vue = require('vue').default;
 Vue.use(VueSweetalert2);
 Vue.component('elim-cuenta', require('./components/EliminarCuenta.vue').default);
 Vue.component('contra-cuenta', require('./components/ModUsuarioContra.vue').default);
+Vue.component('new_tipo_prod', require('./components/CrearTipo_Producto.vue').default);
+Vue.component('elim_tipo_prod', require('./components/EliminarTipo_producto.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

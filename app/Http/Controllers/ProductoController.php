@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -12,9 +14,14 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        return view('Producto.index');
+        $productos = Auth::user()->productos;
+        return view('Producto.index', compact('productos'));
     }
 
     /**
@@ -24,7 +31,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('Producto.craete');
+        $tipoproducto = DB::table('tipoproductos')->get();
+        return view('Producto.create', compact('tipoproducto'));
     }
 
     /**
@@ -35,7 +43,20 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'nombre' =>'required',
+            'precio' =>'required',
+            'tipoproducto' =>'required',
+        ]);
+        DB::table('productos')->insert([
+            'nombre' => $data['nombre'],
+            'precio' => $data['precio'],
+            'id_tipoproducto' => $data['tipoproducto'],
+            'QR' => '1',
+            'ganancia' =>'1',
+            'id_usuario'=>Auth::user()->id,
+        ]);
+        return redirect()->route('Producto.index');
     }
 
     /**

@@ -24,8 +24,8 @@
 
 </head>
 <body> 
-    <div class="div1" id="app">
-        <div class="div2">
+    <div class="div1"></div>
+        <div class="div2" id="app">
             <div class="mydiv">
                 <nav class="navbar navbar-expand-md" style ="border 8px">
                     <div class="container">
@@ -56,14 +56,19 @@
                                         </li>
                                     @endif
                                 @else
-                                @if (Auth::user()->id_rol==2)
-                                    <li class="nav-item" style="margin-right: 25px">
-                                            <a class="nav-link navtext" href="{{ route('Usuarios.index') }}">{{ __('Administrar Usuarios') }}</a>
-                                    </li>
+                                    @if (Auth::user()->id_rol==2)
+                                        <li class="nav-item" style="margin-right: 25px">
+                                                <a class="nav-link navtext" href="{{ route('Tipo_producto.index') }}">{{ __('Crear Tipo de Producto') }}</a>
+                                        </li>
+                                        <li class="nav-item" style="margin-right: 25px">
+                                                <a class="nav-link navtext" href="{{ route('Usuarios.index') }}">{{ __('Administrar Usuarios') }}</a>
+                                        </li>
                                     @endif
+                                    @if (Auth::user()->id_rol==1)
                                     <li class="nav-item" style="margin-right: 25px">
                                             <a class="nav-link navtext" href="{{ route('Producto.index') }}">{{ __('Productos') }}</a>
                                     </li>
+                                    @endif                                    
                                     <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle navtext" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
@@ -76,7 +81,7 @@
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
+                                                {{ __('Cerrar Sesion') }}
                                             </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
@@ -93,7 +98,7 @@
                     @yield('content')
             </main>
         </div>
-    </div>
+    
            
 
 </body>

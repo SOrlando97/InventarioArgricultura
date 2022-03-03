@@ -11337,14 +11337,15 @@ body {
 }
 
 .div1 {
+  position: absolute;
   background-image: url(/images/Fondo.jpg?20b4da1400ab0d8a34660180c11ea28e);
-  background-size: cover;
-  background-attachment: fixed;
+  top: 0;
   width: 100%;
-  min-height: 100vh;
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -100;
+  filter: blur(4px);
 }
 
 .div2 {
@@ -11393,4 +11394,9 @@ body {
 .botonsito {
   margin-right: 10px;
   width: 165px;
+}
+
+.div-primerboton {
+  margin-top: 50px;
+  margin-left: 43%;
 }

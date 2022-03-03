@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Auth,Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 class ModificarUsuario extends Controller
 {
     /**
@@ -35,7 +37,7 @@ class ModificarUsuario extends Controller
   
           $user = Auth::user();
   
-          if (!Hash::check($request->current_password, $user->password)) {
+          if (!hash::check($request->current_password, $user->password)) {
             return back()->with(['msg' => 'La contraseña Actual no coincide']);
 
           }
@@ -91,6 +93,7 @@ class ModificarUsuario extends Controller
      */
     public function destroy(User $user)
     {
+        return ($user);
         $user->delete();
     }
 }

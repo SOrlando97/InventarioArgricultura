@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'usuario',
+        'email',
         'password',        
     ];
 
@@ -39,4 +39,8 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $table = 'usuario';
+    
+    public function productos(){
+        return $this->hasMany(Producto::class,'id_usuario');
+    }
 }

@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -16,7 +18,7 @@ return new class extends Migration
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('usuario');
+            $table->string('email')->unique();
             $table->string('password');
             $table->unsignedBigInteger('id_rol')->default(1);
             $table->rememberToken();
@@ -24,7 +26,7 @@ return new class extends Migration
             $table->foreign('id_rol')->references('id')->on('rols');
         });
         DB::table('usuario')->insert([
-            ['name' => 'administrador','usuario' => 'Admin','password' => Hash::make('12345678'),'id_rol' =>'2'],           
+            ['name' => 'administrador','email' => 'Admin','password' => Hash::make('12345678'),'id_rol' =>'2'],           
         ]);
     }
 

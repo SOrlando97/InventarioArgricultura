@@ -1,14 +1,13 @@
 <?php
-/**controlador para los usuarios desde el administrador*/
+
 namespace App\Http\Controllers;
 
-
-use App\Models\User;
+use App\Models\tipoproducto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
-class UsuariosController extends Controller
+class TipoproductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +20,10 @@ class UsuariosController extends Controller
     }
     public function index()
     {
-        $user= User::all();
+       
         if(Auth::user()->id_rol==2){
-            return view('admin.usuario', compact('user'));
+            $tipoproducto = tipoproducto::all();
+            return view('tipo_producto.index', compact('tipoproducto'));
         }
         else{
             return view('inicio');
@@ -47,18 +47,20 @@ class UsuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $nombre)
     {
-        //
+        DB::table('tipoproductos')->insert([
+            'descripcion' => $nombre,
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\tipoproducto  $tipoproducto
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(tipoproducto $tipoproducto)
     {
         //
     }
@@ -66,23 +68,22 @@ class UsuariosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\tipoproducto  $tipoproducto
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user,$contra)
+    public function edit(tipoproducto $tipoproducto)
     {
-        $user->password = Hash::make($contra);
-        $user->save();
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\tipoproducto  $tipoproducto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, tipoproducto $tipoproducto)
     {
         //
     }
@@ -90,11 +91,11 @@ class UsuariosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\tipoproducto  $tipoproducto
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(tipoproducto $tipoproducto)
     {
-        //
+        $tipoproducto->delete();
     }
 }
