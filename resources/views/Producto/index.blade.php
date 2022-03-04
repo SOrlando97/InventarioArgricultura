@@ -8,7 +8,6 @@
     <table class="table tabla1 table-hover">
         <thead>
             <tr>
-                <th>Usuario</th>
                 <th>Productos</th>
                 <th>Acciones</th>
             </tr>
@@ -16,9 +15,13 @@
         <tbody>
             @foreach($productos as $productos)   
             <tr>
-                <td>{{$productos->id}}</td>
                 <td>{{$productos->nombre}}</td>
-                <td>prueba</td>
+                <td>
+                    <a class = "btn botonsito btn-success" href="{{route('Producto.show',$productos->id)}}">Ver</a>
+                    <a class = "btn botonsito btn-warning" href="">Modificar</a>
+                    <elim_producto producto = {{$productos->id}}><elim_producto>
+                    
+                </td>
             </tr>
             @endforeach
 

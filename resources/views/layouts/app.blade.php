@@ -58,7 +58,7 @@
                                 @else
                                     @if (Auth::user()->id_rol==2)
                                         <li class="nav-item" style="margin-right: 25px">
-                                                <a class="nav-link navtext" href="{{ route('Tipo_producto.index') }}">{{ __('Crear Tipo de Producto') }}</a>
+                                                <a class="nav-link navtext" href="{{ route('Tipo_producto.index') }}">{{ __('Tipo de Producto') }}</a>
                                         </li>
                                         <li class="nav-item" style="margin-right: 25px">
                                                 <a class="nav-link navtext" href="{{ route('Usuarios.index') }}">{{ __('Administrar Usuarios') }}</a>

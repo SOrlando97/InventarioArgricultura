@@ -11,4 +11,7 @@ class tipoproducto extends Model
     protected $fillable = [
         'descripcion',    
     ];
+    public function productos(){
+        return $this->hasMany(Producto::class,'id_tipoproducto');
+    }
 }

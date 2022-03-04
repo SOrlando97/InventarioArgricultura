@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\tipoproducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        $tipoproducto = DB::table('tipoproductos')->get();
+        $tipoproducto = tipoproducto::all();
         return view('Producto.create', compact('tipoproducto'));
     }
 
@@ -43,18 +44,28 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        //validacion de datos de los productos, para que estos sean requeridos en el formulario
         $data = $request->validate([
-            'nombre' =>'required',
-            'precio' =>'required',
-            'tipoproducto' =>'required',
+            'nombre' => 'required',
+            'precio' => 'required',
+            'tipoproducto' => 'required',
         ]);
-        DB::table('productos')->insert([
+        // insercion con sentencia SQL
+        /* DB::table('productos')->insert([
             'nombre' => $data['nombre'],
             'precio' => $data['precio'],
             'id_tipoproducto' => $data['tipoproducto'],
             'QR' => '1',
-            'ganancia' =>'1',
-            'id_usuario'=>Auth::user()->id,
+            'ganancia' => '1',
+            'id_usuario' => Auth::user()->id,
+        ]); */
+        // insercion de datos usando el modelo de laravel (proteje los datos al hacer la insercion)
+        Auth::user()->productos()->create([
+            'nombre' => $data['nombre'],
+            'precio' => $data['precio'],
+            'id_tipoproducto' => $data['tipoproducto'],
+            'QR' => '1',
+            'ganancia' => ($data['precio'] * 1.35),
         ]);
         return redirect()->route('Producto.index');
     }
@@ -67,7 +78,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return view('Producto.show', compact('producto'));
     }
 
     /**
@@ -101,6 +112,6 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
     }
 }

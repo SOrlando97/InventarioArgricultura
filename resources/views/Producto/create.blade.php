@@ -51,20 +51,17 @@
                     </select>
                     
 
-                    @error('nombre')
+                    @error('tipoproducto')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
-            </div>                       
-
-            
-
+            </div>                   
             <div class="row mb-0">
                 <div class="col-md-8 offset-md-4">
                     <button type="submit" class="btn btn-primary">
-                        {{ __('Crear Cuenta') }}
+                        {{ __('Añadir Producto') }}
                     </button>
                 </div>
             </div>

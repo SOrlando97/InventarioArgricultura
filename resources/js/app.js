@@ -26,6 +26,7 @@ Vue.component('elim-cuenta', require('./components/EliminarCuenta.vue').default)
 Vue.component('contra-cuenta', require('./components/ModUsuarioContra.vue').default);
 Vue.component('new_tipo_prod', require('./components/CrearTipo_Producto.vue').default);
 Vue.component('elim_tipo_prod', require('./components/EliminarTipo_producto.vue').default);
+Vue.component('elim_producto', require('./components/EliminarProducto.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

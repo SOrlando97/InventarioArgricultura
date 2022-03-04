@@ -26,6 +26,10 @@ Route::get('/Usuarios/{user}/{contra}/edit', [App\Http\Controllers\UsuariosContr
 Route::get('/productos', [App\Http\Controllers\ProductoController::class, 'index'])->name('Producto.index');
 Route::get('/productos/create', [App\Http\Controllers\ProductoController::class, 'create'])->name('Producto.create');
 Route::post('/productos', [App\Http\Controllers\ProductoController::class, 'store'])->name('Producto.store');
+Route::delete('/productos/{producto}', [App\Http\Controllers\ProductoController::class, 'destroy'])->name('Producto.delete');
+
+Route::get('/productos/{producto}', [App\Http\Controllers\ProductoController::class, 'show'])->name('Producto.show');
+
 Route::get('/Tipo_producto', [App\Http\Controllers\TipoproductoController::class, 'index'])->name('Tipo_producto.index');
 Route::post('/Tipo_producto/{descripcion}', [App\Http\Controllers\TipoproductoController::class, 'store'])->name('Tipo_producto.store');
 Route::delete('/Tipo_producto/{tipoproducto}', [App\Http\Controllers\TipoproductoController::class, 'destroy'])->name('Tipo_producto.delete');

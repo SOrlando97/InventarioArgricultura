@@ -49,6 +49,9 @@ class TipoproductoController extends Controller
      */
     public function store(Request $request, $nombre)
     {
+        /* tipoproducto()->create([
+            'descripcion' => $nombre,
+        ]); */
         DB::table('tipoproductos')->insert([
             'descripcion' => $nombre,
         ]);
