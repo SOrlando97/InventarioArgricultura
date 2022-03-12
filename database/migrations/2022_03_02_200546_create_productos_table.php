@@ -17,12 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->double('cantidad',10,2)->default(0);
-            $table->string('QR');
+            $table->string('QR')->default('');
             $table->double('precio',32,2);
             $table->double('ganancia',32,2);
-            $table->foreignId('id_usuario')->references('id')->on('usuario');
-            $table->foreignId('id_tipoproducto')->references('id')->on('tipoproductos');
+            $table->foreignId('id_usuario')->references('id')->on('usuario')->onDelete('cascade');
+            $table->foreignId('id_tipoproducto')->references('id')->on('tipoproductos')->onDelete('cascade');
         });
+        DB::table('productos')->insert([
+            ['nombre' => 'Papas','cantidad'=> 8.2,'precio' => 15000,'ganancia' => 20250,'id_tipoproducto' =>'5','id_usuario' =>'2'],
+            ['nombre' => 'Yuca','cantidad'=> 0,'precio' => 8000,'ganancia' => 8000*1.35,'id_tipoproducto' =>'5','id_usuario' =>'2'],         
+        ]);
     }
 
     /**

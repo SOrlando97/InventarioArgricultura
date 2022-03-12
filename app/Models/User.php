@@ -37,10 +37,10 @@ class User extends Authenticatable
      * The attributes that should be cast.
      *
      * @var array<string, string>
-     */
-    protected $table = 'usuario';
+     */    
     
     public function productos(){
         return $this->hasMany(Producto::class,'id_usuario');
     }
+    protected $table = 'usuario';
 }

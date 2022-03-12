@@ -11337,7 +11337,7 @@ body {
 }
 
 .div1 {
-  position: absolute;
+  position: fixed;
   background-image: url(/images/Fondo.jpg?20b4da1400ab0d8a34660180c11ea28e);
   top: 0;
   width: 100%;
@@ -11399,4 +11399,44 @@ body {
 .div-primerboton {
   margin-top: 50px;
   margin-left: 43%;
+}
+
+.Producto-cuerpo {
+  background-color: transparent;
+  text-align: center;
+  width: 50rem;
+}
+
+.Producto-cuerpo h3, .Producto-cuerpo .h3 {
+  background-color: white;
+  font-size: 20px;
+}
+
+.Producto-cuerpo h2, .Producto-cuerpo .h2 {
+  background-color: lightgreen;
+}
+
+.Producto-contenido {
+  width: 50rem;
+  margin-left: 21%;
+  font-family: "Roboto", sans-serif;
+}
+
+.Producto-cuerpo div {
+  margin-bottom: 20px;
+}
+
+.Producto-cuerpo-div {
+  border: 1px solid var(--bs-green);
+  background: radial-gradient(circle, rgba(115, 255, 98, 0.9934348739) 0%, #66ffbf 100%);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.Producto-QR {
+  background-color: whitesmoke;
+}
+
+.Producto-contenido ul {
+  font-size: 25px;
+  text-align: center;
 }

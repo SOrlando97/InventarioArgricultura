@@ -27,9 +27,13 @@ Route::get('/productos', [App\Http\Controllers\ProductoController::class, 'index
 Route::get('/productos/create', [App\Http\Controllers\ProductoController::class, 'create'])->name('Producto.create');
 Route::post('/productos', [App\Http\Controllers\ProductoController::class, 'store'])->name('Producto.store');
 Route::delete('/productos/{producto}', [App\Http\Controllers\ProductoController::class, 'destroy'])->name('Producto.delete');
-
 Route::get('/productos/{producto}', [App\Http\Controllers\ProductoController::class, 'show'])->name('Producto.show');
-
+/* hacer el producto update */
 Route::get('/Tipo_producto', [App\Http\Controllers\TipoproductoController::class, 'index'])->name('Tipo_producto.index');
 Route::post('/Tipo_producto/{descripcion}', [App\Http\Controllers\TipoproductoController::class, 'store'])->name('Tipo_producto.store');
 Route::delete('/Tipo_producto/{tipoproducto}', [App\Http\Controllers\TipoproductoController::class, 'destroy'])->name('Tipo_producto.delete');
+Route::get('/productos/{producto}/entrada', [App\Http\Controllers\HistorialentradaController::class, 'show'])->name('historialentrada.show');
+Route::post('/productos/entrada/{producto}', [App\Http\Controllers\HistorialentradaController::class, 'store'])->name('historialentrada.store');
+
+Route::get('/productos/{producto}/salida', [App\Http\Controllers\HistorialsalidaController::class, 'show'])->name('historialsalida.show');
+Route::post('/productos/salida/{producto}', [App\Http\Controllers\HistorialsalidaController::class, 'store'])->name('historialsalida.store');

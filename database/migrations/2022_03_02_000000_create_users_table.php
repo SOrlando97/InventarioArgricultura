@@ -23,10 +23,11 @@ return new class extends Migration
             $table->unsignedBigInteger('id_rol')->default(1);
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('id_rol')->references('id')->on('rols');
+            $table->foreign('id_rol')->references('id')->on('rols')->onDelete('cascade');
         });
         DB::table('usuario')->insert([
-            ['name' => 'administrador','email' => 'Admin','password' => Hash::make('12345678'),'id_rol' =>'2'],           
+            ['name' => 'administrador','email' => 'Admin','password' => Hash::make('12345678'),'id_rol' =>'2'],
+            ['name' => 'Usuario1','email' => 'Usuario1@correo.com','password' => Hash::make('123456789'),'id_rol' =>'1'],          
         ]);
     }
 

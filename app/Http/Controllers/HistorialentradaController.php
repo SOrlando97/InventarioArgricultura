@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historialentrada;
+use Carbon\Carbon;
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\historialentrada;
+use Illuminate\Support\Facades\Auth;
 
 class HistorialentradaController extends Controller
 {
@@ -33,9 +36,20 @@ class HistorialentradaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Producto $producto)
     {
-        //
+       /* validacion de la cantidad, es requerida, entera y debe ser un numero mayor a 1 */
+        $data = $request->validate([
+        'cantidad' => 'required|numeric|min:1',
+        ]);
+        /*  guardar informacion en historial entrada y modificar la cantidad de producto */
+        $producto->historialentrada()->create([
+            'fecha' => Carbon::now()->subhours('5')->format('Y-m-d h:i'),
+            'cantidad' => $data['cantidad'],            
+        ]);
+        $producto->cantidad = $producto->cantidad + $data['cantidad'];
+        $producto->save();
+        return redirect()->route('historialentrada.show',compact('producto'));
     }
 
     /**
@@ -44,9 +58,11 @@ class HistorialentradaController extends Controller
      * @param  \App\Models\historialentrada  $historialentrada
      * @return \Illuminate\Http\Response
      */
-    public function show(historialentrada $historialentrada)
+    public function show(Producto $producto)
     {
-        //
+        /* mostrar historial de entrada y formulario para crear un nuevo historial de entrada */
+        $historialentrada = $producto->historialentrada;
+        return view('historial.historialentrada', compact('historialentrada','producto'));
     }
 
     /**

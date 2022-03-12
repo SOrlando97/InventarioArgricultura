@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('historialsalidas', function (Blueprint $table) {
             $table->id();            
-            $table->date('fecha');
-            $table->integer('cantidad');
+            $table->dateTime('fecha');
+            $table->double('cantidad',10,2);
             $table->double('precioventa',32,2);
-            $table->foreignId('id_producto')->references('id')->on('productos');
+            $table->foreignId('id_producto')->references('id')->on('productos')->onDelete('cascade');
         });
     }
 

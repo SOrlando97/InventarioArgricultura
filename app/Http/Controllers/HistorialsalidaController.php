@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\historialsalida;
+use Carbon\Carbon;
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\historialsalida;
 
 class HistorialsalidaController extends Controller
 {
@@ -33,9 +35,23 @@ class HistorialsalidaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Producto $producto)
     {
-        //
+        /* validacion de la cantidad, es requerida, entera y debe ser un numero mayor a 1 */
+        $cantactual = $producto->cantidad;
+        $data = $request->validate([
+            'cantidad' => 'required|numeric|min:1|max:'.$cantactual,
+            'precioventa' =>'required'
+            ]);
+            /*  guardar informacion en historial entrada y modificar la cantidad de producto */
+            $producto->historialsalida()->create([
+                'fecha' => Carbon::now(-5),
+                'cantidad' => $data['cantidad'],
+                'precioventa' => $data['precioventa'],        
+            ]);
+            $producto->cantidad = $producto->cantidad - $data['cantidad'];
+            $producto->save();
+            return redirect()->route('historialsalida.show',compact('producto'));
     }
 
     /**
@@ -44,9 +60,11 @@ class HistorialsalidaController extends Controller
      * @param  \App\Models\historialsalida  $historialsalida
      * @return \Illuminate\Http\Response
      */
-    public function show(historialsalida $historialsalida)
+    public function show(Producto $producto)
     {
-        //
+        /* mostrar historial de salida y formulario para crear un nuevo historial de salida */
+        $historialsalida = $producto->historialsalida;
+        return view('historial.historialsalida', compact('historialsalida','producto'));
     }
 
     /**
