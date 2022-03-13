@@ -45,7 +45,7 @@ class HistorialsalidaController extends Controller
             ]);
             /*  guardar informacion en historial entrada y modificar la cantidad de producto */
             $producto->historialsalida()->create([
-                'fecha' => Carbon::now(-5),
+                'fecha' => Carbon::now(-5)->format('Y-m-d h:i:s'),
                 'cantidad' => $data['cantidad'],
                 'precioventa' => $data['precioventa'],        
             ]);

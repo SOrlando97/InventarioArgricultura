@@ -44,7 +44,7 @@ class HistorialentradaController extends Controller
         ]);
         /*  guardar informacion en historial entrada y modificar la cantidad de producto */
         $producto->historialentrada()->create([
-            'fecha' => Carbon::now()->subhours('5')->format('Y-m-d h:i'),
+            'fecha' => Carbon::now(-5)->format('Y-m-d h:i:s'),
             'cantidad' => $data['cantidad'],            
         ]);
         $producto->cantidad = $producto->cantidad + $data['cantidad'];
