@@ -1,6 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 // Variables
 @import 'variables';
@@ -52,17 +54,17 @@ body{
 }
 .div1{
     position: fixed;
-    background-image: url("../../public/images/Fondo.jpg");
+    background-image: url("../../public/images/3840x2561-px-agriculture-countryside-farm-field-landscape-1691351-wallhere.com.jpg");
     top:0;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -100;
-    filter: blur(4px);
+    filter: blur(1px);
 }
 .div2{ 
-    background: radial-gradient(rgba(0, 0, 0, 0.3) , rgba(184, 181, 177, 0.3));
+    background: radial-gradient(rgba(0, 0, 0, 0.3) , transparent);
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
@@ -119,15 +121,16 @@ body{
   .Producto-contenido{
     width: 50rem;
     margin-left: 21%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   .Producto-cuerpo div{
     margin-bottom: 20px;
   }
   .Producto-cuerpo-div{
     border: 1px solid var(--bs-green);
-    background: radial-gradient(circle, rgba(115,255,98,0.9934348739495799) 0%, rgba(102,255,191,1) 100%);
-    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    background: linear-gradient(21deg, rgba(49,151,66,1) 7%, rgba(169,234,93,1) 28%, rgba(247,244,116,1) 41%, rgba(239,238,101,1) 51%, rgba(191,228,97,1) 66%, rgba(49,151,49,1) 100%);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
   }  
   .Producto-QR{
     background-color: whitesmoke;
@@ -136,3 +139,5 @@ body{
     font-size: 25px;
     text-align: center;
   }
+
+  
