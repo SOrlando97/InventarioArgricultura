@@ -11434,6 +11434,7 @@ body {
 
 .Producto-cuerpo div {
   margin-bottom: 20px;
+  min-width: 45%;
 }
 
 .Producto-cuerpo-div {

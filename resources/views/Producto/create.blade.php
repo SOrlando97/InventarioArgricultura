@@ -59,8 +59,8 @@
                 </div>
             </div>                   
             <div class="row mb-0">
-                <div class="col-md-8 offset-md-4">
-                    <button class="botonsito"type="submit" class="btn btn-primary">
+                <div class="col-md-8 offset-md-4" style = "text-align: center">
+                    <button class  ="btn botonsito" type="submit" class="btn btn-primary">
                         {{ __('Añadir Producto') }}
                     </button>
                 </div>

@@ -29,8 +29,13 @@
             </div>
             <div>
                 @csrf
-                <a class = "btn btn-secondary botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
-                <a class = "btn btn-secondary botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
+                @guest
+                    @else
+                        @if (Auth::user()->id === $producto->id_usuario)
+                        <a class = "btn btn-secondary botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
+                        <a class = "btn btn-secondary botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
+                        @endif
+                @endguest
                 <a class = "btn btn-secondary botonsito" href="{{route('Producto.index')}}">Volver</a>
             </div>
         </div>      
