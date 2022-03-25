@@ -1,14 +1,15 @@
 @extends('layouts.app')    
 @section('content')
-<article class = "Producto-contenido mt-1">
+<article class = "Producto-contenido mt-1 text-center">
 
     <h1 class = "text-center mb-4">{{$producto->nombre}}</h1>
 
-    <div class ="Producto-QR card">
+    <div class="Producto-QR center-text">
         <!-- colocar imagen de QR -->
-        <h2>Imagen va aqui</h2>
+            <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
+        
     </div>
-    <div class = "Producto-cuerpo card-body" >
+    <div class = "Producto-cuerpo card-body d-flex justify-content-center" >
         <div>
             <div class="Producto-cuerpo-div">
                 <ul>Cantidad: {{$producto->cantidad}} Kg</ul>
@@ -27,8 +28,9 @@
                 <ul>Propietario: {{$producto->usuario->name}}</ul>
             </div>
             <div>
-                <a class = "btn btn-secondary botonsito" href="{{route('historialentrada.show',$producto->id)}}">Añadir Cantidad</a>
-                <a class = "btn btn-secondary botonsito" href="{{route('historialsalida.show',$producto->id)}}">Venta del producto</a>
+                @csrf
+                <a class = "btn btn-secondary botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
+                <a class = "btn btn-secondary botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
                 <a class = "btn btn-secondary botonsito" href="{{route('Producto.index')}}">Volver</a>
             </div>
         </div>      

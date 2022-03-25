@@ -15,7 +15,10 @@
 }
 body{
     min-height: 100vh;    
-}   
+}
+.navtext{
+    color: white !important;
+}
 .carta-inicio {
     position: relative;
     z-index: 1;
@@ -82,6 +85,7 @@ body{
     cursor: pointer;
 }
 .tabla1{
+    max-width: 100%;
     border-radius: 1em;
     border-collapse: collapse;
 }
@@ -99,8 +103,10 @@ body{
     text-align: center;
 }
 .botonsito{    
-    margin-right: 10px;
+    margin-right: 1rem;
+    margin-bottom: 0.4rem;
     width: 165px;
+    border-radius: 5px;
 }
 .div-primerboton{
     margin-top: 50px;
@@ -108,36 +114,33 @@ body{
 }
 .Producto-cuerpo{
     background-color: transparent;
-    text-align: center;
-    width: 50rem;
-  }
-  .Producto-cuerpo h3{
-    background-color: white;
-    font-size: 20px;
-  }
-  .Producto-cuerpo h2{
-    background-color: rgba(144, 238, 144);
-  }
-  .Producto-contenido{
-    width: 50rem;
-    margin-left: 21%;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-  .Producto-cuerpo div{
-    margin-bottom: 20px;
-  }
-  .Producto-cuerpo-div{
-    border: 1px solid var(--bs-green);
-    background: linear-gradient(21deg, rgba(49,151,66,1) 7%, rgba(169,234,93,1) 28%, rgba(247,244,116,1) 41%, rgba(239,238,101,1) 51%, rgba(191,228,97,1) 66%, rgba(49,151,49,1) 100%);
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 600;
-  }  
-  .Producto-QR{
-    background-color: whitesmoke;
-  }
-  .Producto-contenido ul{
+}
+.Producto-cuerpo h3{
+background-color: white;
+font-size: 20px;
+}
+.Producto-cuerpo h2{
+background-color: rgba(144, 238, 144);
+}
+.Producto-contenido{
+font-family: 'Source Sans Pro', sans-serif;
+}
+.Producto-contenido ul{
     font-size: 25px;
     text-align: center;
-  }
+}
+.Producto-cuerpo div{
+margin-bottom: 20px;
+}
+.Producto-cuerpo-div{
+border: 1px solid var(--bs-green);
+background: linear-gradient(21deg, rgba(49,151,66,1) 7%, rgba(169,234,93,1) 28%, rgba(247,244,116,1) 41%, rgba(239,238,101,1) 51%, rgba(191,228,97,1) 66%, rgba(49,151,49,1) 100%);
+font-family: 'Ubuntu', sans-serif;
+font-weight: 600;
+} 
+
+.imagenQR{
+    width: 150px;
+}
 
   

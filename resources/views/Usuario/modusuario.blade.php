@@ -48,7 +48,7 @@
                     </div>  
                     <div>
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary botonsito">
                                 {{ __('Cambiar Contraseña') }}
                             </button>                                    
                         </div>

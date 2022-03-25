@@ -57,9 +57,10 @@ class ModificarUsuario extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $productos = $user->productos;
+        return view('admin.produsuario',compact('productos'));
     }
 
     /**
@@ -93,7 +94,7 @@ class ModificarUsuario extends Controller
      */
     public function destroy(User $user)
     {
-        return ($user);
+        $this->authorize('delete',$user);
         $user->delete();
     }
 }

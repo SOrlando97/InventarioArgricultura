@@ -5504,7 +5504,7 @@ __webpack_require__.r(__webpack_exports__);
             });
 
             setTimeout(function () {
-              window.location.href = '/Tipo_producto';
+              window.location.href = '/Usuarios';
             }, 1500);
           })["catch"](function (error) {
             console.log(error);

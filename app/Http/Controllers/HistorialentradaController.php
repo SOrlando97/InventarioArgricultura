@@ -10,14 +10,21 @@ use Illuminate\Support\Facades\Auth;
 
 class HistorialentradaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Producto $producto)
+    {   
+        $this->authorize ('view',$producto);  
+        $historialentrada = $producto->historialentrada;  
+        //* mostrar historial de entrada y formulario para crear un nuevo historial de entrada */
+        return view('historial.historialentrada', compact('historialentrada','producto'));
     }
 
     /**
@@ -38,6 +45,7 @@ class HistorialentradaController extends Controller
      */
     public function store(Request $request, Producto $producto)
     {
+        $this->authorize ('view',$producto); 
        /* validacion de la cantidad, es requerida, entera y debe ser un numero mayor a 1 */
         $data = $request->validate([
         'cantidad' => 'required|numeric|min:1',
@@ -49,7 +57,7 @@ class HistorialentradaController extends Controller
         ]);
         $producto->cantidad = $producto->cantidad + $data['cantidad'];
         $producto->save();
-        return redirect()->route('historialentrada.show',compact('producto'));
+        return redirect()->route('historialentrada.index',compact('producto'));
     }
 
     /**
@@ -60,9 +68,7 @@ class HistorialentradaController extends Controller
      */
     public function show(Producto $producto)
     {
-        /* mostrar historial de entrada y formulario para crear un nuevo historial de entrada */
-        $historialentrada = $producto->historialentrada;
-        return view('historial.historialentrada', compact('historialentrada','producto'));
+        
     }
 
     /**

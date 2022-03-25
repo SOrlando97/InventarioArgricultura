@@ -6,7 +6,7 @@
         <thead>
             <tr>
                 <th>Usuario</th>
-                <th>Productos</th>
+                <th>Rol</th>
                 <th>Acciones</th>
             </tr>
         </thead> 
@@ -14,8 +14,9 @@
             @foreach($user as $user)      
             <tr>
                 <td>{{$user->name}}</td>
-                <td>prueba</td>
+                <td>{{$user->rol->descripcion}}</td>
                 <td>
+                    <a class = "btn btn-primary botonsito" href="{{route('usuario.show',$user->id)}}">Ver Productos</a>
                     <contra-cuenta usuario-actual = {{$user->id}}></contra-cuenta>
                     <elim-cuenta usuario-actual = {{$user->id}}></elim-cuenta>
                 </td>

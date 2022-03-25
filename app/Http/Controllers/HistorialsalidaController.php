@@ -9,14 +9,21 @@ use App\Models\historialsalida;
 
 class HistorialsalidaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Producto $producto)
+    {      
+        $this->authorize ('view',$producto);   
+        /* mostrar historial de salida y formulario para crear un nuevo historial de salida */
+        $historialsalida = $producto->historialsalida;
+        return view('historial.historialsalida', compact('historialsalida','producto'));
     }
 
     /**
@@ -37,6 +44,7 @@ class HistorialsalidaController extends Controller
      */
     public function store(Request $request, Producto $producto)
     {
+        $this->authorize ('view',$producto); 
         /* validacion de la cantidad, es requerida, entera y debe ser un numero mayor a 1 */
         $cantactual = $producto->cantidad;
         $data = $request->validate([
@@ -51,7 +59,7 @@ class HistorialsalidaController extends Controller
             ]);
             $producto->cantidad = $producto->cantidad - $data['cantidad'];
             $producto->save();
-            return redirect()->route('historialsalida.show',compact('producto'));
+            return redirect()->route('historialsalida.index',compact('producto'));
     }
 
     /**
@@ -62,9 +70,7 @@ class HistorialsalidaController extends Controller
      */
     public function show(Producto $producto)
     {
-        /* mostrar historial de salida y formulario para crear un nuevo historial de salida */
-        $historialsalida = $producto->historialsalida;
-        return view('historial.historialsalida', compact('historialsalida','producto'));
+        
     }
 
     /**

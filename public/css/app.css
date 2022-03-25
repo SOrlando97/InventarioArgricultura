@@ -11297,6 +11297,10 @@ body {
   min-height: 100vh;
 }
 
+.navtext {
+  color: white !important;
+}
+
 .carta-inicio {
   position: relative;
   z-index: 1;
@@ -11373,6 +11377,7 @@ body {
 }
 
 .tabla1 {
+  max-width: 100%;
   border-radius: 1em;
   border-collapse: collapse;
 }
@@ -11394,8 +11399,10 @@ body {
 }
 
 .botonsito {
-  margin-right: 10px;
+  margin-right: 1rem;
+  margin-bottom: 0.4rem;
   width: 165px;
+  border-radius: 5px;
 }
 
 .div-primerboton {
@@ -11405,8 +11412,6 @@ body {
 
 .Producto-cuerpo {
   background-color: transparent;
-  text-align: center;
-  width: 50rem;
 }
 
 .Producto-cuerpo h3, .Producto-cuerpo .h3 {
@@ -11419,9 +11424,12 @@ body {
 }
 
 .Producto-contenido {
-  width: 50rem;
-  margin-left: 21%;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+.Producto-contenido ul {
+  font-size: 25px;
+  text-align: center;
 }
 
 .Producto-cuerpo div {
@@ -11435,11 +11443,6 @@ body {
   font-weight: 600;
 }
 
-.Producto-QR {
-  background-color: whitesmoke;
-}
-
-.Producto-contenido ul {
-  font-size: 25px;
-  text-align: center;
+.imagenQR {
+  width: 150px;
 }

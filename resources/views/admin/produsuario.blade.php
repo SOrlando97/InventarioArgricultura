@@ -1,9 +1,8 @@
 @extends('layouts.app')    
 @section('content')
-<div style="text-align: center">
-    <a class = "btn btn-secondary botonsito" href="{{route('Producto.create')}}">Crear Producto</a>
+<div style="margin-left: 45%">
+<a class = "btn btn-secondary botonsito" href="{{route('Usuarios.index')}}">Volver</a>
 </div>
-
 
 <div class ="col-md-10 mx-auto p-3">
     <table class="table tabla1 table-hover">
@@ -25,6 +24,8 @@
                 </td>
             </tr>
             @endforeach
+
+            
         </tbody>           
     </table>
 </div>

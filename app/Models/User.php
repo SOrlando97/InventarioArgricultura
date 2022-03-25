@@ -42,5 +42,8 @@ class User extends Authenticatable
     public function productos(){
         return $this->hasMany(Producto::class,'id_usuario');
     }
+    public function rol(){
+        return $this->belongsTo(Rol::class,'id_rol');
+    }
     protected $table = 'usuario';
 }

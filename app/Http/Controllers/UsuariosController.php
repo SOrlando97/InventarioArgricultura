@@ -71,6 +71,7 @@ class UsuariosController extends Controller
      */
     public function edit(User $user,$contra)
     {
+        $this->authorize('update',$user);
         $user->password = Hash::make($contra);
         $user->save();
     }
