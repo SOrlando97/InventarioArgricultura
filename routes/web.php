@@ -44,3 +44,6 @@ Route::post('/productos/entrada/{producto}', [App\Http\Controllers\Historialentr
 //Rutas para historial de salida
 Route::get('/productos/{producto}/salida', [App\Http\Controllers\HistorialsalidaController::class, 'index'])->name('historialsalida.index');
 Route::post('/productos/salida/{producto}', [App\Http\Controllers\HistorialsalidaController::class, 'store'])->name('historialsalida.store');
+//Ruta para Lector de QR
+Route::get('/QR', [App\Http\Controllers\QRController::class, 'index'])->name('QR.index');
+Route::post('/QR', [App\Http\Controllers\QRController::class, 'LeerQR'])->name('QR.leerQR');

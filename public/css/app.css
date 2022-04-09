@@ -11447,3 +11447,69 @@ body {
 .imagenQR {
   width: 150px;
 }
+
+.contenedorqr {
+  text-align: center;
+}
+
+.contenedorqr .ul {
+  max-width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contenedorqr .li {
+  padding: 1 em;
+  margin: 0 0.2em 0 0;
+  list-style: none;
+  background-color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 2px #FFFFFF solid;
+  border-left: 2px #60be4d solid;
+  border-top: 2px #60be4d solid;
+  border-right: 2px #60be4d solid;
+  z-index: 2;
+}
+
+.contenedorqr .li.activo {
+  background-color: whitesmoke;
+}
+
+.contenedorqr .subcontenedor {
+  top: -19px;
+  min-height: 18vh;
+  position: relative;
+  height: 430px;
+  background-color: whitesmoke;
+  border-radius: 30px;
+  border: 2px #60be4d solid;
+  padding: 2.5em;
+  z-index: 1;
+}
+
+.contenedorqr .opciones {
+  margin: 1em;
+  top: 0;
+  display: none;
+  text-align: center;
+}
+
+.contenedorqr .opciones.activo {
+  display: inline;
+}
+
+#preview {
+  min-height: 300px;
+  max-height: 70%;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+.prueba {
+  justify-items: center;
+}

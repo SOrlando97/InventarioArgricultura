@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -42,6 +43,9 @@
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ms-auto"> 
                                 <!-- Authentication Links -->
+                                <li class="nav-item">                                            
+                                    <a class="nav-link navtext" href="{{ route('QR.index') }}">{{ __('QR') }}</a>
+                                </li>
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
