@@ -7,8 +7,11 @@
     <div class="Producto-QR center-text">
         <!-- colocar imagen de QR -->
             <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
-        
+                 
     </div>
+    <a href="{{$producto->QR}}" download="{{$producto->nombre}} QR" style="color: yellow">
+            Descargar Imagen SVG
+            </a>   
     <div class = "Producto-cuerpo card-body d-flex justify-content-center" >
         <div>
             <div class="Producto-cuerpo-div">

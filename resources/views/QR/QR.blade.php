@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="container">
 	<div class="container col-md-8 justify-content-center">
 		<div class= "contenedorqr">
@@ -7,7 +8,7 @@
 					<li class="li activo btn">Opcion 1</li>
 					<li class="li btn">Opcion 2</li>
 				</ul>		
-			<div class="container justify-content-center subcontenedor ">
+			<div class="subcontenedor">
 				<div class="opciones activo">
 					<div>
 						<div class="panel-heading">
@@ -23,7 +24,7 @@
 					</div>
 				</div>
 				<div class = "opciones" >
-					<div class="video embed-responsive-item">
+					<div class="video">
 						<video id="preview"></video>
 					</div>
 					<button class="btn botonsito btn-primary" id="btnstartscan">Comenzar Escaneo</button>

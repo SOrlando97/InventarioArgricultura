@@ -23,8 +23,13 @@
             <tr>                
                 <td>{{$numero}}</td>
                 <td>{{$tipoproducto->descripcion}}</td>
-                @csrf
-                <td><elim_tipo_prod tipo-producto = {{$tipoproducto->id}}></elim_tipo_prod></td>
+                              
+                <td>
+                @csrf  
+                    <mod_tipo_prod tipo-producto={{$tipoproducto->id}}></mod_tipo_prod>
+                @csrf  
+                    <elim_tipo_prod tipo-producto = {{$tipoproducto->id}}></elim_tipo_prod>
+                </td>
                 <?php
                 $numero = $numero + '1';
                 ?>

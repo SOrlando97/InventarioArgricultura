@@ -86,9 +86,10 @@ class TipoproductoController extends Controller
      * @param  \App\Models\tipoproducto  $tipoproducto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tipoproducto $tipoproducto)
+    public function update(tipoproducto $tipoproducto, $nombre)
     {
-        //
+        $tipoproducto->descripcion = $nombre;
+        $tipoproducto->save();
     }
 
     /**

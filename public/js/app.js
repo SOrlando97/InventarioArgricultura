@@ -5649,6 +5649,107 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['tipoProducto'],
+  methods: {
+    CambiarTipo_Producto: function CambiarTipo_Producto() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var _yield$Swal$fire, formValues, params;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return Swal.fire({
+                  title: 'Cambiar contraseña',
+                  text: 'Por escriba el nuevo nombre del Tipo de Producto',
+                  html: '<input id="swal-input1" placeholder="Nombre" class="swal2-input">' + '<input id="swal-input2" placeholder="Repetir Nombre" class="swal2-input">',
+                  focusConfirm: false,
+                  showCancelButton: true,
+                  confirmButtonText: 'Cambiar Nombre',
+                  cancelButtonText: 'Cancelar',
+                  preConfirm: function preConfirm() {
+                    return [document.getElementById('swal-input1').value, document.getElementById('swal-input2').value];
+                  }
+                });
+
+              case 2:
+                _yield$Swal$fire = _context.sent;
+                formValues = _yield$Swal$fire.value;
+
+                if (formValues) {
+                  if (formValues[0] == formValues[1]) {
+                    params = {
+                      id: _this.tipoProducto
+                    }; //peticion para cambiar contraseña
+
+                    axios.post("/Tipo_producto/".concat(_this.tipoProducto, "/").concat(formValues[0]), {
+                      params: params,
+                      _method: 'put'
+                    }).then(function (respuesta) {
+                      console.log(respuesta);
+
+                      _this.$swal({
+                        title: 'Cambiado',
+                        text: 'El Nombre ha sido cambiado',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: '1000'
+                      });
+
+                      setTimeout(function () {
+                        window.location.href = '/Tipo_producto';
+                      }, 1500);
+                    })["catch"](function (error) {
+                      console.log(error);
+                    });
+                  } else {
+                    Swal.fire('Error', 'El nombre en los 2 campos tiene que ser igual', 'error');
+                  }
+                }
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModUsuarioContra.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModUsuarioContra.vue?vue&type=script&lang=js& ***!
@@ -5786,6 +5887,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('contra-cuenta', (__webpac
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('new_tipo_prod', (__webpack_require__(/*! ./components/CrearTipo_Producto.vue */ "./resources/js/components/CrearTipo_Producto.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('elim_tipo_prod', (__webpack_require__(/*! ./components/EliminarTipo_producto.vue */ "./resources/js/components/EliminarTipo_producto.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('elim_producto', (__webpack_require__(/*! ./components/EliminarProducto.vue */ "./resources/js/components/EliminarProducto.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('mod_tipo_prod', (__webpack_require__(/*! ./components/ModTipo_Producto.vue */ "./resources/js/components/ModTipo_Producto.vue")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -5798,46 +5900,50 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
 
 var btnstartscanQR = document.getElementById('btnstartscan'); //se busca el button con id btnendscan para su uso futuro
 
-var btnendscanQR = document.getElementById('btnendscan'); //se crea variable global scanner
+var btnendscanQR = document.getElementById('btnendscan');
 
-var scanner = ""; //se agrega al button con id btnstartscan un eventlistener, que se acciona haciendo click en el
+if (btnendscanQR != null || btnstartscanQR != null) {
+  //se crea variable global scanner
+  var scanner = ""; //se agrega al button con id btnstartscan un eventlistener, que se acciona haciendo click en el
 
-btnstartscanQR.addEventListener('click', function () {
-  //variable scanner tomara lo que hay en la etiqueta video con id "preview", escaneara cada 1 frame, y no escaneara en segundo plano
-  scanner = new Instascan.Scanner({
-    video: document.getElementById('preview'),
-    scanPeriod: 1,
-    mirror: false,
-    backgroundScan: false
-  }); //se añade un Listener al escaner, en cuanto detecta un codigo qr lo decodifica y pone su resultado en la constante content
+  btnstartscanQR.addEventListener('click', function () {
+    //variable scanner tomara lo que hay en la etiqueta video con id "preview", escaneara cada 1 frame, y no escaneara en segundo plano
+    scanner = new Instascan.Scanner({
+      video: document.getElementById('preview'),
+      scanPeriod: 1,
+      mirror: false,
+      backgroundScan: false
+    }); //se añade un Listener al escaner, en cuanto detecta un codigo qr lo decodifica y pone su resultado en la constante content
 
-  scanner.addListener('scan', function (content) {
-    //Se redirige a la pagina que muestra el codigo QR
-    window.location.href = content;
+    scanner.addListener('scan', function (content) {
+      //Se redirige a la pagina que muestra el codigo QR
+      window.location.href = content;
+    });
+    /** 
+     * se añade una funcion de la libreria instascan que toma todas las camaras disponibles del dispositivo,
+     * y revisa si este tiene una o mas de una camara, de ser asi activa una de ellas
+     * si el dispositivo solo tiene una camara se activa esa, si tiene mas de 1 se activa la segunda camara
+     * que en dispositivos mobiles tiende a ser la camara trasera
+     */
+
+    Instascan.Camera.getCameras().then(function (cameras) {
+      if (cameras.length > 1) {
+        scanner.start(cameras[1]);
+      } else if (cameras.length = 1) {
+        scanner.start(cameras[0]);
+      } //si no hay camaras tira un error donde no se encontraron camaras
+
+    })["catch"](function (e) {
+      alert('No se encontraron camaras disponibles');
+    });
+  }); //se agrega al button con id btnendscan un eventlistener, que se acciona haciendo click en el
+  // en este se detiene cualquier escaneo y se apagan las camaras
+
+  btnendscanQR.addEventListener('click', function () {
+    scanner.stop();
   });
-  /** 
-   * se añade una funcion de la libreria instascan que toma todas las camaras disponibles del dispositivo,
-   * y revisa si este tiene una o mas de una camara, de ser asi activa una de ellas
-   * si el dispositivo solo tiene una camara se activa esa, si tiene mas de 1 se activa la segunda camara
-   * que en dispositivos mobiles tiende a ser la camara trasera
-   */
+} //constante li, que sera igual a las etiquetas li dentro del html
 
-  Instascan.Camera.getCameras().then(function (cameras) {
-    if (cameras.length > 1) {
-      scanner.start(cameras[1]);
-    } else if (cameras.length = 1) {
-      scanner.start(cameras[0]);
-    } //si no hay camaras tira un error donde no se encontraron camaras
-
-  })["catch"](function (e) {
-    alert('No se encontraron camaras disponibles');
-  });
-}); //se agrega al button con id btnendscan un eventlistener, que se acciona haciendo click en el
-// en este se detiene cualquier escaneo y se apagan las camaras
-
-btnendscanQR.addEventListener('click', function () {
-  scanner.stop();
-}); //constante li, que sera igual a las etiquetas li dentro del html
 
 var li = document.querySelectorAll('.li'); //constante opcion, que sera igual a las etiquetas div dentro del html que contienen las pestñas
 
@@ -29668,6 +29774,45 @@ component.options.__file = "resources/js/components/EliminarTipo_producto.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ModTipo_Producto.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ModTipo_Producto.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModTipo_Producto.vue?vue&type=template&id=476b9f98& */ "./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98&");
+/* harmony import */ var _ModTipo_Producto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModTipo_Producto.vue?vue&type=script&lang=js& */ "./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ModTipo_Producto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ModTipo_Producto.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ModUsuarioContra.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/ModUsuarioContra.vue ***!
@@ -29771,6 +29916,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModTipo_Producto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModTipo_Producto.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModTipo_Producto_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ModUsuarioContra.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ModUsuarioContra.vue?vue&type=script&lang=js& ***!
@@ -29851,6 +30012,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EliminarTipo_producto_vue_vue_type_template_id_1fc8e2e2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EliminarTipo_producto_vue_vue_type_template_id_1fc8e2e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EliminarTipo_producto.vue?vue&type=template&id=1fc8e2e2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EliminarTipo_producto.vue?vue&type=template&id=1fc8e2e2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98& ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModTipo_Producto_vue_vue_type_template_id_476b9f98___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ModTipo_Producto.vue?vue&type=template&id=476b9f98& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98&");
 
 
 /***/ }),
@@ -29979,6 +30157,35 @@ var render = function () {
     staticClass: "btn botonsito btn-danger",
     attrs: { type: "submit", value: "Eliminar" },
     on: { click: _vm.BorrarTipoProducto },
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ModTipo_Producto.vue?vue&type=template&id=476b9f98& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("input", {
+    staticClass: "btn botonsito btn-secondary",
+    attrs: { type: "submit", value: "Modificar Tipo de Producto" },
+    on: { click: _vm.CambiarTipo_Producto },
   })
 }
 var staticRenderFns = []

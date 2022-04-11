@@ -38,6 +38,7 @@ Route::put('/productos/{producto}', [App\Http\Controllers\ProductoController::cl
 Route::get('/Tipo_producto', [App\Http\Controllers\TipoproductoController::class, 'index'])->name('Tipo_producto.index');
 Route::post('/Tipo_producto/{descripcion}', [App\Http\Controllers\TipoproductoController::class, 'store'])->name('Tipo_producto.store');
 Route::delete('/Tipo_producto/{tipoproducto}', [App\Http\Controllers\TipoproductoController::class, 'destroy'])->name('Tipo_producto.delete');
+Route::put('/Tipo_producto/{tipoproducto}/{nombre}/', [App\Http\Controllers\TipoproductoController::class, 'update'])->name('Tipo_producto.update');
 //Rutas para historial de entrada
 Route::get('/productos/{producto}/entrada', [App\Http\Controllers\HistorialentradaController::class, 'index'])->name('historialentrada.index');
 Route::post('/productos/entrada/{producto}', [App\Http\Controllers\HistorialentradaController::class, 'store'])->name('historialentrada.store');

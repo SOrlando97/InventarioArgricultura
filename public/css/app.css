@@ -11314,7 +11314,7 @@ body {
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
-  width: 50%;
+  min-width: 50%;
   border: 0;
   color: #FFFFFF;
   font-size: 14px;
@@ -11505,7 +11505,7 @@ body {
 
 #preview {
   min-height: 300px;
-  max-height: 70%;
+  max-height: 400px;
   min-width: 90%;
   max-width: 90%;
 }

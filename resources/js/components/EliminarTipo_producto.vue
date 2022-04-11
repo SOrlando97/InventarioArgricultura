@@ -35,7 +35,7 @@
                                 showConfirmButton: false,
                                 timer: '1000'
                                 })
-                            setTimeout( function() { window.location.href = '/Tipo_producto'; }, 1500 );
+                            setTimeout( function() { window.location.href = '/Tipo_producto'; }, 1500 );                            
                             })
                             .catch(error=>{
                                 console.log(error)
