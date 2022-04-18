@@ -28,7 +28,7 @@
     <div class="div1"></div>
         <div class="div2" id="app">
             <div class="mydiv">
-                <nav class="navbar navbar-expand-md navbar-light" style ="border 8px">
+                <nav class="my-navbar navbar fixed-top navbar-expand-md navbar-light" style ="border 8px">
                     <div class="container">
                         <a class="navbar-brand navtext" href="{{ url('/') }}">
                             {{ ('Inicio') }}

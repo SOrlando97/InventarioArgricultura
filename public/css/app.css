@@ -11289,6 +11289,80 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+}
+
+.main-banner {
+  position: relative;
+  z-index: 1;
+  min-height: 1200px;
+  background-image: url(/images/Background.png?1c9a6ac2021a10b6890be31356dd3ab9);
+  background-position: bottom right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.addIlustration {
+  min-height: 400px;
+  top: 30px;
+  z-index: 3;
+  background-image: url(/images/Illustration.png?dedb4f38be795c89b646dbf9677f4dbd);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.my-navbar {
+  background-color: #162635;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  margin-bottom: 10px;
+}
+
+.main-card {
+  background-image: url(/images/img3.jpg?cdcc17126d16c5029a4d0419ae0c0c60);
+  background-color: #6ac7df;
+  box-shadow: 5px 5px 5px gray;
+  height: 240px;
+  width: 440px;
+  padding: 20px;
+}
+
+.min-card {
+  background-color: #6ac7df;
+  border-radius: 20px;
+  padding: 25px;
+  height: 80px;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+.circulo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #bf121b;
+  background-repeat: repeat;
+}
+
+.subir-text {
+  position: absolute;
+  margin-top: -80px;
+  z-index: 1;
+  width: 100%;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
+  border: 0.01px solid rgba(234, 223, 223, 0.6);
+}
+
 .mydiv {
   text-align: center;
 }
@@ -11310,7 +11384,7 @@ body {
 
 .formsito button {
   background: #43A047;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -11344,7 +11418,7 @@ body {
 
 .div1 {
   position: fixed;
-  background-image: url(/images/3840x2561-px-agriculture-countryside-farm-field-landscape-1691351-wallhere.com.jpg?7d7f245708c0bd561a09ce092da9e370);
+  background-color: #f1f7f7;
   top: 0;
   width: 100%;
   height: 100%;
