@@ -11,7 +11,7 @@
     <!-- Background image -->
   
     <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-          margin-top: -100px;
+          margin-top: -250px;
           background: hsla(0, 0%, 100%, 0.8);
           backdrop-filter: blur(30px);
           ">
@@ -19,7 +19,7 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <h2 class="fw-bold mb-5">Registro</h2>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-outline mb-4">
@@ -35,7 +35,7 @@
                 </div>
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Email address</label>
+                <label class="form-label" for="form3Example3">Correo electronico</label>
                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                     @error('email')
@@ -47,7 +47,7 @@
   
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example4">Password</label>
+                <label class="form-label" for="form3Example4">Contraseña</label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -57,12 +57,12 @@
               </div>
 
             <div class="form-outline mb-4">
-                <label for="password-confirm" class="form-label">{{ __('Confirmar Contraseña') }}</label>
+                <label for="password-confirm" class="form-label">{{ __('Repetir Contraseña') }}</label>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
             </div>
   
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
+              <button type="submit" class="btn btn-outline-dark btn-lg btn-block">
                 Crear cuenta
               </button>
             </form>
