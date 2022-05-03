@@ -427,15 +427,7 @@ font-weight: 600;
     padding: 1 em;
 	margin: 0 0.2em 0 0;
 	list-style:none;
-    background-color: white;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-bottom: 2px #FFFFFF solid;
-    border-left: 2px rgb(96, 190, 77) solid;
-    border-top: 2px rgb(96, 190, 77) solid;
-    border-right: 2px rgb(96, 190, 77) solid;
+    background-color: rgba(255, 255, 255, 0.6);
     z-index: 2;
 }
 //cuando la pestaña esta activa
@@ -450,9 +442,10 @@ font-weight: 600;
 	min-height: 18vh;
 	position: relative;
     height: 430px;
-    background-color: whitesmoke;
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(9px);
     border-radius: 30px;
-    border: 2px rgb(96, 190, 77) solid;    
+    border-bottom: 8px rgb(251, 251, 251) solid;  
 	padding: 2.5em;
     z-index: 1;
 }

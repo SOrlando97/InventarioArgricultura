@@ -7,6 +7,8 @@
 <body style=" background-color: slateblue;">
   
   @foreach($productos as $producto) 
+  <div class="row">
+
   <div class="contenedor-card">
     <div class="row">
         <div class="col-8 card-text">
@@ -29,7 +31,7 @@
             </div>
         </div>
     </div>
-    
+  </div>
 </div>
 @endforeach
 <div class ="col-md-10 mx-auto p-3">

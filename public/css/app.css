@@ -11744,15 +11744,7 @@ a {
   padding: 1 em;
   margin: 0 0.2em 0 0;
   list-style: none;
-  background-color: white;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom: 2px #FFFFFF solid;
-  border-left: 2px #60be4d solid;
-  border-top: 2px #60be4d solid;
-  border-right: 2px #60be4d solid;
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: 2;
 }
 
@@ -11765,9 +11757,11 @@ a {
   min-height: 18vh;
   position: relative;
   height: 430px;
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
   border-radius: 30px;
-  border: 2px #60be4d solid;
+  border-bottom: 8px #fbfbfb solid;
   padding: 2.5em;
   z-index: 1;
 }
