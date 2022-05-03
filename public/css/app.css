@@ -11444,6 +11444,40 @@ a {
   border-bottom: solid 8px #FFF;
 }
 
+.bg-violet {
+  background-color: slateblue;
+}
+
+.contenedor-card {
+  display: flex;
+  margin: 100px;
+  position: relative;
+  padding: 20px;
+  height: 344px;
+  width: 590px;
+  background-color: rgba(54, 52, 52, 0.6);
+  -webkit-backdrop-filter: blur(9px);
+          backdrop-filter: blur(9px);
+  border-radius: 20px;
+}
+
+.card-producto {
+  position: relative;
+  padding: 10px;
+  height: 310px;
+  width: 210px;
+  background-color: #36383a;
+  border-radius: 20px;
+  border: solid 10px #525252;
+  border-style: ridge;
+}
+
+.card-text {
+  color: #FFF;
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .mynavbar {
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: blur(9px);
@@ -11635,6 +11669,11 @@ a {
   text-align: center;
 }
 
+.bottom-position {
+  top: 500px;
+  position: relative;
+}
+
 .botonsito {
   margin-right: 1rem;
   margin-bottom: 0.4rem;
@@ -11682,7 +11721,11 @@ a {
 }
 
 .imagenQR {
-  width: 150px;
+  display: flex;
+  margin: auto;
+  background-color: #FFF;
+  border-radius: 14px;
+  width: 173px;
 }
 
 .contenedorqr {
