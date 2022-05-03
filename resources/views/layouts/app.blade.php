@@ -28,7 +28,7 @@
     <div class="div1"></div>
         <div class="div2" id="app">
             <div class="mydiv">
-                <nav class="navbar navbar-expand-md navbar-light" style ="border 8px">
+                <nav class="mynavbar navbar navbar-expand-md navbar-light" style ="border 8px">
                     <div class="container">
                         <a class="navbar-brand navtext" href="{{ url('/') }}">
                             {{ ('Inicio') }}
@@ -98,12 +98,10 @@
                     </div>
                 </nav>                
             </div>                        
-            <main class="py-4">
+            <main class="py-0">
                     @yield('content')
             </main>
         </div>
-    
-           
 
 </body>
 </html>

@@ -10,11 +10,187 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.mydiv {    
-    text-align: center;
-}
+$color-white: #FFF;
+
+
 body{
     min-height: 100vh;    
+    background-color: $color-white;
+}
+
+a{
+    text-decoration: none;
+}
+.firstSection{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 455px;
+    background-image: linear-gradient(to right top, #084196, #0075ce, #00a4cc, #00cc8d, #5eeb12);
+    text-align: center;
+}
+.secondSection{
+    height: 700px;
+    background-color: $color-white;
+    background: linear-gradient(#b2eafa, $color-white);
+    // background-color: #7a562d;
+}
+.cuadrado{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #fde917;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card-landing{
+    top: 100px;
+    left: -100px;
+    min-height: 130px;
+    position: relative;
+    border-radius: 20px;
+    color: $color-white;
+    font-size: 17px;
+    background-color: #1f1f1f; 
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    border-left: solid 8px $color-white;
+    margin: 5px;
+}
+.card-landing2{
+    top: 100px;
+    min-height: 130px;
+    position: relative;
+    border-radius: 20px;
+    color: $color-white;
+    font-size: 17px;
+    background-color: #1f1f1f; 
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    border-right: solid 8px $color-white;
+    border-bottom: solid 8px $color-white;
+    margin: 8px;
+}
+.img-consulta{
+    background-image: url("../../public/images/consulta.png");
+    background-repeat: no-repeat;
+    object-fit: scale-down;
+    min-height: 500px;
+}
+.img-consulta2{
+    background-image: url("../../public/images/data.png");
+    background-repeat: no-repeat;
+    object-fit: scale-down;
+    min-height: 500px;
+}
+.img-consulta3{
+    background-image: url("../../public/images/add.png");
+    background-repeat: no-repeat;
+    object-fit: scale-down;
+    min-height: 500px;
+}
+.thirdSection{
+    height: 600px;
+    background: linear-gradient(#69a413, #fde916);
+}
+.fourSection{
+    height: 600px;
+    background: linear-gradient(#e2f1fd, #4caf50);
+
+}
+.fiveSection{
+    height: 500px;
+    background-color: #4CAF50;
+}
+// Scroll
+::-webkit-scrollbar{
+	background-color: rgb(230, 233, 229);
+	width: 6px;
+	height: 0px;
+}
+
+::-webkit-scrollbar:hover{
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #373E43;
+	border-radius: 20px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: #0075ce;width: 6px;
+}
+.banner{
+    background-image: url("../../public/images/banner.jpg");   
+}
+.main-card{
+    top: 200px;
+    position: relative;
+    width: 400px;
+    height: 220px;
+    background-color: rgba(33, 32, 32, 0.8); 
+    backdrop-filter: blur(9px);
+    border-radius: 20px;
+    margin: 7px;
+}
+.main-card:hover{
+    height: 228px;
+    background-color: rgba(54, 52, 52, 0.8);
+    backdrop-filter: blur(2px);
+    border-bottom: solid 8px $color-white;
+}
+.mynavbar{
+    background-color: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(9px);
+}
+
+.p{
+    position: relative;
+    top: 150px;
+    text-align:center;
+    color: $color-white;
+    font-weight: 900;
+    font-size: 17px;
+}
+.p:hover{
+    font-size: 20px;
+}
+.imgBx{
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    width: 175px;
+    height: 170px;
+    border-radius: 20px;
+    background-color: #15c9e4;
+    background-image: url("../../public/images/QR.png");
+    object-fit: scale-down;
+}
+.img2{
+    background-image: url("../../public/images/inventario.png");
+    width: 228px;
+}
+.img3{
+    background-image: url("../../public/images/farm.jpg");
+    width: 255px;
+}
+.myrow{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.mydiv {    
+    text-align: center;
 }
 .navtext{
     color: white !important;
@@ -25,6 +201,46 @@ body{
     background: #FFFFFF;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+.bg-form{
+    background-color: hsl(218, 41%, 15%);
+    background-image: radial-gradient(650px circle at 0% 0%,
+        hsl(218, 41%, 35%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%),
+      radial-gradient(1250px circle at 100% 100%,
+        hsl(218, 41%, 45%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%);
+}
+
+#radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+  }
+
+  #radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+  }
+
+  .bg-glass {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+  }
+  
 .formsito button{
     background: #43A047;
     font-family: "Roboto", sans-serif;
@@ -56,8 +272,8 @@ body{
     align-items: center;
 }
 .div1{
-    position: fixed;
-    background-image: url("../../public/images/3840x2561-px-agriculture-countryside-farm-field-landscape-1691351-wallhere.com.jpg");
+    position: absolute;
+    // background-image: url("../../public/images/3840x2561-px-agriculture-countryside-farm-field-landscape-1691351-wallhere.com.jpg");
     top:0;
     width: 100%;
     height: 100%;
@@ -67,7 +283,7 @@ body{
     filter: blur(1px);
 }
 .div2{ 
-    background: radial-gradient(rgba(0, 0, 0, 0.3) , transparent);
+    // background: radial-gradient(rgba(0, 0, 0, 0.3) , transparent);
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
