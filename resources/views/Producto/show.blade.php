@@ -11,7 +11,7 @@
                  
     </div>
     <a href="{{$producto->QR}}" download="{{$producto->nombre}} QR" style="color: yellow">
-            Descargar Imagen SVG
+            Descargar Imagen PNG
             </a>   
     <div class = "Producto-cuerpo card-body d-flex justify-content-center" >
         <div>
