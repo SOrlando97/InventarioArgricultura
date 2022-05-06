@@ -98,7 +98,7 @@
                     </div>
                 </nav>                
             </div>                        
-            <main class="py-0">
+            <main class="py-5">
                     @yield('content')
             </main>
         </div>
@@ -227,5 +227,6 @@
             <!-- Copyright -->
           </footer>
 
+          
 </body>
 </html>

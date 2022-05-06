@@ -1,12 +1,12 @@
 @extends('layouts.app')    
 @section('content')
 <div style="text-align: center">
-    <a class = "btn btn-secondary botonsito" href="{{route('Producto.create')}}">Crear Producto</a>
+    <a class = "mt-5 btn btn-secondary btn-success botonsito" href="{{route('Producto.create')}}">Crear Producto</a>
 </div>
 
 <body style=" background-color: slateblue;">
   
-  @foreach($productos as $producto) 
+  {{-- @foreach($productos as $producto) 
   <div class="row">
 
   <div class="contenedor-card">
@@ -33,7 +33,9 @@
     </div>
   </div>
 </div>
-@endforeach
+@endforeach --}}
+
+
 <div class ="col-md-10 mx-auto p-3">
     <table class="table tabla1 table-hover">
         <thead>
@@ -43,18 +45,18 @@
                 <th>Acciones</th>
             </tr>
         </thead> 
-        <tbody>
+        <tbody id="idTabla">
             @foreach($productos as $productos)   
             <tr>
-              <td>
-                <img class= "imagenQR" src="{{$productos->QR}}" alt="imagen de {{$productos->nombre}}">
+                <td>
+                    <img class= "imagenQR" src="{{$productos->QR}}" alt="imagen de {{$productos->nombre}}">
+                </td>
               </td>
-                <td>{{$productos->nombre}}</td>
+                <td class="mitd">{{$productos->nombre}}</td>
                 <td>
                     <a class = "btn botonsito btn-success" href="{{route('Producto.show',$productos->id)}}">Ver</a>
-                    <a class = "btn botonsito btn-warning" href="{{route('Producto.edit',$productos->id)}}">Modificar</a>
+                    <a class = "btn botonsito btn-warning " href="{{route('Producto.edit',$productos->id)}}">Modificar</a>
                     <elim_producto producto = {{$productos->id}}><elim_producto>
-                    
                 </td>
             </tr>
             @endforeach
