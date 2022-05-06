@@ -36,7 +36,7 @@
                         </div>
             
                         <div class="row mb-3">
-                            <label for="precio" class="form-label">{{ __('Precio') }}</label>
+                            <label for="precio" class="form-label">{{ __('Precio (kg)') }}</label>
             
                             <div class="col-md-12">
                                 <input autocomplete="off" id="precio" type="text" class="form-control @error('precio') is-invalid @enderror" name="precio" value="{{ old('precio') }}">

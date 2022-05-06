@@ -44,8 +44,12 @@
                             <ul class="navbar-nav ms-auto"> 
                                 <!-- Authentication Links -->
                                 <li class="nav-item">                                            
+                                    <a class="nav-link navtext" href="../manual_Usuario.pdf" target="_blank">{{ __('Ayuda') }}</a>
+                                </li>
+                                <li class="nav-item">                                            
                                     <a class="nav-link navtext" href="{{ route('QR.index') }}">{{ __('QR') }}</a>
                                 </li>
+                                
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">

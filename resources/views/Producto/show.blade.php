@@ -75,7 +75,7 @@
         
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-left: 130px">
         @csrf
         @guest
             @else
