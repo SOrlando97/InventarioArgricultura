@@ -1,10 +1,10 @@
 @extends('layouts.app')    
 @section('content')
 <div style="margin-left: 45%">
-<a class = "btn btn-secondary botonsito" href="{{route('Usuarios.index')}}">Volver</a>
+<a class = "mt-5 btn btn-secondary botonsito" href="{{route('Usuarios.index')}}">Volver</a>
 </div>
 
-<div class ="col-md-10 mx-auto p-3">
+<div class ="mt-2 col-md-10 mx-auto p-3">
     <table class="table tabla1 table-hover">
         <thead>
             <tr>

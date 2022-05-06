@@ -2,7 +2,7 @@
 
 @section('content')
 <div style="margin-left: 15%">
-<a class = "btn btn-secondary botonsito" href="{{route('Producto.show',$producto->id)}}">Volver</a>
+<a class = "mt-5 btn btn-secondary botonsito" href="{{route('Producto.show',$producto->id)}}">Volver</a>
 </div>
 <div class="container">
     <div class="carta-inicio card " style="margin-top: 20px">

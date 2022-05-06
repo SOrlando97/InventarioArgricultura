@@ -1,7 +1,7 @@
 @extends('layouts.app')    
 @section('content')
 
-<div class ="col-md-10 mx-auto p-3">
+<div class ="mt-5 col-md-10 mx-auto p-3">
     <table class="table tabla1 table-hover">
         <thead>
             <tr>
