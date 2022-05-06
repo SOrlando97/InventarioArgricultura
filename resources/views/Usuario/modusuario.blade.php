@@ -1,11 +1,26 @@
 @extends('layouts.app')
 @section('content')
-<div class="content-div2">
-    <div class="content-div" style ="background-color: #FFFFFF">
-            <div>
+
+<section class="text-center">
+    <!-- Background image -->
+    <div class="mt-4 p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -250px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">Edición usuario</h2>
             <form  method="POST" action="{{ route('change.password')}}">
                 @csrf
-                <div class="form-titulo text-center">{{__('Modificar Usuario')}}</div>
                 <div class="row mb-3 text-center mt-3">
                     <label class="col-md-4 col-form-label mt-4 text-md-end" for="current_password" >{{__('Contraseña Actual')}}</label>
                     <div class="col-md-6">                        
@@ -48,7 +63,7 @@
                     </div>  
                     <div>
                         <div class="mt-2">
-                            <button type="submit" class="btn btn-primary botonsito">
+                            <button type="submit" class="mt-4 btn btn-dark btn-ver">
                                 {{ __('Cambiar Contraseña') }}
                             </button>                                    
                         </div>
@@ -56,18 +71,26 @@
                 </div>
             </form>
         </div>
-        <div>
+            <div>
+                <h2 class="fw-bold mt-5 mb-5">Eliminar mi cuenta</h2>
+                    <div class="row mb-3 text-center mt-3">
+                        <div class="text-center">
+                            @csrf
+                            <elim-cuenta usuario-actual = {{Auth::user()->id}}>
+                            </elim-cuenta>
+                        </div>
+                    </div>  
+            </div>               
+        </div>     
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="content-div2">
+    <div class="content-div" style ="background-color: #FFFFFF">
+            <div>
             
-                <div class="form-titulo text-center">{{__('Eliminar Cuenta')}}</div>
-                <div class="row mb-3 text-center mt-3">
-                    <div class="text-center">
-                        @csrf
-                        <elim-cuenta usuario-actual = {{Auth::user()->id}}>
-                        </elim-cuenta>
-                    </div>
-                    
-                </div>             
-         </div>     
     </div>
 </div>
 @endsection
