@@ -170,16 +170,16 @@ class ProductoController extends Controller
         // @param url parametro que toma la direccion del producto
         $url = res::URL('Producto.show').'/'.$id;
         // @param imgurl direccion donde se guardara el codigo QR
-        $imgurl = '../storage/app/public/qrcodes/'.$id.'.svg';
+        $imgurl = '../storage/app/public/qrcodes/'.$id.'.png';
         /**
          *  funcion que crea un codigo QR de tamañño 800 con 2 de margen, recibe la direccion url
          * de la cual se generara el codigo QR, y la direccion imgurl donde se guardara una vez generado
          **/ 
-        QrCode::size(800)->margin(2)->generate($url,$imgurl);
+        QrCode::format('png')->size(800)->margin(2)->generate($url,$imgurl);
         // se busca el producto por el id
         $producto = Auth::user()->productos()->find($id);
         // se remplaza el valor de imgurl por la url que se añadira al producto, URL solo para visualizacion
-        $imgurl = '../storage/qrcodes/'.$id.'.svg';
+        $imgurl = '../storage/qrcodes/'.$id.'.png';
         // se agrega el url del QR al modelo del producto
         $producto->QR = $imgurl;
         // se guarda los cambios en la BD
