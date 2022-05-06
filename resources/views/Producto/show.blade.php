@@ -56,7 +56,7 @@
                 <h2 class="text-center"> <strong> {{$producto->nombre}} </strong> </h2>
                 <p> Cantidad: {{$producto->cantidad}} Kg</p>
                 <p> Precio: {{$producto->precio}}</p>
-                <p> Ganancia: {{$producto->ganancia}} </p>
+                <p> Precio Sugerido: {{$producto->ganancia}} </p>
                 <p> Tipo de Producto: {{$producto->tipoproducto->descripcion}} </p>
                 <p> Propietario: {{$producto->usuario->name}} </p>
             </div>
@@ -67,7 +67,7 @@
                     <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
             
                     <a class="card-text" href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
-                        Descargar Imagen SVG
+                        Descargar Imagen PNG
                     </a>   
                 </div>
             </div>

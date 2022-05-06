@@ -12,7 +12,7 @@
             <form class="formsito" method="POST" action="{{ route('historialsalida.store',$producto->id)}}">
                 @csrf
                 <div class="row mb-3">
-                    <label for="cantidad" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad Vendida') }}</label>
+                    <label for="cantidad" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad Vendida (Kg)') }}</label>
 
                     <div class="col-md-6">
                         <input autocomplete="off" id="cantidad" type="text" class="form-control @error('cantidad') is-invalid @enderror" name="cantidad" value="{{ old('cantidad') }}">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="precioventa" class="col-md-4 col-form-label text-md-end">{{ __('Precio al que se vendio') }}</label>
+                    <label for="precioventa" class="col-md-4 col-form-label text-md-end">{{ __('Precio al que se vendio (cada Kg)') }}</label>
 
                     <div class="col-md-6">
                         <input autocomplete="off" id="precioventa" type="text" class="form-control @error('precioventa') is-invalid @enderror" name="precioventa" value="{{ old('precioventa') }}">
@@ -54,7 +54,7 @@
     <table class="table tabla1 table-hover">
         <thead>
             <tr>
-                <th>Cantidad añadida</th>
+                <th>Cantidad Vendida</th>
                 <th>Precio al que se vendio</th>
                 <th>Fecha</th>
             </tr>

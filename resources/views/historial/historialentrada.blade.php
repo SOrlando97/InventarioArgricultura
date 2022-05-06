@@ -12,7 +12,7 @@
             <form class="formsito" method="POST" action="{{ route('historialentrada.store',$producto->id)}}">
                 @csrf
                 <div class="row mb-3">
-                    <label for="cantidad" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad') }}</label>
+                    <label for="cantidad" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad (Kg)') }}</label>
 
                     <div class="col-md-6">
                         <input autocomplete="off" id="cantidad" type="text" class="form-control @error('cantidad') is-invalid @enderror" name="cantidad" value="{{ old('cantidad') }}">

@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "instascan": "^1.0.0",
         "mix": "^0.0.1",
         "vue-sweetalert2": "^5.0.2",
         "zxing-qr-reader": "^2.1.0"
