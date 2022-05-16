@@ -157,6 +157,8 @@
                     <p>
                         Conectando el agro con la tecnología.
                     </p>
+                    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+                      
                   </div>
                   <!-- Grid column -->
           

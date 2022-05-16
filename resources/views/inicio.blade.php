@@ -1,8 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="section">
+   <div class="section-img">
+      <div class="col-5">
+              
+        <p class="section-title">Unete y empieza a tener el control de tu inventario </p>        
+        <div class="end">
+                <lord-icon
+                src="https://cdn.lordicon.com/lrkpgjtq.json"
+                trigger="loop"
+                delay="1000"
+                style="width:140px;height:140px">
+            </lord-icon>
+
+        </div>
+      </div>     
+   </div>
+ </div>  
 <div class="firstSection banner">
-   <div class="row">
+        {{-- Servicios --}}
+<div class="servicios">
+        Conoce nuestros servicios
+</div>
+   {{-- <div class="row">
            <div class="main-card">
                 <div class="imgBx img3"></div>
                 <p class="p"> <strong>Controla tú inventario</strong></p>
@@ -15,7 +36,7 @@
                 <div class="imgBx img2"></div>
                 <p class="p">Consulta el valor de tú producto</p>
            </div>
-    </div>
+    </div> --}}
 </div>
 
 <div class="secondSection">
