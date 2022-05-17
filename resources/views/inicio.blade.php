@@ -18,11 +18,14 @@
       </div>     
    </div>
  </div>  
-<div class="firstSection banner">
+<div class="firstSection ">
         {{-- Servicios --}}
-<div class="servicios">
+        <div class="servicios">
         Conoce nuestros servicios
-</div>
+        </div>
+             
+        
+   
    {{-- <div class="row">
            <div class="main-card">
                 <div class="imgBx img3"></div>
@@ -39,8 +42,46 @@
     </div> --}}
 </div>
 
-<div class="secondSection">
-  <div class="row">
+{{-- <div class="secondSection"> --}}
+        {{-- <div class="card-group">
+                <div class="card">
+                        <lord-icon
+                        src="https://cdn.lordicon.com/rgyftmhc.json"
+                        trigger="loop"
+                        style="width:150px;height:150px">
+                    </lord-icon>
+                  <div class="card-body">
+                    <h5 class="card-title">Consulta el valor de tú producto</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                        <lord-icon
+                        src="https://cdn.lordicon.com/bccqzuyr.json"
+                        trigger="loop"
+                        style="width:150px;height:150px">
+                    </lord-icon>
+                  <div class="card-body">
+                    <h5 class="card-title">Identifica Tus productos usando Codigo QR</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+                <div class="card">
+                        <lord-icon
+    src="https://cdn.lordicon.com/qnlcdeqi.json"
+    trigger="loop"
+    style="width:250px;height:250px">
+</lord-icon>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div> --}}
+  {{-- <div class="row">
      <div class="col-8">
         <div class="img-consulta"></div>
      </div>
@@ -66,8 +107,8 @@
                 </div>
         </div>
      </div>
-  </div>
-</div>
+  </div> --}}
+{{-- </div> --}}
 <div class="thirdSection">
   <div class="row">
         <div class="col-4">
