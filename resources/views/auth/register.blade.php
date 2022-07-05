@@ -2,17 +2,17 @@
 
 @section('content')
 <!-- Section: Design Block -->
-<section class="text-center">
+<section class="container text-center">
     <!-- Background image -->
     <div class="p-5 bg-image" style="
-          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-          height: 300px;
+          background-color: transparent;
+          height: 260px;
           "></div>
     <!-- Background image -->
   
     <div class="card mx-4 mx-md-5 shadow-5-strong" style="
           margin-top: -250px;
-          background: hsla(0, 0%, 100%, 0.8);
+          background: hsla(0, 0%, 100%, 0.9);
           backdrop-filter: blur(30px);
           ">
       <div class="card-body py-5 px-md-5">

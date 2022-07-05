@@ -5,13 +5,13 @@
 
 <!-- Section: Design Block -->
 <section class="background-radial-gradient overflow-hidden">
-    <div class="container bg-form px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: rgb(30 30 30)">
             Sistema de inventario<br />
           </h1>
-          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          <p class="mb-4 opacity-70" style="color: rgb(30 30 30)">
             Si no tienes una cuenta, ¡Registrate!
           </p>
         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<body style=" background-color: slateblue;">
+<body>
 <div class="container mt-5">
 	<div class="container col-md-8 justify-content-center">
 		<div class= "contenedorqr">

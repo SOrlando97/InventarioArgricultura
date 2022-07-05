@@ -11,11 +11,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 $color-white: #FFF;
-
+$bg: #dde5d0;
 
 body{
     min-height: 100vh;    
-    background-color: $color-white;
+    background-color: $bg;
 }
 
 a{
@@ -84,10 +84,17 @@ a{
     width: 100%;
     height: 50px;
     text-align: center;
-    
+}
+
+.SectionOne{
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: row;
+    justify-content: space-around;
+    height: 300px;
 }
 .secondSection{
-    height: 700px;
+    height: 600px;
     background-color: $color-white;
     background: linear-gradient(#b2eafa, #b1eaf7);
     // background-color: #7a562d;
@@ -192,20 +199,18 @@ a{
     background-image: url("../../public/images/banner.jpg");   
 }
 .main-card{
-    top: 200px;
+    top: 100px;
     position: relative;
-    width: 400px;
+    width: 380px;
     height: 220px;
     background-color: rgba(33, 32, 32, 0.8); 
     backdrop-filter: blur(9px);
     border-radius: 20px;
-    margin: 7px;
+    border-bottom: solid 8px $color-white;
 }
 .main-card:hover{
-    height: 228px;
     background-color: rgba(54, 52, 52, 0.8);
     backdrop-filter: blur(2px);
-    border-bottom: solid 8px $color-white;
 }
 
 .bg-violet{
@@ -239,8 +244,6 @@ a{
     font-size: 20px;
 }
 .mynavbar{
-    background-color: rgba(0, 0, 0, 0.8); 
-    backdrop-filter: blur(9px);
     background-color: rgba(0, 0, 0, 0.8); 
     backdrop-filter: blur(9px);
     z-index: 10;
@@ -319,7 +322,7 @@ a{
     width: 220px;
     top: -60px;
     left: -130px;
-    background: radial-gradient(#44006b, #ad1fff);
+    background: radial-gradient(#03a863, #017143);
     overflow: hidden;
   }
 
@@ -329,7 +332,7 @@ a{
     right: -110px;
     width: 300px;
     height: 300px;
-    background: radial-gradient(#44006b, #ad1fff);
+    background: radial-gradient(#03a863, #017143);
     overflow: hidden;
   }
 
@@ -520,7 +523,7 @@ font-weight: 600;
 //cuando la pestaña esta activa
 .contenedorqr .li.activo
 {
-	background-color: whitesmoke;
+    border: 2px rgba(0, 0, 0, 0.8) solid;
 }
 //div que contiene todas las pestañas
 .contenedorqr .subcontenedor
@@ -532,7 +535,7 @@ font-weight: 600;
     background-color: rgba(255, 255, 255, 0.6); 
     backdrop-filter: blur(9px);
     border-radius: 30px;
-    border-bottom: 8px rgb(251, 251, 251) solid;  
+    border-bottom: 8px #2c2e2a solid;
 	padding: 2.5em;
     z-index: 1;
 }
@@ -558,4 +561,70 @@ font-weight: 600;
 }  
 .prueba{
     justify-items: center;
+}
+
+// Responsive page home
+@media only screen and (max-width: 600px){
+    .main-card{
+        margin-bottom: 72px;
+    }
+    .section-title{
+        padding: 70px;
+    }
+    .SectionOne{
+        height: 900px;
+    }
+    .main-card{
+        width: 320px;
+        margin: 0px 30px;
+    }
+    .p{
+        padding: 10px;
+        top: 136px;
+    }
+    .img-consulta{
+        display: none;
+    }
+    .img-consulta2{
+        display: none;
+    }
+    .img-consulta3{
+        display: none;
+    }
+    .card-landing{
+        margin: 5px 0px 5px -127px;
+        width: 300px;
+    }
+    .card-landing2{
+        margin: 5px 0px 5px 30px;
+        width: 300px;
+    }
+    .cuadrado{
+        margin: 33% 2px 0px 0px;
+        height: 125px; 
+    }
+    .secondSection{
+        height: 450px;
+    }
+    #logo-63{
+        height: 105px;
+        width: 83px;
+        display: flex;
+        justify-content: center;
+    }
+    #logo-58{
+        height: 105px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+    }
+    .fourSection{
+        height: 559px;
+        .cuadrado{
+            display: none;
+        }
+        p{
+            margin-left: -52px;
+        }
+    }
 }
