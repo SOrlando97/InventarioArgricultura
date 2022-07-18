@@ -7,6 +7,9 @@
           <li class="breadcrumb-item active" aria-current="page">Productos</li>
         </ol>
       </nav>
+      @if(count($productos) < 1)
+      <h1>Este usuario aún no tiene productos</h1>
+@endif  
     <div class="row">
     @foreach($productos as $productos)   
     <div class="col m-2">
