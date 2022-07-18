@@ -50,41 +50,61 @@
 <body >
     
 <div class="container">
-    <div class="contenedor-card">
-        <div class="row">
-            <div class="col-8 card-text">
-                <h2 class="text-center"> <strong> {{$producto->nombre}} </strong> </h2>
-                <p> Cantidad: {{$producto->cantidad}} Kg</p>
-                <p> Precio: {{$producto->precio}}</p>
-                <p> Precio Sugerido: {{$producto->ganancia}} </p>
-                <p> Tipo de Producto: {{$producto->tipoproducto->descripcion}} </p>
-                <p> Propietario: {{$producto->usuario->name}} </p>
-            </div>
-
-            <div class="col-4">
-
-                <div class="card-producto">
-                    <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
-            
-                    <a class="card-text" href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
-                        Descargar Imagen PNG
-                    </a>   
-                </div>
-            </div>
-        </div>
-        
-    </div>
-
     <div class="row" style="margin-left: 130px">
         @csrf
         @guest
             @else
                 @if (Auth::user()->id === $producto->id_usuario)
-                <a class = "btn btn-secondary botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
-                <a class = "btn btn-secondary botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
+                <a class = "btn btn-success botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
+                <a class = "btn btn-warning botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
                 @endif
         @endguest
         <a class = "btn btn-secondary botonsito" href="{{route('Producto.index')}}">Volver</a>
+    </div>
+    <div class="contenedor-card">
+        <div class="row">
+            <div class="col-8 card-text">
+                <h2 class="text-center text-capitalize text-dark"> <strong> {{$producto->nombre}} </strong> </h2>
+                <table class="table">
+                    <thead >
+                      <tr>
+                        <th scope="col">Propietario</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-capitalize"> {{$producto->usuario->name}}</td>
+                        <td>{{$producto->cantidad}} Kg</td>
+                        <td>{{$producto->precio}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Precio Sugerido</th>
+                        <th scope="col">Tipo de Producto</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{$producto->ganancia}}</td>
+                        <td>{{$producto->tipoproducto->descripcion}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-4">
+                <div class="card-producto">
+                    <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
+                    <a class="mt-5 card-text " href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
+                        Descargar Imagen PNG
+                    </a>   
+                </div>
+            </div>
+        </div>
     </div>
 </div>  
 </body>

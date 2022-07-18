@@ -5,9 +5,9 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('Usuarios.index')}}">Listado de usuarios</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Tipos de Productos</li>
+          <li class="breadcrumb-item active text-decoration-underline" aria-current="page">Tipos de Productos</li>
         </ol>
-      </nav>
+    </nav>
 
 <div class="div-primerboton">
     <new_tipo_prod style="width: 180px"></new_tipo_prod>

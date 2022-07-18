@@ -11292,6 +11292,7 @@ textarea.form-control-lg {
 body {
   min-height: 100vh;
   background-color: #dde5d0;
+  font-family: "Nunito", sans-serif;
 }
 
 a {
@@ -11528,13 +11529,13 @@ a {
 
 .card-producto {
   position: relative;
-  padding: 10px;
-  height: 310px;
-  width: 210px;
+  padding: 47px;
+  height: 168px;
+  width: 170px;
   border-radius: 20px;
   border: solid 10px #525252;
   border-style: ridge;
-  background-color: #16181a;
+  background-color: #8dadcd;
 }
 
 .card-text {
@@ -11776,7 +11777,7 @@ a {
 
 .formsito button {
   background-color: #000;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   outline: 0;
   min-width: 50%;
@@ -11828,7 +11829,7 @@ a {
 
 .navtext {
   color: #FFF;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
 }
 
@@ -11852,10 +11853,11 @@ tr:hover {
   background-color: white;
   height: 50px;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .tabla1 tbody {
-  background-color: rgba(34, 68, 55, 0.6);
+  background-color: #02251a;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
 }
@@ -11919,7 +11921,7 @@ tr:hover {
 }
 
 .Producto-contenido {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .Producto-contenido ul {
@@ -11935,12 +11937,12 @@ tr:hover {
 .Producto-cuerpo-div {
   border: 1px solid var(--bs-green);
   background: linear-gradient(21deg, #319742 7%, #a9ea5d 28%, #f7f474 41%, #efee65 51%, #bfe461 66%, #319731 100%);
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
 }
 
 .imagenQR {
-  border: 1px solid;
+  border: 1px solid #16181a;
   display: flex;
   margin: auto;
   border-radius: 10px;

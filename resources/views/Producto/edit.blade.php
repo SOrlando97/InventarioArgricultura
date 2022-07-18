@@ -8,8 +8,7 @@
     <section class="text-center">
         <!-- Background image -->
         <div class="p-5 bg-image" style="
-              background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-              height: 500px;
+              height: 450px;
               "></div>
         <!-- Background image -->
       

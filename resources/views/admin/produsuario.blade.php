@@ -4,12 +4,12 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{route('Usuarios.index')}}">Listado de usuarios</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Productos</li>
+          <li class="breadcrumb-item active text-decoration-underline" aria-current="page">Productos</li>
         </ol>
       </nav>
       @if(count($productos) < 1)
-      <h1>Este usuario aún no tiene productos</h1>
-@endif  
+        <h1>Este usuario aún no tiene productos</h1>
+      @endif  
     <div class="row">
     @foreach($productos as $productos)   
     <div class="col m-2">

@@ -14,10 +14,12 @@ $color-white: #FFF;
 $color-black: #16181a;
 $color-green: #72e183;
 $bg: #dde5d0;
+$font-family: 'Nunito', sans-serif;
 
 body{
     min-height: 100vh;    
-    background-color: #dde5d0;;
+    background-color: $bg;
+    font-family: $font-family;
 }
 
 a{
@@ -234,13 +236,21 @@ box-shadow: -17px 16px 15px -2px rgba(0,0,0,0.36);
 }
 .card-producto{
     position: relative;
-    padding: 10px;
-    height: 310px;
-    width: 210px;
+    padding: 47px;
+    height: 168px;
+    width: 170px;
     border-radius: 20px;
     border: solid 10px #525252;
     border-style: ridge;
-    background-color: $color-black;
+    background-color: #8dadcd;
+    // position: relative;
+    // padding: 10px;
+    // height: 310px;
+    // width: 210px;
+    // border-radius: 20px;
+    // border: solid 10px #525252;
+    // border-style: ridge;
+    // background-color: $color-black;
     // background-color: #02251a;
 }
 .card-text{
@@ -441,7 +451,7 @@ box-shadow: -17px 16px 15px -2px rgba(0,0,0,0.36);
 }
 .formsito button{
     background-color: #000;
-    font-family: "Roboto", sans-serif;
+    font-family: $font-family;
     text-transform: uppercase;
     outline: 0;
     min-width: 50%;         
@@ -488,7 +498,7 @@ box-shadow: -17px 16px 15px -2px rgba(0,0,0,0.36);
 }
 .navtext{
     color: $color-white;
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-family;
     font-size: 18px;
     // font-weight: 600;
     // text-shadow: 1.5px 1.5px black;
@@ -510,9 +520,11 @@ tr:hover{
     background-color: rgb(255, 255, 255);
     height: 50px;
     font-size: 20px;
+    border-radius: 10px;
 }
 .tabla1 tbody{
-    background-color: rgb(34 68 55 / 60%);
+    background-color: #02251a;
+    // background-color: rgb(34 68 55 / 60%);
     backdrop-filter: blur(20px);
 }
 .tabla1 td{
@@ -563,7 +575,7 @@ font-size: 20px;
 background-color: rgba(144, 238, 144);
 }
 .Producto-contenido{
-font-family: 'Source Sans Pro', sans-serif;
+font-family: $font-family;
 }
 .Producto-contenido ul{
     font-size: 25px;
@@ -576,12 +588,12 @@ min-width: 45%;
 .Producto-cuerpo-div{
 border: 1px solid var(--bs-green);
 background: linear-gradient(21deg, rgba(49,151,66,1) 7%, rgba(169,234,93,1) 28%, rgba(247,244,116,1) 41%, rgba(239,238,101,1) 51%, rgba(191,228,97,1) 66%, rgba(49,151,49,1) 100%);
-font-family: 'Ubuntu', sans-serif;
+font-family: $font-family;
 font-weight: 600;
 } 
 
 .imagenQR{
-    border: 1px solid;
+    border: 1px solid $color-black;
     display: flex;
     margin: auto;
     border-radius: 10px;
