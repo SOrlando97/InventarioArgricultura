@@ -487,11 +487,11 @@ box-shadow: -17px 16px 15px -2px rgba(0,0,0,0.36);
 
 }
 .navtext{
-    color: white;
+    color: $color-white;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: 1.5px 1.5px black;
+    font-size: 18px;
+    // font-weight: 600;
+    // text-shadow: 1.5px 1.5px black;
 }
 .navtext:hover{
     color:rgb(96, 190, 77);;

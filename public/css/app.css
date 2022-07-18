@@ -11827,11 +11827,9 @@ a {
 }
 
 .navtext {
-  color: white;
+  color: #FFF;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  text-shadow: 1.5px 1.5px black;
+  font-size: 18px;
 }
 
 .navtext:hover {
