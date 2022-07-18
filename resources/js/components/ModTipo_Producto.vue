@@ -1,7 +1,7 @@
 <template>
     <input type="submit"
-    class="btn botonsito btn-secondary"
-    value="Modificar Tipo de Producto"
+    class="btn botonsito btn-success"
+    value="Modificar"
     @click="CambiarTipo_Producto"
     >
 </template>
@@ -11,7 +11,7 @@
         methods:{
             async CambiarTipo_Producto(){
                 const { value: formValues } = await Swal.fire({
-                    title: 'Cambiar contraseña',
+                    title: 'Modificar Producto',
                     text: 'Por escriba el nuevo nombre del Tipo de Producto',
                     html:
                         '<input id="swal-input1" placeholder="Nombre" class="swal2-input">' +

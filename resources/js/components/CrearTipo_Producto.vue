@@ -1,6 +1,6 @@
 <template>
     <input type="submit"
-    class="btn botonsito btn-primary"
+    class="btn botonsito btn-outline-dark"
     value="Nuevo Tipo de Producto"
     @click="AgregarTipo_producto"
     >

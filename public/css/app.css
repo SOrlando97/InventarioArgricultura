@@ -11648,6 +11648,31 @@ a {
   margin: 13px;
 }
 
+.cardProducts2 {
+  height: 331px;
+  width: 265px;
+  border-radius: 20px;
+  background-color: #cef2ff;
+}
+
+.imgPro2 {
+  background-image: url("/images/Cloth Bag.H03.2k (1).png?0728cab17b68f7bf6027015c7c88af85");
+  width: 208px;
+  min-height: 208px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(2, 37, 26, 0.6);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 13px;
+  -webkit-backdrop-filter: blur(123px);
+          backdrop-filter: blur(123px);
+}
+
 .cardProducts {
   height: 331px;
   width: 265px;

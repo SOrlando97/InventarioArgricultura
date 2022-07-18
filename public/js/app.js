@@ -5690,7 +5690,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.next = 2;
                 return Swal.fire({
-                  title: 'Cambiar contraseña',
+                  title: 'Modificar Producto',
                   text: 'Por escriba el nuevo nombre del Tipo de Producto',
                   html: '<input id="swal-input1" placeholder="Nombre" class="swal2-input">' + '<input id="swal-input2" placeholder="Repetir Nombre" class="swal2-input">',
                   focusConfirm: false,
@@ -30067,7 +30067,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("input", {
-    staticClass: "btn botonsito btn-primary",
+    staticClass: "btn botonsito btn-outline-dark",
     attrs: { type: "submit", value: "Nuevo Tipo de Producto" },
     on: { click: _vm.AgregarTipo_producto },
   })
@@ -30183,8 +30183,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("input", {
-    staticClass: "btn botonsito btn-secondary",
-    attrs: { type: "submit", value: "Modificar Tipo de Producto" },
+    staticClass: "btn botonsito btn-success",
+    attrs: { type: "submit", value: "Modificar" },
     on: { click: _vm.CambiarTipo_Producto },
   })
 }

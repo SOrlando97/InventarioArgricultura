@@ -3,9 +3,8 @@
 
 <section class="text-center">
     <!-- Background image -->
-    <div class="mt-4 p-5 bg-image" style="
-          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-          height: 300px;
+    <div class="mt-4 bg-image" style="
+          height: 200px;
           "></div>
     <!-- Background image -->
   
@@ -18,13 +17,18 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Edición usuario</h2>
+            <h2 class="fw-bold ">Edición usuario</h2>
             <form  method="POST" action="{{ route('change.password')}}">
                 @csrf
                 <div class="row mb-3 text-center mt-3">
-                    <label class="col-md-4 col-form-label mt-4 text-md-end" for="current_password" >{{__('Contraseña Actual')}}</label>
+                    <label class="col-md-4 col-form-label mt-4 text-md-end" for="current_password" >
+                        {{__('Contraseña Actual')}}
+                    </label>
                     <div class="col-md-6">                        
-                        <input name="current_password" class="form-control mt-4 @error('current_password') is-invalid @enderror" type="password" autocomplete = "current_password">
+                        <input name="current_password" class="form-control mt-4
+                            @error('current_password') is-invalid @enderror" 
+                            type="password" autocomplete = "current_password" required
+                        >
                         @if(session()->has('msg'))
                             <div class="alert alert-danger">
                                 {{ session()->get('msg') }}
@@ -44,16 +48,24 @@
                     </div>
                     <label class="col-md-4 col-form-label  mt-4 text-md-end" for="new_password" >{{__('Contraseña Nueva')}}</label>
                     <div class="col-md-6">
-                        <input name="new_password" class="form-control mt-4 @error('new_password') is-invalid @enderror" type="password" autocomplete = "new_password">
+                        <input name="new_password" class="form-control mt-4
+                            @error('new_password') is-invalid @enderror" 
+                            type="password" autocomplete = "new_password" required
+                        >
                         @error('new_password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div> 
-                    <label class="col-md-4 col-form-label mt-4 text-md-end" for="new_confirm_password" >{{__('Confirmar Contraseña')}}</label>
+                    <label class="col-md-4 col-form-label mt-4 text-md-end" for="new_confirm_password" >
+                        {{__('Confirmar Contraseña')}}
+                    </label>
                     <div class="col-md-6">
-                        <input name="new_confirm_password" class="form-control mt-4 @error('new_confirm_password') is-invalid @enderror" type="password" autocomplete = "new_confirm_password">
+                        <input name="new_confirm_password" class="form-control mt-4
+                            @error('new_confirm_password') is-invalid @enderror"
+                            type="password" autocomplete = "new_confirm_password" required
+                        >
                         @error('new_confirm_password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

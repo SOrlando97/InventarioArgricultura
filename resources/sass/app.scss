@@ -327,6 +327,29 @@ box-shadow: -17px 16px 15px -2px rgba(0,0,0,0.36);
     padding: 10px;
     margin: 13px;
 }
+.cardProducts2 {
+    height: 331px;
+    width: 265px;
+    border-radius: 20px;
+    background-color: #cef2ff;
+}
+
+.imgPro2{
+    background-image: url("../../public/images/Cloth\ Bag.H03.2k\ \(1\).png");
+    width: 208px;
+    min-height: 208px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(2, 37, 26, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 13px;
+    backdrop-filter: blur(123px);
+}
 
 .cardProducts{
     height: 331px;
