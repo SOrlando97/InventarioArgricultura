@@ -47,7 +47,7 @@
     </div>
 
 </article> --}}
-<body style=" background-color: slateblue;">
+<body >
     
 <div class="container">
     <div class="contenedor-card">

@@ -18,6 +18,23 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                          Administrar Usuarios
+                        </div>
+                      </div>
+                </div>
+                <div class="col">
+
+                <div class="card">
+                    <div class="card-body">
+                      Administrar Productos
+                    </div>
+                  </div>
+                </div>                  
+            </div>
         </div>
     </div>
 </div>

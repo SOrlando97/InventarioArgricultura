@@ -19,7 +19,7 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Registro</h2>
+            <h2 class="fw-bold mb-1">Registro</h2>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-outline mb-4">

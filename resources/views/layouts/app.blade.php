@@ -107,7 +107,7 @@
             </main>
         </div>
     
-        <footer class="bg-dark text-center text-white">
+        <footer class=" myfooter text-center text-white">
             <!-- Section: Social media -->
             <section
               class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"

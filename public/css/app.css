@@ -11519,10 +11519,11 @@ a {
   padding: 20px;
   height: 344px;
   width: 590px;
-  background-color: rgba(54, 52, 52, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(9px);
           backdrop-filter: blur(9px);
   border-radius: 20px;
+  box-shadow: -17px 16px 15px -2px rgba(0, 0, 0, 0.36);
 }
 
 .card-producto {
@@ -11530,22 +11531,54 @@ a {
   padding: 10px;
   height: 310px;
   width: 210px;
-  background-color: #36383a;
   border-radius: 20px;
   border: solid 10px #525252;
   border-style: ridge;
+  background-color: #16181a;
 }
 
 .card-text {
-  color: #FFF;
+  color: #16181a;
   font-weight: 700;
-  font-size: 20px;
+}
+
+.cardP {
+  width: 452px;
+  height: 225px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari 9+ */
+  backdrop-filter: blur(10px);
+  /* Chrome and Opera */
+  border-radius: 136px;
+  box-shadow: 10px 10px 5px 0px #b5b5b5;
+  -webkit-animation: scale-up-horizontal-center 0.4s;
+          animation: scale-up-horizontal-center 0.4s;
+}
+
+@-webkit-keyframes scale-up-horizontal-center {
+  0% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scale-up-horizontal-center {
+  0% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.myfooter {
+  background-color: #16181a;
 }
 
 .mynavbar {
-  background-color: rgba(0, 0, 0, 0.8);
-  -webkit-backdrop-filter: blur(9px);
-          backdrop-filter: blur(9px);
+  background-color: #16181a;
   z-index: 10;
   position: fixed;
   width: 100%;
@@ -11588,6 +11621,72 @@ a {
 .img3 {
   background-image: url(/images/farm.jpg?4069656a79719fbc4012ad427a7153da);
   width: 255px;
+}
+
+.imgUser {
+  background-image: url("/images/p (2).jpg?d7b4942a83e1cffc9b999e501d3f20ad");
+  width: 150px;
+  min-height: 225px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat;
+}
+
+.imgPro {
+  background-image: url("/images/Bag.H03.2k (1).png?9691fe1ba798e427c21294c3051a2085");
+  width: 208px;
+  min-height: 208px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(2, 37, 26, 0.3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 13px;
+}
+
+.cardProducts {
+  height: 331px;
+  width: 265px;
+  border-radius: 10px 10px 0px 0px;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
+  background: #c1f497;
+}
+
+.cardProducts:hover {
+  -webkit-animation: shadow-drop-center 0.2s linear both;
+          animation: shadow-drop-center 0.2s linear both;
+}
+
+@-webkit-keyframes shadow-drop-center {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: 0 0 20px 0 rgba(21, 21, 21, 0.55);
+  }
+}
+
+@keyframes shadow-drop-center {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: 0 0 20px 0 rgba(21, 21, 21, 0.55);
+  }
+}
+.footerCardProducts {
+  position: relative;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+          backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  bottom: 0px;
+  z-index: 1;
 }
 
 .myrow {
@@ -11722,7 +11821,7 @@ a {
 }
 
 tr:hover {
-  background-color: #3d387c;
+  background-color: #FFF;
 }
 
 .tabla1 thead {
@@ -11733,7 +11832,9 @@ tr:hover {
 }
 
 .tabla1 tbody {
-  background-color: #151326;
+  background-color: rgba(34, 68, 55, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 
 .tabla1 td {
@@ -11816,11 +11917,12 @@ tr:hover {
 }
 
 .imagenQR {
+  border: 1px solid;
   display: flex;
   margin: auto;
-  background-color: #FFF;
-  border-radius: 14px;
-  width: 173px;
+  border-radius: 10px;
+  width: 140px;
+  border-style: ridge;
 }
 
 .contenedorqr {
