@@ -5,7 +5,7 @@
 <a class = "mt-5 btn btn-secondary botonsito" href="{{route('Producto.show',$producto->id)}}">Volver</a>
 </div>
 <div class="container">
-    <div class="carta-inicio card " style="margin-top: 20px">
+    <div class="carta-inicio card table" style="margin-top: 20px">
         <div class="card-header">{{ __('Historial de entrada de ') }}{{$producto->nombre}}</div>
 
         <div class="card-body">
