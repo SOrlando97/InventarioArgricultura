@@ -12119,4 +12119,12 @@ tr:hover {
     width: 125px;
     border-style: ridge;
   }
+
+  #btnstartscan {
+    margin-top: -56px;
+  }
+
+  #btnendscan {
+    margin-top: -10px;
+  }
 }

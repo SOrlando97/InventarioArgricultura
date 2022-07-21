@@ -27,8 +27,10 @@
 					<div class="video">
 						<video id="preview"></video>
 					</div>
-					<button class="btn botonsito btn-primary" id="btnstartscan">Comenzar Escaneo</button>
-					<button class="btn botonsito btn-primary" id="btnendscan">Terminar Escaneo</button>
+					<div class="">
+						<button class="btn botonsito btn-dark" id="btnstartscan">Comenzar Escaneo</button>
+						<button class="btn botonsito btn-outline-dark" id="btnendscan">Terminar Escaneo</button>
+					</div>
 				</div>		
 			</div>		
 		</div>

@@ -667,6 +667,7 @@ font-weight: 600;
     backdrop-filter: blur(1px);
     border: none;
 }
+
 // Responsive page home
 @media only screen and (max-width: 600px){
     .main-card{
@@ -764,5 +765,13 @@ font-weight: 600;
         border-radius: 10px;
         width: 125px;
         border-style: ridge;
+    }
+
+    #btnstartscan{
+        margin-top: -56px;
+    }
+    
+    #btnendscan{
+        margin-top: -10px;
     }
 }
