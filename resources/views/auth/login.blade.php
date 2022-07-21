@@ -12,7 +12,7 @@
             Sistema de inventario<br />
           </h1>
           <p class="mb-4 opacity-70" style="color: rgb(30 30 30)">
-            Si no tienes una cuenta, ¡Registrate!
+            Si no tienes una cuenta,  <a href="{{ route('register')}}">¡Registrate!</a>
           </p>
         </div>
   
@@ -71,13 +71,11 @@
                   </button>
                     
 
-                    @if (Route::has('password.request'))
+                    <!-- @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Olvidaste la contraseña?') }}
                         </a>
-                    @endif
-                    
-                
+                    @endif -->
               </form>
             </div>
           </div>
