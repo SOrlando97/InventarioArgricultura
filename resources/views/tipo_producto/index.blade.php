@@ -2,12 +2,20 @@
 
 @section('content')
 <div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{route('Usuarios.index')}}">Listado de usuarios</a></li>
-          <li class="breadcrumb-item active text-decoration-underline" aria-current="page">Tipos de Productos</li>
-        </ol>
-    </nav>
+    <div class="alert alert-light d-flex justify-content-center" role="alert">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item text-center">
+                    <a class="text-dark" href="{{route('Usuarios.index')}}">
+                        Listado de usuarios
+                    </a>
+            </li>
+              <li class="breadcrumb-item active text-decoration-underline text-dark" aria-current="page">
+                  <strong>Tipos de Productos</strong>
+              </li>
+            </ol>
+        </nav>
+      </div>
 
 <div class="div-primerboton">
     <new_tipo_prod style="width: 180px"></new_tipo_prod>

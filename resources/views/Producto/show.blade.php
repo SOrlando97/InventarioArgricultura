@@ -50,7 +50,7 @@
 <body >
     
 <div class="container">
-    <div class="row" style="margin-left: 130px">
+    <div class="row d-flex justify-content-center">
         @csrf
         @guest
             @else
@@ -63,7 +63,7 @@
     </div>
     <div class="contenedor-card">
         <div class="row">
-            <div class="col-8 card-text">
+            <div class="col card-text">
                 <h2 class="text-center text-capitalize text-dark"> <strong> {{$producto->nombre}} </strong> </h2>
                 <table class="table">
                     <thead >
@@ -96,7 +96,7 @@
                     </tbody>
                   </table>
             </div>
-            <div class="col-4">
+            <div class="col">
                 <div class="card-producto">
                     <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
                     <a class="mt-5 card-text " href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
