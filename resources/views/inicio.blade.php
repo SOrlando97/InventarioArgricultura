@@ -39,7 +39,7 @@
 
 <div class="secondSection">
   <div class="row">
-     <div class="col-8">
+     <div class="col">
         <div class="img-consulta"></div>
      </div>
      <div class="col-4">
@@ -109,7 +109,7 @@
         <div class="card-landing">
           <div class="row">
             <div class="col-4">
-                <div class="cuadrado" style="background-color: #00ed64;"></div>
+                <div class="cuadrado"></div>
             </div>
             <div class="col-8">
                 <p>Registra tus productos, el sistema no cuenta con limitantes</p>
@@ -119,7 +119,7 @@
         <div class="card-landing ">
           <div class="row">
             <div class="col-4">
-               <div class="cuadrado" style="background-color: #00ed64;"></div>
+               <div class="cuadrado"></div>
             </div>
             <div class="col-8">
                 <p>Modificalos, eliminalos</p>
@@ -130,7 +130,7 @@
           <div class="card-landing ">
             <div class="row">
              <div class="col-4">
-                <div class="cuadrado" style="background-color: #00ed64;"></div>
+                <div class="cuadrado"></div>
              </div>
              <div class="col-8">
                 <p>No esperes más, registrate</p>
