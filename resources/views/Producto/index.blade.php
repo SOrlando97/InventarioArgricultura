@@ -20,22 +20,26 @@
                 </tr>
             </thead> 
             <tbody id="idTabla">
-                @foreach($productos as $productos)   
+                @foreach($productos as $producto)   
                 <tr>
                     <td>
-                        <img class= "imagenQR" src="{{$productos->QR}}" alt="imagen de {{$productos->nombre}}">
+                        <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
                     </td>
                 </td>
-                    <td class="text-capitalize">{{$productos->nombre}}</td>
+                    <td class="text-capitalize">{{$producto->nombre}}</td>
                     <td>
-                        <a class = "btn botonsito btn-success" href="{{route('Producto.show',$productos->id)}}">Ver</a>
-                        <a class = "btn botonsito btn-warning " href="{{route('Producto.edit',$productos->id)}}">Modificar</a>
-                        <elim_producto producto = {{$productos->id}}><elim_producto>
+                        <a class = "btn botonsito btn-success" href="{{route('Producto.show',$producto->id)}}">Ver</a>
+                        <a class = "btn botonsito btn-warning " href="{{route('Producto.edit',$producto->id)}}">Modificar</a>
+                        <elim_producto producto = {{$producto->id}}><elim_producto>
                     </td>
                 </tr>
                 @endforeach
-            </tbody>           
+            </tbody>      
         </table>
+        <div class="d-flex justify-content-end">
+            {!! $productos->links()!!}
+        </div>
+        
     </div>
     @endif 
 </div>
