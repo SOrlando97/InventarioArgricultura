@@ -21,7 +21,7 @@ class UsuariosController extends Controller
     }
     public function index()
     {
-        $user= User::all();
+        $user= User::paginate(4);
         if(Auth::user()->id_rol==2){
             return view('admin.usuario', compact('user'));
         }
