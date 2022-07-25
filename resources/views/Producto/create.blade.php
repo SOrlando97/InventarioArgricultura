@@ -1,16 +1,22 @@
 @extends('layouts.app')    
 @section('content')
-<div style="margin-left: 15%">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{route('Producto.index')}}">Productos</a></li>
-          <li class="breadcrumb-item active text-decoration-underline" aria-current="page">Crear Producto</li>
-        </ol>
-      </nav>
-</div>
 <div class="container">
+    <div class="alert alert-light d-flex justify-content-center" role="alert">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item text-center">
+                    <a class="text-dark" href="{{route('Producto.index')}}">
+                        Listado de Productos
+                    </a>
+            </li>
+                <li class="breadcrumb-item active text-decoration-underline text-dark" aria-current="page">
+                    <strong>Crear Producto</strong>
+                </li>
+            </ol>
+        </nav>
+    </div>
     <section class="background-radial-gradient overflow-hidden">
-        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="container px-4 py-3 px-md-5 text-center text-lg-start my-5">
           <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
             </div>
