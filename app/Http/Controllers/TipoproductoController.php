@@ -22,7 +22,7 @@ class TipoproductoController extends Controller
     {
        
         if(Auth::user()->id_rol==2){
-            $tipoproducto = tipoproducto::all();
+            $tipoproducto = tipoproducto::paginate(6);
             return view('tipo_producto.index', compact('tipoproducto'));
         }
         else{

@@ -22,22 +22,22 @@
 </div>
 
 <div class="row">
-    @foreach($tipoproducto as $tipoproducto)      
+    @foreach($tipoproducto as $tipoproductos)      
 
     <div class="col m-2 mb-5">
         <a  href="#">
             <div class="cardProducts">
                 <div class="card-body">
                     <h5 class="card-title text-center text-capitalize text-dark">
-                        <strong>{{$tipoproducto->descripcion}}</strong>
+                        <strong>{{$tipoproductos->descripcion}}</strong>
                     </h5>
                     <div class="imgPro2"></div>
                     <div class="">
                         <p class="d-flex align-items-center">
                             @csrf  
-                    <mod_tipo_prod tipo-producto={{$tipoproducto->id}}></mod_tipo_prod>
+                    <mod_tipo_prod tipo-producto={{$tipoproductos->id}}></mod_tipo_prod>
                 @csrf  
-                    <elim_tipo_prod tipo-producto = {{$tipoproducto->id}}></elim_tipo_prod>
+                    <elim_tipo_prod tipo-producto = {{$tipoproductos->id}}></elim_tipo_prod>
                         </p>    
                     </div>
                 </div>
@@ -45,6 +45,9 @@
         </a>
     </div>
     @endforeach
+    </div>
+    <div class="d-flex justify-content-center">
+            {!! $tipoproducto->links()!!}
     </div>
 </div>
 @endsection
