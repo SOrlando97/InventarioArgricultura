@@ -7,13 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <link rel="icon" href="/images/icons8.png">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -194,6 +190,9 @@
             <!-- Copyright -->
           </footer>
 
-          
+        <!-- Scripts -->
+        <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>      
 </body>
 </html>

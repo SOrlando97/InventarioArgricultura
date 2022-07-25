@@ -12,7 +12,7 @@
             Sistema de inventario<br />
           </h1>
           <p class="mb-4 opacity-70" style="color: rgb(30 30 30)">
-            Si no tienes una cuenta,  <a href="{{ route('register')}}">¡Registrate!</a>
+            Si no tienes una cuenta,  <a class="text-white text-decoration-underline" href="{{ route('register')}}">¡Registrate!</a>
           </p>
         </div>
   
