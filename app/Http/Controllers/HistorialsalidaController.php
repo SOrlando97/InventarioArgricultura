@@ -22,7 +22,7 @@ class HistorialsalidaController extends Controller
     {      
         $this->authorize ('view',$producto);   
         /* mostrar historial de salida y formulario para crear un nuevo historial de salida */
-        $historialsalida = $producto->historialsalida;
+        $historialsalida = $producto->historialsalida()->orderBy('fecha','DESC')->paginate(15);
         return view('historial.historialsalida', compact('historialsalida','producto'));
     }
 

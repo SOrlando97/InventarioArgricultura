@@ -60,16 +60,19 @@
             </tr>
         </thead> 
         <tbody>
-            @foreach($historialsalida as $historialsalida)   
+            @foreach($historialsalida as $historialsal)   
             <tr>
-                <td>{{$historialsalida->cantidad}} Kg</td>
-                <td>{{$historialsalida->precioventa}} /Kg</td>
-                <td>{{$historialsalida->fecha}}</td>
+                <td>{{$historialsal->cantidad}} Kg</td>
+                <td>{{$historialsal->precioventa}} /Kg</td>
+                <td>{{$historialsal->fecha}}</td>
             </tr>
             @endforeach
 
             
         </tbody>           
     </table>
+    <div class="d-flex justify-content-end">
+            {!! $historialsalida->links()!!}
+    </div>
 </div>
 @endsection

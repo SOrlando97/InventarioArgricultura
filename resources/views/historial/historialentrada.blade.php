@@ -46,15 +46,18 @@
             </tr>
         </thead> 
         <tbody>
-            @foreach($historialentrada as $historialentrada)   
+            @foreach($historialentrada as $historialentr)   
             <tr>
-                <td>{{$historialentrada->cantidad}} Kg</td>
-                <td>{{$historialentrada->fecha}}</td>
+                <td>{{$historialentr->cantidad}} Kg</td>
+                <td>{{$historialentr->fecha}}</td>
             </tr>
             @endforeach
 
             
         </tbody>           
     </table>
+    <div class="d-flex justify-content-end">
+            {!! $historialentrada->links()!!}
+        </div>
 </div>
 @endsection
