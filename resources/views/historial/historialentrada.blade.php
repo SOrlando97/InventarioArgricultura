@@ -37,6 +37,32 @@
     </div>
 </div>
 
+
+<div class="container">
+    <div class="carta-inicio card table" style="margin-top: 20px">
+        <div class="card-header">{{ __('Descargar Informe de ') }}{{$producto->nombre}}</div>
+            <form action="{{ route('historialentrada.PDF',$producto->id)}}" method="get">
+                <div class="card-body">
+                        <label for="">Desde</label>
+                        <input type="date" class="form-control @error('fechainicio') is-invalid @enderror" name="fechainicio" id="fechainicio" value="{{ old('fechainicio') }}">
+                        @error('fechainicio')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        <label for="">hasta</label>
+                        <input type="date" class="form-control @error('fechafin') is-invalid @enderror"name="fechafin" id="fechafin" value="{{ old('fechafin') }}">
+                        @error('fechafin')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        <button>Descargar</button>
+                </div>
+            </form>                
+    </div>
+</div>
+
 <div class ="col-md-10 mx-auto p-3">
     <table class="table tabla1 table-hover">
         <thead>

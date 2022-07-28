@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\historialsalida;
+use PDF;
 
 class HistorialsalidaController extends Controller
 {
@@ -51,7 +52,7 @@ class HistorialsalidaController extends Controller
             'cantidad' => 'required|numeric|min:1|max:'.$cantactual,
             'precioventa' =>'required'
             ]);
-            /*  guardar informacion en historial entrada y modificar la cantidad de producto */
+            /*  guardar informacion en historial salida y modificar la cantidad de producto */
             $producto->historialsalida()->create([
                 'fecha' => Carbon::now(-5)->format('Y-m-d h:i:s'),
                 'cantidad' => $data['cantidad'],
@@ -105,5 +106,24 @@ class HistorialsalidaController extends Controller
     public function destroy(historialsalida $historialsalida)
     {
         //
+    }
+    public function PDF(Request $request, Producto $producto)
+    {   
+        $data = $request->validate([
+        'fechainicio' => 'required',
+        'fechafin' => 'required||after_or_equal:fechainicio||before_or_equal:today',
+        ],
+        [
+            'fechainicio.required'=>'Esta fecha es obligatoria',
+            'fechafin.after_or_equal'=>'la fecha hasta debe ser mayor a la fecha desde',
+            'fechafin.required'=>'Esta fecha es obligatoria',
+            'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
+        ]);
+        //$this->authorize ('view',$producto);         
+        $historialsalida = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
+        view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsalida,'request',$request]);
+        $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsalida,'request'=>$request]);
+        return $pdf->download('Reporte-pdf.pdf');
+        return view('historial.ReporteHistorialSalida', compact('historialsalida','request'));
     }
 }

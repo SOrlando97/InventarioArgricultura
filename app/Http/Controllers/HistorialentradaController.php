@@ -7,6 +7,8 @@ use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\historialentrada;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use PDF;
 
 class HistorialentradaController extends Controller
 {
@@ -103,5 +105,24 @@ class HistorialentradaController extends Controller
     public function destroy(historialentrada $historialentrada)
     {
         //
+    }
+    public function PDF(Request $request, Producto $producto)
+    {   
+        $data = $request->validate([
+        'fechainicio' => 'required',
+        'fechafin' => 'required||after_or_equal:fechainicio||before_or_equal:today',
+        ],
+        [
+            'fechainicio.required'=>'Esta fecha es obligatoria',
+            'fechafin.after_or_equal'=>'la fecha hasta debe ser mayor a la fecha desde',
+            'fechafin.required'=>'Esta fecha es obligatoria',
+            'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
+        ]);
+        //$this->authorize ('view',$producto);         
+        $historialentrada = $producto->historialentrada->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
+        view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request]);
+        $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request]);
+        return $pdf->download('Reporte-pdf.pdf');
+        return view('historial.ReporteHistorialEntrada', compact('historialentrada','request'));
     }
 }

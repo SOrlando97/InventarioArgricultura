@@ -30,7 +30,7 @@ class ProductoController extends Controller
     public function index()
     {
         // @param productos son los productos que tiene el usuario autenticado
-        $productos = Auth::user()->productos()->paginate(3);
+        $productos = Auth::user()->productos()->paginate(6);
         // se muestra vista de productos con los productos que petenecen al usuario autenticado
         return view('Producto.index', compact('productos'));
     }

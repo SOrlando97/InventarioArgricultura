@@ -1,0 +1,14 @@
+{
+    "nunito": {
+        "normal": "nunito_normal_586f3f8a461df5c8635a870033365d5e"
+    },
+    "roboto": {
+        "normal": "roboto_normal_7bc701b343c10631f60048716b96e4f7"
+    },
+    "ubuntu": {
+        "300": "ubuntu_300_78caa070e669b23c12005b68678fc64d"
+    },
+    "source sans pro": {
+        "normal": "source_sans_pro_normal_cfe91c9ecf9b11c570756c61c2157ce6"
+    }
+}
