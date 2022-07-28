@@ -42,11 +42,11 @@ Route::put('/Tipo_producto/{tipoproducto}/{nombre}/', [App\Http\Controllers\Tipo
 //Rutas para historial de entrada
 Route::get('/productos/{producto}/entrada', [App\Http\Controllers\HistorialentradaController::class, 'index'])->name('historialentrada.index');
 Route::post('/productos/entrada/{producto}', [App\Http\Controllers\HistorialentradaController::class, 'store'])->name('historialentrada.store');
-Route::get('/productos/pdf/{producto}', [App\Http\Controllers\HistorialentradaController::class, 'PDF'])->name('historialentrada.PDF');
+Route::get('/productos/pdfentrada/{producto}', [App\Http\Controllers\HistorialentradaController::class, 'PDF'])->name('historialentrada.PDF');
 //Rutas para historial de salida
 Route::get('/productos/{producto}/salida', [App\Http\Controllers\HistorialsalidaController::class, 'index'])->name('historialsalida.index');
 Route::post('/productos/salida/{producto}', [App\Http\Controllers\HistorialsalidaController::class, 'store'])->name('historialsalida.store');
-Route::get('/productos/pdf/{producto}', [App\Http\Controllers\HistorialsalidaController::class, 'PDF'])->name('historialsalida.PDF');
+Route::get('/productos/pdfsalida/{producto}', [App\Http\Controllers\HistorialsalidaController::class, 'PDF'])->name('historialsalida.PDF');
 //Ruta para Lector de QR
 Route::get('/QR', [App\Http\Controllers\QRController::class, 'index'])->name('QR.index');
 Route::post('/QR', [App\Http\Controllers\QRController::class, 'LeerQR'])->name('QR.leerQR');

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\historialentrada;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Redirect;
 use PDF;
 
 class HistorialentradaController extends Controller
@@ -120,9 +121,15 @@ class HistorialentradaController extends Controller
         ]);
         //$this->authorize ('view',$producto);         
         $historialentrada = $producto->historialentrada->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
-        view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request]);
-        $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request]);
-        return $pdf->download('Reporte-pdf.pdf');
-        return view('historial.ReporteHistorialEntrada', compact('historialentrada','request'));
+        
+        if(count($historialentrada) >0 ){
+            view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request]);
+            $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request]);
+            return $pdf->download('Reporte-pdf.pdf');
+            return view('historial.ReporteHistorialEntrada', compact('historialentrada','request'));
+        }
+        else{
+            return Redirect::back()->withErrors(['msg' => 'No existen datos entre las fechas']);
+        }
     }
 }

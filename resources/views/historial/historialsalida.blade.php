@@ -71,9 +71,12 @@
                             </span>
                         @enderror
                         <button>Descargar</button>
+                    @if($errors->any())
+                    <h4>{{$errors->first()}}</h4>
+                    @endif
                 </div>
             </form>                
-    </div>
+    </div>    
 </div>
 
 

@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\historialsalida;
+use Redirect;
 use PDF;
 
 class HistorialsalidaController extends Controller
@@ -119,11 +120,16 @@ class HistorialsalidaController extends Controller
             'fechafin.required'=>'Esta fecha es obligatoria',
             'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
         ]);
-        //$this->authorize ('view',$producto);         
+        //$this->authorize ('view',$producto);
         $historialsalida = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
-        view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsalida,'request',$request]);
-        $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsalida,'request'=>$request]);
-        return $pdf->download('Reporte-pdf.pdf');
-        return view('historial.ReporteHistorialSalida', compact('historialsalida','request'));
+        if(count($historialsalida) >0 ){
+            view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsalida,'request',$request]);
+            $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsalida,'request'=>$request]);
+            return $pdf->download('Reporte-pdf.pdf');
+            return view('historial.ReporteHistorialSalida', compact('historialsalida','request'));
+        }
+        else{
+            return Redirect::back()->withErrors(['msg' => 'No existen datos entre las fechas']);
+        }
     }
 }
