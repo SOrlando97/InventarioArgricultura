@@ -56,10 +56,21 @@
                     @enderror
               </div>
 
-            <div class="form-outline mb-4">
-                <label for="password-confirm" class="form-label">{{ __('Repetir Contraseña') }}</label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-            </div>
+              <div class="form-outline mb-4">
+                  <label for="password-confirm" class="form-label">{{ __('Repetir Contraseña') }}</label>
+                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+              </div>
+              <!-- telefono -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example5">Telefono (Opcional)</label>
+                <input id="telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}">
+
+                    @error('telefono')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+              </div>
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-outline-dark btn-lg btn-block">
