@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('Telefono');
+            $table->string('Telefono')->nullable();
             $table->unsignedBigInteger('id_rol')->default(1);
             $table->rememberToken();
             $table->timestamps();

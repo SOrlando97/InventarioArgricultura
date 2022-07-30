@@ -50,6 +50,27 @@ class ModificarUsuario extends Controller
   
           
     }
+    /**
+     * Funcion storeUT(Usuario Telefono), para modificar usuario.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeUT(Request $request){
+        $request->validate([
+            'nombre_usuario' => 'required|string',
+            'telefono' => 'nullable|string|min:7',
+        ],
+        [
+          'telefono.min'=>'El telefono debe ser mayor o igual a 7 digitos o vacio si lo quiere eliminar',  
+        ]);
+        $user = Auth::user();
+        $user->name = $request['nombre_usuario'];
+        $user->telefono = $request['telefono'];
+        $user->save();
+        return redirect()->route('modusuario');
+  
+    }
 
     /**
      * Display the specified resource.

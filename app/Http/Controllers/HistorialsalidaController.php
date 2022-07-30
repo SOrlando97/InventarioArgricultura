@@ -55,7 +55,7 @@ class HistorialsalidaController extends Controller
             ]);
             /*  guardar informacion en historial salida y modificar la cantidad de producto */
             $producto->historialsalida()->create([
-                'fecha' => Carbon::now(-5)->format('Y-m-d h:i:s'),
+                'fecha' => Carbon::now()->format('Y-m-d H:i:s'),
                 'cantidad' => $data['cantidad'],
                 'precioventa' => $data['precioventa'],        
             ]);
@@ -109,7 +109,7 @@ class HistorialsalidaController extends Controller
         //
     }
     public function PDF(Request $request, Producto $producto)
-    {   
+    {           
         $data = $request->validate([
         'fechainicio' => 'required',
         'fechafin' => 'required||after_or_equal:fechainicio||before_or_equal:today',
@@ -121,12 +121,12 @@ class HistorialsalidaController extends Controller
             'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
         ]);
         //$this->authorize ('view',$producto);
-        $historialsalida = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
-        if(count($historialsalida) >0 ){
-            view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsalida,'request',$request]);
-            $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsalida,'request'=>$request]);
-            return $pdf->download('Reporte-pdf.pdf');
-            return view('historial.ReporteHistorialSalida', compact('historialsalida','request'));
+        $historialsal = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'].'00:00:00',$request['fechafin'].'23:59:59']);
+        if(count($historialsal) >0 ){
+            view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsal,'request',$request,'producto',$producto]);
+            $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsal,'request'=>$request,'producto'=>$producto]);
+            return $pdf->download('Reporte ventas '.$producto->nombre.' '.$request['fechainicio'].' a '.$request['fechafin'].'-pdf.pdf');
+            return view('historial.ReporteHistorialSalida', compact('historialsal','request','producto'));
         }
         else{
             return Redirect::back()->withErrors(['msg' => 'No existen datos entre las fechas']);

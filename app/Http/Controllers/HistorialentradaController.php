@@ -55,10 +55,10 @@ class HistorialentradaController extends Controller
         ]);
         /*  guardar informacion en historial entrada y modificar la cantidad de producto */
         $producto->historialentrada()->create([
-            'fecha' => Carbon::now(-5)->format('Y-m-d h:i:s'),
+            'fecha' => Carbon::now()->format('Y-m-d H:i:s'),
             'cantidad' => $data['cantidad'],            
         ]);
-        $producto->cantidad = $producto->cantidad + $data['cantidad'];
+        $producto->cantidad = $producto->cantidad+$data['cantidad'];
         $producto->save();
         return redirect()->route('historialentrada.index',compact('producto'));
     }
@@ -120,13 +120,13 @@ class HistorialentradaController extends Controller
             'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
         ]);
         //$this->authorize ('view',$producto);         
-        $historialentrada = $producto->historialentrada->whereBetween('fecha',[$request['fechainicio'],$request['fechafin']]);
+        $historialentrada = $producto->historialentrada->whereBetween('fecha',[$request['fechainicio'].' 00:00:00',$request['fechafin'].' 23:59:59']);
         
         if(count($historialentrada) >0 ){
-            view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request]);
-            $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request]);
+            view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request,'producto',$producto]);
+            $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request,'producto'=>$producto]);
             return $pdf->download('Reporte-pdf.pdf');
-            return view('historial.ReporteHistorialEntrada', compact('historialentrada','request'));
+            return $pdf->download('Reporte entrada '.$producto->nombre.' '.$request['fechainicio'].' a '.$request['fechafin'].'-pdf.pdf');
         }
         else{
             return Redirect::back()->withErrors(['msg' => 'No existen datos entre las fechas']);

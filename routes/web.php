@@ -21,6 +21,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Rutas de modificar usuario autenticado
 Route::get('/Usuario', [App\Http\Controllers\ModificarUsuario::class, 'index'])->name('modusuario');
 Route::post('/Usuario', [App\Http\Controllers\ModificarUsuario::class, 'store'])->name('change.password');
+Route::put('/Usuario/edit', [App\Http\Controllers\ModificarUsuario::class, 'storeUT'])->name('change.user');
 Route::delete('/Usuario/{user}', [App\Http\Controllers\ModificarUsuario::class, 'destroy'])->name('change.delete');
 Route::get('/Usuario/{user}/productos', [App\Http\Controllers\ModificarUsuario::class, 'show'])->name('usuario.show');
 //Rutas Modifcar usuario como Admin
