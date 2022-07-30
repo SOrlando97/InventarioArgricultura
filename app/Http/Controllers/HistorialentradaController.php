@@ -25,7 +25,7 @@ class HistorialentradaController extends Controller
     public function index(Producto $producto)
     {   
         $this->authorize ('view',$producto);  
-        $historialentrada = $producto->historialentrada()->orderBy('fecha','DESC')->paginate(15);
+        $historialentrada = $producto->historialentrada()->orderBy('fecha','DESC')->paginate(10);
         //* mostrar historial de entrada y formulario para crear un nuevo historial de entrada */
         return view('historial.historialentrada', compact('historialentrada','producto'));
     }
