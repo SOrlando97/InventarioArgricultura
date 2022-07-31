@@ -16,6 +16,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 

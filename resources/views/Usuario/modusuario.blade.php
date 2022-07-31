@@ -31,16 +31,16 @@
                                 {{ session()->get('msg') }}
                             </div>
                         @endif
-                        @if(session()->has('success'))
-                            <script>
-                                //alert ('Contraseña cambiada')
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'La contraseña se cambio exitosamente',
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                    })
-                            </script>
+                        @if(session('exitoso'))
+                        <script>
+                            //alert ('Contraseña cambiada')
+                            Swal.fire({
+                            icon: 'success',
+                            title: 'La contraseña se cambio exitosamente',
+                            showConfirmButton: false,
+                            timer: 1500
+                            })                             
+                        </script>                            
                         @endif
                     </div>
                     <label class="col-md-3 col-form-label  mt-4 " for="new_password" >{{__('Contraseña Nueva')}}</label>

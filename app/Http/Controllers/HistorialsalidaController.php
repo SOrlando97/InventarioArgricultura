@@ -121,7 +121,7 @@ class HistorialsalidaController extends Controller
             'fechafin.before_or_equal'=>'Esta fecha debe ser igual o menor a la fecha actual',
         ]);
         //$this->authorize ('view',$producto);
-        $historialsal = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'].'00:00:00',$request['fechafin'].'23:59:59']);
+        $historialsal = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'].' 00:00:00',$request['fechafin'].' 23:59:59']);
         if(count($historialsal) >0 ){
             view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsal,'request',$request,'producto',$producto]);
             $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsal,'request'=>$request,'producto'=>$producto]);

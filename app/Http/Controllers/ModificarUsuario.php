@@ -45,7 +45,7 @@ class ModificarUsuario extends Controller
             $user->password = Hash::make($request->new_password);
             $user->save();
     
-            return back()->with('success', 'Password successfully changed!');
+            return back()->with('exitoso', 'Contraseña Cambiada Exitosamente');
           }
   
           
