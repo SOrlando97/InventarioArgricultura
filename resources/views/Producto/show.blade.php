@@ -59,7 +59,7 @@
                 <a class = "btn btn-warning botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
                 @endif
         @endguest
-        <a class = "btn btn-secondary botonsito" href="{{route('Producto.index')}}">Volver</a>
+        <a class = "btn btn-dark botonsito" href="{{route('Producto.index')}}">Volver</a>
     </div>
     <div class="contenedor-card">
         <div class="row">
