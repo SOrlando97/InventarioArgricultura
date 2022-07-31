@@ -16,6 +16,12 @@
             {{ __('informe de ingreso de la fecha ') }}{{$request['fechainicio']}}
             {{ __(' a la fecha ') }}{{$request['fechafin']}}
             </div>
+                <div>
+                    Cantidad Total añadida {{$historialsalida->sum('cantidad')}} kg
+                </div>
+                <div>
+                    Recaudado total {{$historialsalida->sum('precioventa')}} kg
+                </div>
                 <div class="card-body">
                     <table class="table tabla1 table-hover">
                         <thead>

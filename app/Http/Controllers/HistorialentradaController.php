@@ -125,7 +125,6 @@ class HistorialentradaController extends Controller
         if(count($historialentrada) >0 ){
             view()->share('historial.ReporteHistorialEntrada', ['historialentrada',$historialentrada,'request',$request,'producto',$producto]);
             $pdf = PDF::loadView('historial.ReporteHistorialEntrada', ['historialentrada'=>$historialentrada,'request'=>$request,'producto'=>$producto]);
-            return $pdf->download('Reporte-pdf.pdf');
             return $pdf->download('Reporte entrada '.$producto->nombre.' '.$request['fechainicio'].' a '.$request['fechafin'].'-pdf.pdf');
         }
         else{

@@ -15,7 +15,10 @@
             <div class="card-header">
             {{ __('informe de ingreso de la fecha ') }}{{$request['fechainicio']}}
             {{ __(' a la fecha ') }}{{$request['fechafin']}}
-            </div>            
+            </div>
+                <div>
+                    Cantidad Total añadida {{$historialentrada->sum('cantidad')}} kg
+                </div>
                 <div class="card-body">
                     <table class="table tabla1 table-hover">
                         <thead>
