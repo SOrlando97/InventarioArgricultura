@@ -4,45 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel 8 PDF</title>
+    <title>Informe de egreso de {{$producto->nombre}}</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="{{ public_path('css/app.css') }}"/>
 </head>
 <body>
     <h1 style="text-align: center">{{$producto->nombre}}</h1>
-    <div class="container">
-        <div class="carta-inicio card table" style="margin-top: 20px">
-            <div class="card-header">
-            {{ __('informe de ingreso de la fecha ') }}{{$request['fechainicio']}}
-            {{ __(' a la fecha ') }}{{$request['fechafin']}}
+    <p>
+        El presente documento es un informe de egreso del producto: {{$producto->nombre}}, el cual ha 
+        sido generado por el sistema de inventario el día: <?php echo  date('m-d-Y h:i:s a', time()); ?>.
+    </p>
+    <p>
+        A continuación encontrará la información recolectada desde {{$request['fechainicio']}} hasta {{$request['fechafin']}}.
+    </p>
+        <div class="container-fluid">
+            <table class="table tabla1 table-hover border border-dark rounded">
+                <thead>
+                    <tr class="border border-secondary">
+                        <th class="border border-secondary">Cantidad añadida</th>
+                        <th class="border border-secondary">Precio venta</th>
+                        <th class="border border-secondary">Fecha</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    @foreach($historialsalida as $historialsal)   
+                        <tr class="border border-secondary">
+                            <td class="border border-secondary">{{$historialsal->cantidad}} Kg</td>
+                            <td class="border border-secondary">
+                                <?php echo $venta= number_format($historialsal->precioventa); ?>
+                            </td>
+                            <td class="border border-secondary">{{$historialsal->fecha}}</td>
+                        </tr>
+                    @endforeach                       
+                </tbody>           
+            </table>
+            <div class="row">
+                <div class="col-6">
+                        <div class="alert alert-success" role="alert">
+                        <strong>Recaudado total $ <?php echo $value= number_format($historialsalida->sum('precioventa')); ?> </strong>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="alert alert-success" role="alert">
+                        <strong>Existencia actual: {{$producto->cantidad}} kg de {{$producto->nombre}}</strong>
+                    </div>
+                </div>
             </div>
-                <div>
-                    Cantidad Total añadida {{$historialsalida->sum('cantidad')}} kg
-                </div>
-                <div>
-                    Recaudado total {{$historialsalida->sum('precioventa')}} kg
-                </div>
-                <div class="card-body">
-                    <table class="table tabla1 table-hover">
-                        <thead>
-                            <tr>
-                                <th>Cantidad añadida</th>
-                                <th>Precio venta</th>
-                                <th>Fecha</th>
-                            </tr>
-                        </thead> 
-                        <tbody>
-                            @foreach($historialsalida as $historialsal)   
-                            <tr>
-                                <td>{{$historialsal->cantidad}} Kg</td>
-                                <td>{{$historialsal->precioventa}}</td>
-                                <td>{{$historialsal->fecha}}</td>
-                            </tr>
-                            @endforeach                            
-                        </tbody>           
-                    </table>
-                </div>                           
         </div>
-    </div>
 </body>
 </html>
