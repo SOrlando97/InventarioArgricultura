@@ -41,8 +41,8 @@
             </table>
             <div class="row">
                 <div class="col-6">
-                        <div class="alert alert-success" role="alert">
-                        <strong>Recaudado total $ <?php echo $value= number_format($historialsalida->sum('precioventa')); ?> </strong>
+                    <div class="alert alert-success" role="alert">
+                        <strong>Recaudado total $ <?php echo $value= number_format($recaudado); ?> </strong>
                     </div>
                 </div>
                 <div class="col-6">

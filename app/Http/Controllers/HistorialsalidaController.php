@@ -123,10 +123,14 @@ class HistorialsalidaController extends Controller
         //$this->authorize ('view',$producto);
         $historialsal = $producto->historialsalida->whereBetween('fecha',[$request['fechainicio'].' 00:00:00',$request['fechafin'].' 23:59:59']);
         if(count($historialsal) >0 ){
-            view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsal,'request',$request,'producto',$producto]);
-            $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsal,'request'=>$request,'producto'=>$producto]);
+            $recaudado = 0;
+            foreach($historialsal as $historials){
+                $recaudado +=$historials->cantidad*$historials->precioventa;
+            }
+            view()->share('historial.ReporteHistorialsalida', ['historialsalida',$historialsal,'request',$request,'producto',$producto,'recaudado',$recaudado]);
+            $pdf = PDF::loadView('historial.ReporteHistorialsalida', ['historialsalida'=>$historialsal,'request'=>$request,'producto'=>$producto,'recaudado'=>$recaudado]);
             return $pdf->download('Reporte ventas '.$producto->nombre.' '.$request['fechainicio'].' a '.$request['fechafin'].'-pdf.pdf');
-            return view('historial.ReporteHistorialSalida', compact('historialsal','request','producto'));
+            return view('historial.ReporteHistorialSalida', compact('historialsal','request','producto','recaudado'));
         }
         else{
             return Redirect::back()->withErrors(['msg' => 'No existen datos entre las fechas']);
