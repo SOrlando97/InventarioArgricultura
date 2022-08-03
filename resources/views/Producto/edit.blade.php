@@ -23,7 +23,7 @@
               <div class="col-lg-8">
                 <h2 class="fw-bold mb-5">Modificar producto</h2>
 
-                <form class="formsito" method="POST" action="{{ route('Producto.update',['producto' => $producto->id]) }}">
+                <form class="formsito" method="POST" enctype="multipart/form-data" action="{{ route('Producto.update',['producto' => $producto->id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="row mb-3">
@@ -74,9 +74,20 @@
                                 </span>
                             @enderror
                         </div>
+                    </div> 
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="imagen">Elegir Imagen</label>
+                            <input id="imagen" type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen">
+                            @error('imagen')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>                   
                     <div class="row mb-0">
-                        <div class="col-md-8 offset-md-4" style = "text-align: center">
+                        <div class="col-md-8 offset-md-2" style = "text-align: center">
                             <button type="submit" class="btn btn-primary botonsito">
                                 {{ __('Modificar Producto') }}
                             </button>

@@ -238,7 +238,8 @@ a{
     position: relative;
     padding: 20px;
     height: 344px;
-    width: 590px;
+    //width: 590px;
+    width: 700px;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(9px);
     border-radius: 20px;
@@ -603,6 +604,14 @@ font-weight: 600;
     margin: auto;
     border-radius: 10px;
     width: 140px;
+    border-style: ridge;
+}
+.imagenProd{
+    border: 1px solid $color-black;
+    display: flex;
+    margin: 15px;
+    border-radius: 10px;
+    width: 170px;
     border-style: ridge;
 }
 

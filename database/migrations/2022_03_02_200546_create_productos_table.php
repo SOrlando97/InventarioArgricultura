@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('QR')->default('');
             $table->double('precio',32,2);
             $table->double('ganancia',32,2);
+            $table->string('imagen')->nullable();
             $table->foreignId('id_usuario')->references('id')->on('usuario')->onDelete('cascade');
             $table->foreignId('id_tipoproducto')->references('id')->on('tipoproductos')->onDelete('cascade');
         });

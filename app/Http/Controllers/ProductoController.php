@@ -56,11 +56,13 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        
         //validacion de datos de los productos, para que estos sean requeridos en el formulario
         $data = $request->validate([
             'nombre' => 'required',
             'precio' => 'required',
             'tipoproducto' => 'required',
+            'imagen'=> 'nullable|image',
         ]);
         // insercion con sentencia SQL
         /* DB::table('productos')->insert([
@@ -71,6 +73,12 @@ class ProductoController extends Controller
             'ganancia' => '1',
             'id_usuario' => Auth::user()->id,
         ]); */
+        if($request['imagen']){
+            $ruta_imagen = $request['imagen']->store('imagen_productos','public');
+        }
+        else{
+            $ruta_imagen = null;
+        }
         // @param id, recibe el id autoincremental con el que se genero el producto.
         // insercion de datos usando el modelo de laravel (proteje los datos al hacer la insercion)
         $id = Auth::user()->productos()->create([
@@ -79,6 +87,7 @@ class ProductoController extends Controller
             'id_tipoproducto' => $data['tipoproducto'],
             'QR' => '1',
             'ganancia' => ($data['precio'] * 1.35),
+            'imagen'=>$ruta_imagen,              
         ])->id;
         //se envia el id con el que se genero el producto a la funcion para generar codigo QR
         return $this->QRgenerate($id);
@@ -131,8 +140,16 @@ class ProductoController extends Controller
             'nombre' => 'required',
             'precio' => 'required',
             'tipoproducto' => 'required',
+            'imagen'=> 'nullable|image',
         ]);
-        
+        if($request['imagen']){
+            if($producto->imagen){
+                Storage::delete('public/'.$producto->imagen);
+            }
+            
+            $ruta_imagen = $request['imagen']->store('imagen_productos','public');
+            $producto->imagen = $ruta_imagen;
+        }
         //se añaden los datos provenientes del formulario al modelo de producto      
         $producto->nombre = $data['nombre'];
         $producto->precio = $data['precio'];
@@ -156,6 +173,9 @@ class ProductoController extends Controller
         // se busca el codigo QR relacionado al producto 
         $filename = 'public/qrcodes/'.$producto->id.'.svg';
         // se elimina el codigo QR del servidor
+        if($producto->imagen != null){
+            Storage::delete('public/'.$producto->imagen);
+        }
         Storage::delete($filename); 
         // se elimina el producto de la BD
         $producto->delete();        

@@ -25,7 +25,7 @@
               <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
               <div class="card bg-glass">
                 <div class="card-body px-4 py-5 px-md-5">
-                    <form class="formsito" method="POST" action="{{ route('Producto.store') }}">
+                    <form class="formsito" method="POST" enctype="multipart/form-data" action="{{ route('Producto.store') }}">
                         @csrf
                         <h4 style="text-align: center;"><strong>Crear producto</strong></h4>
                         <div class="row mb-3">
@@ -65,7 +65,20 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>                   
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="imagen">Elegir Imagen</label>
+                                <input id="imagen" type="file" class="form-control @error('imagen') is-invalid @enderror" name="imagen">
+                                @error('imagen')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> 
+                        
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button class  ="btn btn-dark btn-ver" type="submit">

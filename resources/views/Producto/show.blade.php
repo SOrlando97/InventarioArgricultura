@@ -98,11 +98,19 @@
             </div>
             <div class="col">
                 <div class="card-producto">
+                    
                     <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
                     <a class="mt-5 card-text " href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
                         Descargar Imagen PNG
                     </a>   
                 </div>
+            </div>
+            <div class="col">
+                @if($producto->imagen)
+                    <img class= "imagenProd" src="/storage/{{ $producto->imagen }}" alt="imagen de {{$producto->nombre}}">
+                    @else
+                    <img class= "imagenProd" src="/images/perfil.jpg" alt="imagen de {{$producto->nombre}}">                                                  
+                @endif
             </div>
         </div>
     </div>

@@ -4806,10 +4806,10 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #000;  
+  color: #0d6efd;
   text-decoration: none;
-  background-color: #05FF96;
-  /* border-top: 2px solid white; */
+  background-color: #fff;
+  border: 1px solid #dee2e6;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4820,11 +4820,9 @@ textarea.form-control-lg {
 .page-link:hover {
   z-index: 2;
   color: #0a58ca;
-  background-color: #fff;
-  /* border-color: #dee2e6; */
-  /* border-radius: 50%; */
+  background-color: #e9ecef;
+  border-color: #dee2e6;
 }
-
 .page-link:focus {
   z-index: 3;
   color: #0a58ca;
@@ -4839,9 +4837,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #055160;
+  background-color: #0d6efd;
   border-color: #0d6efd;
-  border-radius: 50%;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -11529,7 +11526,7 @@ a {
   position: relative;
   padding: 20px;
   height: 344px;
-  width: 590px;
+  width: 700px;
   background-color: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(9px);
           backdrop-filter: blur(9px);
@@ -11942,6 +11939,15 @@ tr:hover {
   margin: auto;
   border-radius: 10px;
   width: 140px;
+  border-style: ridge;
+}
+
+.imagenProd {
+  border: 1px solid #16181a;
+  display: flex;
+  margin: 15px;
+  border-radius: 10px;
+  width: 170px;
   border-style: ridge;
 }
 

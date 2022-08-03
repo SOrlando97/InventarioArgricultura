@@ -12,7 +12,7 @@ class Producto extends Model
     use HasFactory;
     //campos que se agregan
     protected $fillable =[
-        'nombre','precio','id_tipoproducto','QR','ganancia',
+        'nombre','precio','id_tipoproducto','QR','ganancia','imagen',
     ];
     public function usuario(){
         return $this->belongsTo(User::class, 'id_usuario');
