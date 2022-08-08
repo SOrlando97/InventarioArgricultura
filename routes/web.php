@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\EmailAlert;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +54,12 @@ Route::get('/productos/pdfsalida/{producto}', [App\Http\Controllers\Historialsal
 //Ruta para Lector de QR
 Route::get('/QR', [App\Http\Controllers\QRController::class, 'index'])->name('QR.index');
 Route::post('/QR', [App\Http\Controllers\QRController::class, 'LeerQR'])->name('QR.leerQR');
+
+Route::get('alert', function(){
+
+    $correo = new EmailAlert;
+
+    Mail::to('yrvelandiaa@correo.udistrital.edu.co')->send($correo);
+
+    return "Mensaje enviado correctamente";
+});
