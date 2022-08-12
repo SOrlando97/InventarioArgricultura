@@ -12,10 +12,10 @@
     <h1 style="text-align: center">{{$producto->nombre}}</h1>
     <p>
         El presente documento es un informe de ingreso del producto: {{$producto->nombre}}, el cual ha 
-        sido generado por el sistema de inventario el dia: <?php echo  date('m-d-Y h:i:s a', time()); ?>.
+        sido generado por el sistema de inventario el día: <?php echo  date('m-d-Y h:i:s a', time()); ?>.
     </p>
     <p>
-        A continuación encontrara la información recolectada desde {{$request['fechainicio']}} hasta {{$request['fechafin']}}.
+        A continuación encontrará la información recolectada desde {{$request['fechainicio']}} hasta {{$request['fechafin']}}.
     </p>
     <div class="container-fluid">
             <table class="table tabla1 table-hover border border-dark rounded">
