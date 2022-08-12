@@ -18,11 +18,14 @@ return new class extends Migration
             $table->id();            
             $table->dateTime('fecha');
             $table->double('cantidad',10,2);
+            $table->double('cantfaltante',10,2);
+            $table->integer('dias');
+            $table->boolean('dañado');
             $table->foreignId('id_producto')->references('id')->on('productos')->onDelete('cascade');
         });
         DB::table('historialentradas')->insert([
-            ['fecha' => Carbon::now(-5),'cantidad'=> 3,'id_producto' => 1],
-            ['fecha' => Carbon::now(-5),'cantidad'=> 5.2,'id_producto' => 1]
+            ['fecha' => Carbon::now(-5),'cantidad'=> 3,'cantfaltante'=>3,'dias'=>30,'dañado'=>false,'id_producto' => 1],
+            ['fecha' => Carbon::now(-5),'cantidad'=> 5.2,'cantfaltante'=>5.2,'dias'=>30,'dañado'=>false,'id_producto' => 1]
         ]);
     }
 

@@ -52,11 +52,15 @@ class HistorialentradaController extends Controller
        /* validacion de la cantidad, es requerida, entera y debe ser un numero mayor a 1 */
         $data = $request->validate([
         'cantidad' => 'required|numeric|min:1',
+        'dias'=>'required|numeric|min:1',
         ]);
         /*  guardar informacion en historial entrada y modificar la cantidad de producto */
         $producto->historialentrada()->create([
             'fecha' => Carbon::now()->format('Y-m-d H:i:s'),
-            'cantidad' => $data['cantidad'],            
+            'cantidad' => $data['cantidad'],
+            'cantfaltante'=>$data['cantidad'],
+            'dias'=>$data['dias'],
+            'dañado'=>false,
         ]);
         $producto->cantidad = $producto->cantidad+$data['cantidad'];
         $producto->save();

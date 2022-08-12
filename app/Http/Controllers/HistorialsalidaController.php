@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\historialsalida;
+use App\Models\historialentrada;
 use Redirect;
 use PDF;
 
@@ -59,6 +60,26 @@ class HistorialsalidaController extends Controller
                 'cantidad' => $data['cantidad'],
                 'precioventa' => $data['precioventa'],        
             ]);
+
+            $historialentrada = $producto->historialentrada()->orderBy('fecha','ASC')->get();
+            $bandera = false;
+            $i = 0;
+            $cantidadactual = $data['cantidad'];
+            foreach($historialentrada as $he){          
+                if($he->cantfaltante != 0 && $he->dañado ==false  && $cantidadactual != 0){
+                    if($he->cantfaltante< $cantidadactual){
+                        $cantidadactual = $cantidadactual- $he->cantfaltante;
+                        $he->cantfaltante = 0;                        
+                    }elseif($he->cantfaltante == $cantidadactual){
+                        $he->cantfaltante = 0;
+                    }elseif($he->cantfaltante> $cantidadactual){
+                        $he->cantfaltante = $he->cantfaltante-$cantidadactual;
+                        $cantidadactual = 0;
+                    }
+                    $he->save();
+                }
+            }
+
             $producto->cantidad = $producto->cantidad - $data['cantidad'];
             $producto->save();
             return redirect()->route('historialsalida.index',compact('producto'));

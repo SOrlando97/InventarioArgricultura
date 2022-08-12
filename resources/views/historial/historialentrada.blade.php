@@ -75,6 +75,24 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row mb-3">
+                            <label for="dias" class="col-md-4 col-form-label text-md-end">{{ __('Dias de vida') }}</label>
+        
+                            <div class="col-md-6">
+                                <input autocomplete="off" id="dias" type="number" min="1"
+                                    class="form-control @error('dias') is-invalid @enderror" 
+                                    name="dias" value="{{ old('dias') }}" required
+                                >
+        
+                                @error('dias')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
@@ -95,14 +113,25 @@
             <thead>
                 <tr>
                     <th>Cantidad añadida</th>
+                    <th>Cantidad Actual</th>
                     <th>Fecha</th>
+                    <th>Dias para que se dañe</th>
+                    <th>Dañado</th>
                 </tr>
             </thead> 
             <tbody>
                 @foreach($historialentrada as $historialentr)   
                 <tr>
                     <td>{{$historialentr->cantidad}} Kg</td>
+                    <td>{{$historialentr->cantfaltante}} Kg</td>
                     <td>{{$historialentr->fecha}}</td>
+                    <td>{{$historialentr->dias}}</td>
+                    @if($historialentr->dañado)
+                        <td>Si</td>
+                    @else
+                        <td>No</td>
+                    @endif
+                    
                 </tr>
                 @endforeach
 

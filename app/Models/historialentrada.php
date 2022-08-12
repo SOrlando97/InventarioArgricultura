@@ -10,7 +10,7 @@ class historialentrada extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'fecha','cantidad',
+        'fecha','cantidad','cantfaltante','dias','dañado'
     ];
     public function producto(){
         return $this->belongsTo(Producto::class, 'id_producto');
