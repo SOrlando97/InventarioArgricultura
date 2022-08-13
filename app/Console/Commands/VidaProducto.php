@@ -3,7 +3,9 @@
 namespace App\Console\Commands;
 use App\Models\Producto;
 use App\Models\historialentrada;
+use App\Mail\EmailVidaProducto;
 use Illuminate\Console\Command;
+use Mail;
 
 class VidaProducto extends Command
 {
@@ -43,15 +45,8 @@ class VidaProducto extends Command
                         $producto->save();
                     }
                 $he->save();
-                if($he->dias == 30){
-                    \Log::info('quedan 30 dias para que se dañe el producto');
-                }elseif($he->dias == 15){
-                    \Log::info('quedan 15 dias para que se dañe el producto');
-                }elseif($he->dias == 10){
-                    \Log::info('quedan 10 dias para que se dañe el producto');
-                }
-                elseif($he->dias == 5){
-                    \Log::info('quedan 5 dias para que se dañe el producto');
+                if($he->dias == 30 || $he->dias == 15 || $he->dias == 10 || $he->dias == 5){
+                    Mail::to($he->producto->usuario->email)->send(new EmailVidaProducto($he));
                 }
                 elseif($he->dias == 0){
                     \Log::info('El producto se ha dañado y sacado del inventario');
