@@ -45,11 +45,8 @@ class VidaProducto extends Command
                         $producto->save();
                     }
                 $he->save();
-                if($he->dias == 30 || $he->dias == 15 || $he->dias == 10 || $he->dias == 5){
+                if($he->dias == 30 || $he->dias == 15 || $he->dias == 10 || $he->dias == 5|| $he->dias == 0){
                     Mail::to($he->producto->usuario->email)->send(new EmailVidaProducto($he));
-                }
-                elseif($he->dias == 0){
-                    \Log::info('El producto se ha dañado y sacado del inventario');
                 }
             }           
         }    
