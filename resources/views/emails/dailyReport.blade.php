@@ -39,7 +39,7 @@
     El producto queda con un total de {{$historialentrada->producto->cantidad}}kg 
 @else
 
-    Hola muy buenas nos permitimos informal que un stock del producto {{$historialentrada->producto->nombre}} con 
+    Hola muy buenas nos permitimos informar que un stock del producto {{$historialentrada->producto->nombre}} con 
     {{$historialentrada->cantfaltante}} kg restantes esta a 
     {{$historialentrada->dias}} dias de dañarse y ser quitado del inventario.
 

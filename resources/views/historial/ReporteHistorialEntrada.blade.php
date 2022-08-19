@@ -23,6 +23,8 @@
                     <tr class="border border-secondary">
                         <th class="border border-secondary">Cantidad añadida</th>
                         <th class="border border-secondary">Fecha</th>
+                        <th class="border border-secondary">Dias para dañarse</th>
+                        <th class="border border-secondary">Dañado</th>
                     </tr>
                 </thead> 
                 <tbody>
@@ -30,6 +32,12 @@
                     <tr class="border border-secondary">
                         <td class="border border-secondary">{{$historialentr->cantidad}} Kg</td>
                         <td class="border border-secondary">{{$historialentr->fecha}}</td>
+                        <td class="border border-secondary">{{$historialentr->dias}}</td>
+                        @if($historialentr->dañado)
+                            <td class="border border-secondary">Si</td>
+                        @else
+                            <td class="border border-secondary">No</td>
+                        @endif
                     </tr>
                     @endforeach                            
                 </tbody>           

@@ -172,7 +172,7 @@ class ProductoController extends Controller
         //politica para borrar, solo si el usuario es propietario del producto, o si es un administrador
         $this->authorize ('delete',$producto);
         // se busca el codigo QR relacionado al producto 
-        $filename = 'public/qrcodes/'.$producto->id.'.svg';
+        $filename = 'public/qrcodes/'.$producto->id.'.png';
         // se elimina el codigo QR del servidor
         if($producto->imagen != null){
             Storage::delete('public/'.$producto->imagen);
