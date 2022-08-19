@@ -54,3 +54,4 @@ Route::get('/productos/pdfsalida/{producto}', [App\Http\Controllers\Historialsal
 //Ruta para Lector de QR
 Route::get('/QR', [App\Http\Controllers\QRController::class, 'index'])->name('QR.index');
 Route::post('/QR', [App\Http\Controllers\QRController::class, 'LeerQR'])->name('QR.leerQR');
+Route::get('productos/{id}/catalogo', [App\Http\Controllers\ProductoController::class, 'catalogo'])->name('Producto.catalogo');

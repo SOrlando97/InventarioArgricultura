@@ -99,8 +99,8 @@
             <div class="col">
                 <div class="card-producto">
                     
-                    <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
-                    <a class="mt-5 card-text " href="{{$producto->QR}}" download="{{$producto->nombre}} QR">
+                    <img class= "imagenQR" src="../storage/{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
+                    <a class="mt-5 card-text " href="../storage/{{$producto->QR}}" download="{{$producto->nombre}} QR">
                         Descargar Imagen PNG
                     </a>   
                 </div>

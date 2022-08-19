@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\User;
 use App\Models\tipoproducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Request as res;
-
+use PDF;
 class ProductoController extends Controller
 {    
     /**
@@ -199,12 +200,18 @@ class ProductoController extends Controller
         // se busca el producto por el id
         $producto = Auth::user()->productos()->find($id);
         // se remplaza el valor de imgurl por la url que se añadira al producto, URL solo para visualizacion
-        $imgurl = '../storage/qrcodes/'.$id.'.png';
+        $imgurl = 'qrcodes/'.$id.'.png';
         // se agrega el url del QR al modelo del producto
         $producto->QR = $imgurl;
         // se guarda los cambios en la BD
         $producto->save();
         // se redirecciona a la vista de productos de un usuario
         return redirect()->route('Producto.index');
+    }
+    public function catalogo(User $user){
+        $usuario = Auth::user(); 
+        view()->share('Producto.Catalogo', ['usuario',$usuario]);
+        $pdf = PDF::loadView('Producto.Catalogo', ['usuario'=>$usuario]);
+        return $pdf->download('Catalogo '.$usuario->name.'-pdf.pdf');
     }
 }

@@ -3,6 +3,8 @@
 <div style="text-align: center">
     <a class = "mt-5 btn btn-secondary btn-success botonsito"
      href="{{route('Producto.create')}}">Crear Producto</a>
+     <a class = "mt-5 btn btn-secondary btn-success botonsito"
+     href="{{route('Producto.catalogo',Auth::user()->id)}}">Descargar Catalogo</a>
 </div>
 <body>
     <div class ="col-md-10 mx-auto p-3">
@@ -23,7 +25,7 @@
                 @foreach($productos as $producto)   
                 <tr>
                     <td>
-                        <img class= "imagenQR" src="{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
+                        <img class= "imagenQR" src="../storage/{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
                     </td>
                 </td>
                     <td class="text-capitalize">{{$producto->nombre}}</td>
