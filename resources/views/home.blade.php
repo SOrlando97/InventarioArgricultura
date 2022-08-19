@@ -101,7 +101,18 @@
                       </div>
                 </div>
             </div>
-            <div class="card"></div>
+            
+              @if($cantidad)
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>El producto mas vendido es {{$prodmasvendido->nombre}} con {{$cantidad}} kg vendidos este mes</strong> 
+              </div>
+              <h3></h3>
+              @else
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>Este mes no se ha vendido ningun producto este mes</strong> 
+              </div>
+              @endif
+            
             @endif
         </div>
     </div>

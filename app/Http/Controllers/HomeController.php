@@ -25,17 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $prueba = 0 ;
-        // $prodmasvendido;
-        // $productos = Auth::user()->productos;
-        // foreach($productos as $producto){
-        //     if($producto->historialsalida->sum('cantidad') > $prueba){
-        //         $prueba = $producto->historialsalida->whereBetween('fecha',[date('Y-m-01 00:00:01'),date('Y-m-d 23:59:59')])->sum('cantidad');
-        //         $prodmasvendido = $producto;
-        //     }            
-        // }
-        // dd($prodmasvendido->nombre);
+        $cantidad = 0 ;
+        $prodmasvendido;
+        $productos = Auth::user()->productos;
+        foreach($productos as $producto){
+            if($producto->historialsalida->sum('cantidad') > $cantidad){
+                $cantidad = $producto->historialsalida->whereBetween('fecha',[date('Y-m-01 00:00:01'),date('Y-m-d 23:59:59')])->sum('cantidad');
+                $prodmasvendido = $producto;
+            }            
+        }
+        if($cantidad !=0){
+            return view('home',compact('prodmasvendido','cantidad'));
+        }
+        else{
+            return view('home',compact('cantidad'));
+        }
 
-        return view('home');
+        
     }
 }
