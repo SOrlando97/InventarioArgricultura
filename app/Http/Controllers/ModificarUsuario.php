@@ -60,13 +60,16 @@ class ModificarUsuario extends Controller
         $request->validate([
             'nombre_usuario' => 'required|string',
             'telefono' => 'nullable|string|min:7',
+            'ciudad' => 'nullable|string|min:4',
         ],
         [
-          'telefono.min'=>'El telefono debe ser mayor o igual a 7 digitos o vacio si lo quiere eliminar',  
+          'telefono.min'=>'El telefono debe ser mayor o igual a 7 digitos o vacio si lo quiere eliminar',
+          'ciudad.min'=>'El nombre de la ciudad debe tener al menos 4 caracteres o puede se vacio.',
         ]);
         $user = Auth::user();
         $user->name = $request['nombre_usuario'];
         $user->telefono = $request['telefono'];
+        $user->ciudad = $request['ciudad'];
         $user->save();
         return redirect()->route('modusuario');
   

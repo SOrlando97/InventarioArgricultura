@@ -109,7 +109,7 @@
                         <input name="telefono" class="form-control mt-4
                             @error('telefono') is-invalid @enderror" 
                             type="text" autocomplete = "telefono"
-                            value="{{Auth::user()->telefono}}"
+                            value="{{Auth::user()->Telefono}}"
                         >
                         @error('telefono')
                             <span class="invalid-feedback" role="alert">
@@ -117,6 +117,25 @@
                             </span>
                         @enderror
                     </div>
+                    
+
+                    <label class="col-md-4 col-form-label mt-4" for="ciudad" >
+                        {{__('ciudad')}}
+                    </label>
+                    <div class="col-md-7">
+                        <input name="ciudad" class="form-control mt-4
+                            @error('ciudad') is-invalid @enderror" 
+                            type="text" autocomplete = "ciudad"
+                            value="{{Auth::user()->ciudad}}"
+                        >
+                        @error('ciudad')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+
                     @if(session()->has('msg'))
                             <div class="alert alert-danger">
                                 {{ session()->get('msg') }}

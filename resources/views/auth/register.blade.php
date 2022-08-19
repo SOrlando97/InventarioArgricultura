@@ -71,6 +71,17 @@
                         </span>
                     @enderror
               </div>
+              <!-- ciudad -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example5">Ciudad (Opcional)</label>
+                <input id="ciudad" type="text" class="form-control @error('ciudad') is-invalid @enderror" name="ciudad" value="{{ old('ciudad') }}">
+
+                    @error('ciudad')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+              </div>
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-outline-dark btn-lg btn-block">

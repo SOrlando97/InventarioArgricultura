@@ -22,7 +22,7 @@
             <table class="table tabla1 table-hover border border-dark rounded">
                 <thead>
                     <tr class="border border-secondary">
-                        <th class="border border-secondary">Cantidad añadida</th>
+                        <th class="border border-secondary">Cantidad Vendida</th>
                         <th class="border border-secondary">Precio venta</th>
                         <th class="border border-secondary">Fecha</th>
                     </tr>
