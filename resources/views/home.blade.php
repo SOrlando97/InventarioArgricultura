@@ -102,15 +102,38 @@
                 </div>
             </div>
             
-              @if($cantidad)
+              @if($cantmesactual)
               <div class="alert alert-light text-center text-black" role="alert">
-                  <strong>El producto mas vendido es {{$prodmasvendido->nombre}} con {{$cantidad}} kg vendidos este mes</strong> 
+                  <strong>El producto mas vendido es {{$prodmasvendidomesactual->nombre}} con {{$cantmesactual}} kg vendidos este mes</strong> 
               </div>
               <h3></h3>
               @else
               <div class="alert alert-light text-center text-black" role="alert">
                   <strong>Este mes no se ha vendido ningun producto este mes</strong> 
               </div>
+              @endif
+              @if($cantmesanterior)
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>El producto mas vendido el mes anterior fue {{$prodmasvendidoanterior->nombre}} con {{$cantmesanterior}} kg</strong> 
+              </div>
+              <h3></h3>
+              @else
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>Este mes no se ha vendido ningun producto el mes anterior</strong> 
+              </div>
+              @endif
+              
+              @if($mrot)
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>El producto que mas roto este mes es {{$prodmasrot->nombre}} con una rotacion de {{$mrot}}</strong> 
+              </div>
+              <h3></h3>
+              @endif
+              @if($mrotanterior)
+              <div class="alert alert-light text-center text-black" role="alert">
+                  <strong>El producto que mas roto el mes pasado fue {{$prodmasrotanterior->nombre}} con una rotacion de {{$mrotanterior}}</strong> 
+              </div>
+              <h3></h3>
               @endif
             
             @endif
