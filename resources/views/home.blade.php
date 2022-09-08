@@ -109,7 +109,7 @@
               <h3></h3>
               @else
               <div class="alert alert-light text-center text-black" role="alert">
-                  <strong>Este mes no se ha vendido ningun producto este mes</strong> 
+                  <strong>Este mes no se ha vendido ningun producto</strong> 
               </div>
               @endif
               @if($cantmesanterior)
@@ -119,7 +119,7 @@
               <h3></h3>
               @else
               <div class="alert alert-light text-center text-black" role="alert">
-                  <strong>Este mes no se ha vendido ningun producto el mes anterior</strong> 
+                  <strong>No se ha vendido ningun producto el mes anterior</strong> 
               </div>
               @endif
               
