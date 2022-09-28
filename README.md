@@ -4,3 +4,9 @@
 <h2><strong>Hecho por: </strong><br>
 <h2> Stiven Orlando Mendez Vanegas y
 Yeferson Reinel Velandia Arias</h2>
+<p> 
+Este trabajo fue hecho con el Framework de laravel
+Para su correcto funcionamiento se requiere tener instalado PHP, y <a link="https://getcomposer.org">composer</a>
+instalado
+
+</p>
