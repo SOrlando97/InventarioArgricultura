@@ -1,8 +1,8 @@
 <h1 align="center">Trabajo de grado</h1><br>
-<h2>APLICACIÓN WEB PARA GESTIONAR EL INVENTARIO DE PRODUCTOS IMPLEMENTANDO TECNOLOGÍA QR</h2><br>
-<h2>Tutora: Rocio Rodriguez Guerrero</h2><br>
-<h2><strong>Hecho por: </strong></h2><br>
-<h2> Stiven Orlando Mendez Vanegas y
+<h2 align="center">APLICACIÓN WEB PARA GESTIONAR EL INVENTARIO DE PRODUCTOS IMPLEMENTANDO TECNOLOGÍA QR</h2><br>
+<h2 align="center">Tutora: Rocio Rodriguez Guerrero</h2><br>
+<h2 align="center"><strong>Hecho por: </strong></h2><br>
+<h2 align="center"> Stiven Orlando Mendez Vanegas y
 Yeferson Reinel Velandia Arias</h2>
 <p> 
 Este trabajo fue hecho con el Framework de laravel
