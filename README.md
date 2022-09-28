@@ -8,7 +8,7 @@ Yeferson Reinel Velandia Arias</h2>
 Este trabajo fue hecho con el Framework de laravel
 Para su correcto funcionamiento se requiere tener instalado PHP, <a href="https://getcomposer.org">composer</a>
 y <a href="https://nodejs.org/en/">node</a> instalado en el ordenador. Tambien se debe tener instalada
-la extension de php <a href="https://www.youtube.com/watch?v=qZ9_rq6c9uY">(link a tutorial de instalacion) Imagick</a> para generar los codigos QR en imagenes png.<br>
+la extension de php <a href="https://www.youtube.com/watch?v=qZ9_rq6c9uY">(link a tutorial de instalacion) Imagick</a> para generar los codigos QR en imagenes png.<br><br>
 Para el funcionamiento del proyecto se debe seguir los siguientes paso:<br><br>
 1)Clonar el respositorio.<br>
 2)Dentro de la carpeta del proyecto ejecutar el comando "composer install" en cualquier terminal de comandos ya sea cmd, la terminal incluida en visual studio o cualquier otra.<br>
