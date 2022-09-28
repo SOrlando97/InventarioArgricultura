@@ -6,7 +6,7 @@
 Yeferson Reinel Velandia Arias</h2>
 <p> 
 Este trabajo fue hecho con el Framework de laravel
-Para su correcto funcionamiento se requiere tener instalado PHP, y <a href="https://getcomposer.org">composer</a>
-instalado
+Para su correcto funcionamiento se requiere tener instalado PHP, <a href="https://getcomposer.org">composer</a>
+y <a href="https://nodejs.org/en/">node </a> instalado en el ordenador
 
 </p>
