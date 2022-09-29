@@ -51,9 +51,11 @@
     
 <div class="container">
     <div class="row d-flex justify-content-center">
-        @csrf
-        @guest
-        <a class = "btn btn-dark botonsito" href="{{route('Producto.index')}}">Home</a>
+        @csrf        
+        @if (Auth::user()->id === $producto->id_usuario)
+        <a class = "btn btn-success botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
+        <a class = "btn btn-warning botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
+        <a class = "btn btn-dark botonsito" href="{{route('Producto.index')}}">Volver</a>
         </div>
         <div class="contenedor-card">
             <div class="row">
@@ -64,33 +66,28 @@
                         <tr>
                             <th scope="col">Propietario</th>
                             <th scope="col">Cantidad</th>
-                            <th scope="col">Telefono propietario</th>
-                            
+                            <th scope="col">Precio</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td class="text-capitalize"> {{$producto->usuario->name}}</td>
                             <td>{{$producto->cantidad}} Kg</td>
-                            @if($producto->usuario->Telefono)
-                            <td>{{$producto->usuario->Telefono}}</td>
-                            @else
-                            <td>No hay registro</td>
-                            
-                            @endif
+                            <td>{{$producto->precio}}</td>
                         </tr>
                         </tbody>
                     </table>
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">Correo de Contacto</th>
-                            
+                            <th scope="col">Precio Sugerido</th>
+                            <th scope="col">Tipo de Producto</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>{{$producto->usuario->email}}</td>                            
+                            <td>{{$producto->ganancia}}</td>
+                            <td>{{$producto->tipoproducto->descripcion}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -113,73 +110,69 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-            @else
-                @if (Auth::user()->id === $producto->id_usuario)
-                <a class = "btn btn-success botonsito" href="{{route('historialentrada.index',$producto->id)}}">Añadir Cantidad</a>
-                <a class = "btn btn-warning botonsito" href="{{route('historialsalida.index',$producto->id)}}">Venta del producto</a>
-                <a class = "btn btn-dark botonsito" href="{{route('Producto.index')}}">Volver</a>
-                </div>
-                <div class="contenedor-card">
-                    <div class="row">
-                        <div class="col card-text">
-                            <h2 class="text-center text-capitalize text-dark"> <strong> {{$producto->nombre}} </strong> </h2>
-                            <table class="table">
-                                <thead >
-                                <tr>
-                                    <th scope="col">Propietario</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Precio</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-capitalize"> {{$producto->usuario->name}}</td>
-                                    <td>{{$producto->cantidad}} Kg</td>
-                                    <td>{{$producto->precio}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">Precio Sugerido</th>
-                                    <th scope="col">Tipo de Producto</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>{{$producto->ganancia}}</td>
-                                    <td>{{$producto->tipoproducto->descripcion}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col">
-                            <div class="card-producto">
+        @else
+            <a class = "btn btn-dark botonsito" href="{{route('Producto.index')}}">Home</a>
+            </div>
+            <div class="contenedor-card">
+                <div class="row">
+                    <div class="col card-text">
+                        <h2 class="text-center text-capitalize text-dark"> <strong> {{$producto->nombre}} </strong> </h2>
+                        <table class="table">
+                            <thead >
+                            <tr>
+                                <th scope="col">Propietario</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Telefono propietario</th>
                                 
-                                <img class= "imagenQR" src="../storage/{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
-                                <a class="mt-5 card-text " href="../storage/{{$producto->QR}}" download="{{$producto->nombre}} QR">
-                                    Descargar Imagen PNG
-                                </a>   
-                            </div>
-                        </div>
-                        <div class="col">
-                            @if($producto->imagen)
-                                <img class= "imagenProd" src="/storage/{{ $producto->imagen }}" alt="imagen de {{$producto->nombre}}">
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-capitalize"> {{$producto->usuario->name}}</td>
+                                <td>{{$producto->cantidad}} Kg</td>
+                                @if($producto->usuario->Telefono)
+                                <td>{{$producto->usuario->Telefono}}</td>
                                 @else
-                                <img class= "imagenProd" src="/images/perfil.jpg" alt="imagen de {{$producto->nombre}}">                                                  
-                            @endif
+                                <td>No hay registro</td>
+                                
+                                @endif
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Correo de Contacto</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$producto->usuario->email}}</td>                            
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <div class="card-producto">
+                            
+                            <img class= "imagenQR" src="../storage/{{$producto->QR}}" alt="imagen de {{$producto->nombre}}">
+                            <a class="mt-5 card-text " href="../storage/{{$producto->QR}}" download="{{$producto->nombre}} QR">
+                                Descargar Imagen PNG
+                            </a>   
                         </div>
                     </div>
+                    <div class="col">
+                        @if($producto->imagen)
+                            <img class= "imagenProd" src="/storage/{{ $producto->imagen }}" alt="imagen de {{$producto->nombre}}">
+                            @else
+                            <img class= "imagenProd" src="/images/perfil.jpg" alt="imagen de {{$producto->nombre}}">                                                  
+                        @endif
+                    </div>
                 </div>
-                @endif
-        @endguest
+            </div>
+        @endif
+        
     
 </div>  
 </body>
