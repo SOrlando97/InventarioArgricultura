@@ -18,4 +18,6 @@ Para el funcionamiento del proyecto se debe seguir los siguientes paso:<br><br>
 6)Configurar en el archivo .env la base de datos en las lineas 'DB'. En la linea "DB_DATABASE=" colocar el nombre de la base de datos creada.<br>
 7)Ejecutar el comando "php artisan migrate"
 
+para correr el servidor se ejecuta el comando "php artisan serve"
+
 </p>

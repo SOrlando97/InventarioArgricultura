@@ -122,7 +122,7 @@
                             <tr>
                                 <th scope="col">Propietario</th>
                                 <th scope="col">Cantidad</th>
-                                <th scope="col">Telefono propietario</th>
+                                
                                 
                             </tr>
                             </thead>
@@ -130,12 +130,7 @@
                             <tr>
                                 <td class="text-capitalize"> {{$producto->usuario->name}}</td>
                                 <td>{{$producto->cantidad}} Kg</td>
-                                @if($producto->usuario->Telefono)
-                                <td>{{$producto->usuario->Telefono}}</td>
-                                @else
-                                <td>No hay registro</td>
                                 
-                                @endif
                             </tr>
                             </tbody>
                         </table>
@@ -152,6 +147,24 @@
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Telefono propietario</th>
+                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                            @if($producto->usuario->Telefono)
+                                <td>{{$producto->usuario->Telefono}}</td>
+                                @else
+                                <td>No hay registro</td>
+                                
+                                @endif                           
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="col">
                         <div class="card-producto">
@@ -162,7 +175,7 @@
                             </a>   
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col ml-2">
                         @if($producto->imagen)
                             <img class= "imagenProd" src="/storage/{{ $producto->imagen }}" alt="imagen de {{$producto->nombre}}">
                             @else
