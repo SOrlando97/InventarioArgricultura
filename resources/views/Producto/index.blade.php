@@ -3,7 +3,7 @@
 <div style="text-align: center">
     <a class = "mt-5 btn btn-secondary btn-success botonsito"
      href="{{route('Producto.create')}}">Crear Producto</a>
-     <a class = "mt-5 btn btn-secondary btn-success botonsito"
+     <a class = "mt-5 btn btn-secondary btn-light botonsito"
      href="{{route('Producto.catalogo',Auth::user()->id)}}">Descargar Catalogo</a>
 </div>
 <body>

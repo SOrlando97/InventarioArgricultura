@@ -115,7 +115,7 @@
                     <th>Cantidad añadida</th>
                     <th>Cantidad Actual</th>
                     <th>Fecha</th>
-                    <th>Dias para que se dañe</th>
+                    <th>Días para que se dañe</th>
                     <th>Dañado</th>
                 </tr>
             </thead> 
