@@ -36,7 +36,10 @@ php artisan key:generate
 ```
 php artisan migrate
 ```
-
+8. Ejecutar el comando
+```
+php artisan storage:link
+```
 para correr la aplicación se ejecuta el comando 
 ```
 php artisan serve
