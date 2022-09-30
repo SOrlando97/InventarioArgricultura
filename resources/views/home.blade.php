@@ -42,7 +42,7 @@
                               </p>
                                 <div style="text-align: center">
                                     <a class = "mt-4 btn btn-secondary btn-success botonsito"
-                                    href="{{route('Producto.create')}}">Crear Producto</a>
+                                    href="{{route('Usuarios.index')}}">Ver Usuarios</a>
                                 </div>
                             </div>
                           </div>
