@@ -1,4 +1,4 @@
 *
-!imagen_productos
-!qrcodes
+!imagen_productos/
+!qrcodes/
 !.gitignore
