@@ -45,9 +45,5 @@
 
 @endif
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
-
 ATT: {{ config('app.name') }}
 @endcomponent
