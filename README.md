@@ -13,6 +13,9 @@ Para el funcionamiento del proyecto se debe seguir los siguientes paso:
 </p>
 
 1. Clonar el respositorio.
+```
+git clone https://github.com/SOrlando97/ProyectoGrado.git
+```
 2. Dentro de la carpeta del proyecto ejecutar el comando 
 
 ```
@@ -20,14 +23,14 @@ composer install
 ```
  en cualquier terminal de comandos ya sea cmd, la terminal incluida en visual studio o cualquier otra.
 
-3. Renombrar el archivo '.env.example' a '.env'
+3. Renombrar el archivo ```.env.example``` a ```.env```
 4. Ejecutar el comando 
 
 ```
 php artisan key:generate
 ```
-5. Crear una base de datos en su gestor de base de datos de preferencia (En el caso del proyecto se uso Xampp con una base de datos llamada "proyectog")
-6. Configurar en el archivo .env la base de datos en las lineas 'DB'. En la linea "DB_DATABASE=" colocar el nombre de la base de datos creada.
+5. Crear una base de datos MySQL en su gestor de base de datos de preferencia. En el caso del proyecto se uso Xampp con una base de datos llamada ```proyectog```
+6. Configurar en el archivo ```.env``` la base de datos en las lineas 'DB'. En la linea ```DB_DATABASE=``` colocar el nombre de la base de datos creada.
 7. Ejecutar el comando
 
 ```
