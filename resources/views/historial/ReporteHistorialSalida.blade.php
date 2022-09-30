@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe de egreso de {{$producto->nombre}}</title>
+    <title>Informe de egreso de {{ucfirst($producto->nombre)}}</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="{{ public_path('css/app.css') }}"/>
 </head>
 <body>
-    <h1 style="text-align: center">{{$producto->nombre}}</h1>
+    <h1 style="text-align: center">{{ucfirst($producto->nombre)}}</h1>
     <p>
-        El presente documento es un informe de egreso del producto: {{$producto->nombre}}, el cual ha 
+        El presente documento es un informe de egreso del producto: {{ucfirst($producto->nombre)}}, el cual ha 
         sido generado por el sistema de inventario el día: <?php echo  date('m-d-Y h:i:s a', time()); ?>.
     </p>
     <p>
