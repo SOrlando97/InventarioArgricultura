@@ -11526,7 +11526,7 @@ a {
   position: relative;
   padding: 20px;
   height: 344px;
-  width: 700px;
+  width: 720px;
   background-color: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(9px);
           backdrop-filter: blur(9px);
@@ -11946,7 +11946,7 @@ tr:hover {
   display: flex;
   margin: 15px;
   border-radius: 10px;
-  width: 170px;
+  width: 150px;
 }
 
 .contenedorqr {
