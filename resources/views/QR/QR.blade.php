@@ -17,7 +17,7 @@
 						<hr>
 						<form action="{{ route('QR.leerQR') }}" method="post" enctype="multipart/form-data">
 						@csrf
-							<input type="file" name="qrimage" id="qrimage" class="form-control" required=""><br>
+							<input type="file" name="qrimage" id="qrimage" class="form-control" accept="image/png, .jpeg, .jpg, image/gif" required=""><br>
 							<input type="submit" class="btn btn-md btn-block btn-info" value="Enviar datos" name="">					
 						</form>
 						
