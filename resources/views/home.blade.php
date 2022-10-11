@@ -20,7 +20,7 @@
                                 el sistema, además podrás modificarlos y eliminarlos.
                               </p>
                                 <div style="text-align: center">
-                                    <a class = "mt-5 btn btn-secondary btn-success botonsito"
+                                    <a class = "mt-5 btn btn-secondary btn-success "
                                     href="{{route('Tipo_producto.index')}}">Ver Productos</a>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 en el sistema, en el cual podrás ver sus productos, cambiar su contraseña y así mismo eliminarlos del sistema.
                               </p>
                                 <div style="text-align: center">
-                                    <a class = "mt-4 btn btn-secondary btn-success botonsito"
+                                    <a class = "mt-4 btn btn-secondary btn-success"
                                     href="{{route('Usuarios.index')}}">Ver Usuarios</a>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 el sistema, además podrás descargar tus reportes de ventas e ingresos.
                               </p>
                                 <div style="text-align: center">
-                                    <a class = "mt-2 btn btn-secondary btn-success botonsito"
+                                    <a class = "mt-2 btn btn-secondary btn-success"
                                     href="{{route('Producto.index')}}">Ver Productos</a>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                 funciones que contiene el sistema.
                               </p>
                                 <div style="text-align: center">
-                                    <a class = "mt-5 btn btn-secondary btn-success botonsito"
+                                    <a class = "mt-5 btn btn-secondary btn-success "
                                     href="{{route('Producto.create')}}">Crear Producto</a>
                                 </div>
                             </div>

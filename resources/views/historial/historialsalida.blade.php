@@ -117,7 +117,7 @@
         </div>
       </div>
 
-      <div class ="col-12 p-0 mt-3">
+      <div class ="table-responsive col-12 p-0 mt-3">
           <table class="table tabla1 table-hover">
               <thead>
                   <tr>

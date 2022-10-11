@@ -108,7 +108,7 @@
         
     </div>
 
-    <div class ="col-md-12 mx-auto  mt-3">
+    <div class ="table-responsive col-md-12 mx-auto  mt-3">
         <table class="table tabla1 table-hover">
             <thead>
                 <tr>

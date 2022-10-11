@@ -14,10 +14,10 @@
     @endif
 
     @if($historialentrada->dañado)
-        Hola muy buenas, nos permitimos informar que un stock de el producto {{$historialentrada->producto->nombre}}
-        con {{$historialentrada->cantfaltante}} kg restantes, se ha dañado y ha sido retirado del inventario.
+        Hola muy buenas, nos permitimos informar que un stock del producto {{$historialentrada->producto->nombre}}
+        con {{$historialentrada->cantfaltante}} Kg restantes, se ha dañado y ha sido retirado del inventario.
         <br>
-        El producto queda con un total de {{$historialentrada->producto->cantidad}}kg 
+        El producto queda con un total de {{$historialentrada->producto->cantidad}}Kg 
     @else
 
         Hola muy buenas nos permitimos informar que un stock del producto {{$historialentrada->producto->nombre}} con 
@@ -33,10 +33,10 @@
 @component('mail::message')
 
 @if($historialentrada->dañado)
-    Hola muy buenas, nos permitimos informar que un stock de el producto {{$historialentrada->producto->nombre}}
-    con {{$historialentrada->cantfaltante}} kg restantes, se ha dañado y ha sido retirado del inventario.
+    Hola muy buenas, nos permitimos informar que un stock del producto {{$historialentrada->producto->nombre}}
+    con {{$historialentrada->cantfaltante}} Kg restantes, se ha dañado y ha sido retirado del inventario.
     <br>
-    El producto queda con un total de {{$historialentrada->producto->cantidad}}kg 
+    El producto queda con un total de {{$historialentrada->producto->cantidad}}Kg 
 @else
 
     Hola muy buenas nos permitimos informar que un stock del producto {{$historialentrada->producto->nombre}} con 

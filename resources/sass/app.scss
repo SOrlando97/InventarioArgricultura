@@ -607,12 +607,10 @@ font-weight: 600;
     border-style: ridge;
 }
 .imagenProd{
-    border: 1px solid $color-black;
     display: flex;
     margin: 15px;
     border-radius: 10px;
     width: 170px;
-    border-style: ridge;
 }
 
 //vista para leer codigos QR
@@ -776,16 +774,16 @@ font-weight: 600;
     }
     .contenedor-card {
         display: flex;
-        margin: 3px;
+        margin: 0px 5% 200px 3%;
         position: relative;
         padding: 20px;
         height: 344px;
         width: 330px;
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.5);
         -webkit-backdrop-filter: blur(9px);
-        backdrop-filter: blur(9px);
+        backdrop-filter: blur(4px);
         border-radius: 20px;
-        box-shadow: -17px 16px 15px -2px rgb(0 0 0 / 36%);
+        box-shadow: -17px 16px 15px -2px rgb(0 0 0 / 39%);
     }
     .card-producto {
         position: relative;
@@ -815,5 +813,13 @@ font-weight: 600;
     
     #btnendscan{
         margin-top: -10px;
+    }
+
+    .imagenProd {
+        display: flex;
+        margin: 20%;
+        border-radius: 10px;
+        width: 170px;
+        backdrop-filter: blur(42px);
     }
 }

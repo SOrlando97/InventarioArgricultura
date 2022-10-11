@@ -1,11 +1,9 @@
 @extends('layouts.app')    
 @section('content')
-<div style="margin-left: 15%">
-<a class = "mt-5 btn btn-secondary botonsito" href="{{route('Producto.index')}}">Volver</a>
-</div>
 <div class="container">
-
+    
     <section class="text-center">
+        <a class = "mt-5 btn btn-dark botonsito" href="{{route('Producto.index')}}">Volver</a>
         <!-- Background image -->
         <div class="p-5 bg-image" style="
               height: 450px;
